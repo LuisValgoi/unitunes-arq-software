@@ -1,0 +1,95 @@
+
+### Música
+
+- All Categories
+- Blues
+- Children's Music
+- Christian & Gospel
+- Classical
+- Comedy
+- Country
+- Dance
+- Electronic
+- Fitness & Workout
+- HipHop & Rap
+- New Artists
+- Jazz
+- Latino
+- Live Music
+- Metal
+- Classic Hits
+- Pop
+- R&B/Soul
+- Reggae
+- Rock
+- Singer/Songwriter
+- Soundtrack
+- World
+
+### Livros
+- All Categories
+- Arts & Enterteinment
+- Biographies & Memoris
+- Books in Spanish
+- Business & Personal Finance
+- Children & Teens
+- Comics & Graphic Novels
+- Computers & Internet
+- Cookbooks, Food & Write
+- Education
+- Fiction & Literatures
+- Health, Mind & Body
+- History
+- Humor
+- Lifestyle & Home
+- Mysteries & Thrillers
+- Nonfiction
+- Parenting
+- Policts & Current Events
+- Professional & Technical
+- Reference
+- Religion & Spirituality
+- Romance
+- Sci-Fi & Fantasy
+- Science & Nature
+- Sports & Outdoors
+- Textbooks
+- Travel & Adventure
+
+### Filme
+- All Categories
+- Kids & Family
+- Comedy
+- Action & Adventure
+- Classics
+- Documentary
+- Drama
+- Foreign
+- Horror
+- Independent
+- Music
+- Romance
+- Sci-Fi & Fantasy
+- Short Films
+- Sports
+- Thriller
+- Western
+
+### PodCast
+- All Categories
+- Arts
+- Business
+- Comedy
+- Education
+- Games & Hobbies
+- Government & Organizations
+- Health
+- Kids & Family
+- Muisc
+- News & Politics
+- Religion & Spirituality
+- Science & Medicine
+- Society & Culture
+- Sports & Recreation
+- Technology
+- TV & Film
