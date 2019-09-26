@@ -55,16 +55,15 @@ Tem o objetivo de evitar comportamentos inadequados como, por exemplo:
   - mídia que viole as regras da universidade
   - mídia que viole os princípios éticos. 
 
-Se o administrador do sistema identificar alguma mídia inapropriada, ele poderá `removê-la`.
+`Se` o administrador do sistema `identificar alguma mídia inapropriada`, ele poderá `removê-la`.
+  - Caso acontece, `o criador da mídia deve ser notificado` com o motivo da remoção dela. 
 
-Caso acontece, o criador da mídia deve ser `notificado` do motivo da remoção dela. 
-
-O administrador poderá também `excluir` a conta de acadêmicos, porém o inverso não é possível.
+O administrador poderá também `excluir a conta de acadêmicos`, porém o inverso não é possível.
 
 ## Outros
-A mídia disponibilizada na aplicação uniTunes poderá ser de `livre` acesso ou `paga`. 
+A `mídia` disponibilizada na aplicação uniTunes `poderá ser de livre acesso ou paga`. 
 
-Cada mídia disponibilizada terá um valor `igual` ou `maior` que `R$ 0,01`. 
+Cada mídia disponibilizada terá um valor `igual ou maior` que `R$ 0,01`. 
 
 A uniTunes terá às seguintes mídias:
 - música (Figura 1)
@@ -84,13 +83,13 @@ Toda mídia é caracterizada por:
 
 As categorias das mídias são encontradas em [`~/docs/categorias.md`](https://github.com/LuisValgoi/unitunes-arq-software/blob/master/doc/categorias.md).
 
-As mídias do tipo `música`, `vídeo` e `podcasts` serão caracterizadas pela duração contabilizada em minutos.
+As mídias do tipo `música`, `vídeo` e `podcasts` serão `caracterizadas pela duração contabilizada em minutos`.
 
-As mídias do tipo `livro`, por sua vez, será também caracterizado pelo seu número de páginas.
+As mídias do tipo `livro`, por sua vez, será também `caracterizado pelo seu número de páginas`.
 
-Os stakeholders usarão estas categorias para `classificar` as mídias e `executar buscas` mais refinadas e customizadas.
+Os stakeholders usarão estas categorias para `classificar as mídias` e `executar buscas mais refinadas` e customizadas.
 
-O sistema deverá ter uma `interface específica` para cada tipo de mídia.
+O sistema deverá ter uma `interface específica para cada tipo de mídia`.
 
 Os stakeholders do uniTunes poderão:
 - executar uma mídia (exceto para livro)
@@ -106,11 +105,72 @@ Os stakeholders poderão:
 - atualizar uma lista de favoritos e uma midia desta lista
 - remover uma lista de favoritos e uma midia desta lista
 
-Todo stakeholder poderá `adicionar créditos (R$)` a sua conta com o objetivo de `comprar` alguma `mídia`, podendo ser:
+Todo stakeholder poderá `adicionar créditos (R$)` a sua conta com o objetivo de `comprar alguma mídia`, podendo ser:
 - via cartão de crédito
 - transferência
 - boleto bancário.
 
-Comprar uma mídia significa:
+`Comprar uma mídia` significa:
 - transferir 90% do valor da mídia da conta do stakeholder (o comprador) para a conta do criador da mídia (o vendedor)
 - transferir 10% do valor da mídia para a conta do administrador do sistema (o qual é o representante legal da empresa proprietária do uniTunes)
+
+Um `comprovante de pagamento será emitido`, contendo:
+- a descrição do que foi comprado
+- o valor total vendido
+- a data
+- o nome do comprador
+- o nome do vendedor
+
+O administrador do sistema poderá `acompanhar as vendas realizadas` no uniTunes através de um `dashboard`.
+
+Ele poderá `consultar o nome das mídias vendidas` e o `total vendido` por:
+- dia
+- bimestre
+- ano
+- intervalo de data
+
+As `mídias compradas` por um stakeholder serão `disponibilizadas na lista de mídias adquiridas` pelo mesmo.
+
+O stakeholder poderá `visualizar, a qualquer momento, os seus créditos`.
+
+O administrador poderá `verificar a quantidade` e o `valor total` de mídias vendidas `até a data corrente`.
+
+Os stakeholders poderão `fazer downloads das mídias compradas` e das mídias `de acesso livre`.
+
+Os `criadores de mídia` (Academicos) poderão criar álbuns para melhor organizar as suas músicas.
+
+Um `álbum terá ao menos uma música`.
+
+Os acadêmicos poderão visualizar:
+- os álbuns novos
+- os álbuns mais recentes
+- todos os álbuns cadastrados no sistema
+
+> Álbuns novos são aqueles cadastrados nos últimos sessenta dias, tomando como referência a data que o
+autor disponibilizou o mesmo para acesso e a data corrente. Por exemplo, se um autor cadastrar um álbum
+em 01/03/2019 e um usuário acessa o uniTunes em 10/04/2019, o álbum será classificado como um álbum
+novo (ver Figura 1). Se o acesso ocorre em 05/05/2019, o álbum será classificado como recente (ver Figura
+1). O uniTunes poderá ser web, desktop ou um aplicativo para dispositivos móveis.
+
+## Autenticação
+
+`Apenas stakeholders autenticados` poderão ter acesso ao uniTunes.
+
+Sendo assim, a uniTunes deverá apresentar as seguintes funcionalidades:
+- criar conta de usuário
+    - primeiro nome
+    - último nome
+    - e-mail (será o login)
+    - senha
+    - confirmação de senha
+
+- recuperar senha cadastrada
+  - a qual será enviada ao e-mail do usuário
+
+- autenticar (fazer login/logout) no sistema
+  - Acadêmicos não poderão ter acesso às funcionalidades inerentes aos Administradores
+  - O sistema deve ser capaz de checar se o e-mail de cadastro é válido
+  - O sistema deve garantir que a senha tem no mínimo 6 e no máximo 30 caracteres alfanuméricos
+  - O sistema deve garantir que os campos da senha e da confirmação de senha sejam
+iguais
+  - O sistema deve garantir que o primeiro e último nome não são nulos
