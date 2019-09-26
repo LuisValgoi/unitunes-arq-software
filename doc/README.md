@@ -82,7 +82,7 @@ Toda mídia é caracterizada por:
 - data de criação
 - categoria
 
-As categorias das mídias são encontradas em [`~/docs/categorias.md`](https://github.com/LuisValgoi/unitunes-arq-software/blob/master/doc/categories.md).
+As categorias das mídias são encontradas em [`~/docs/categorias.md`](https://github.com/LuisValgoi/unitunes-arq-software/blob/master/doc/categorias.md).
 
 As mídias do tipo `música`, `vídeo` e `podcasts` serão caracterizadas pela duração contabilizada em minutos.
 
