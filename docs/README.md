@@ -1,14 +1,14 @@
 # Informações de Entrega
 
 ## Visão Geral
-- ~T1 - (12/09) = Apresentação sobre ReactJS˜
+- T1 - (12/09) = Apresentação sobre ReactJS
 - T2 - (03/10) = Projeto da Aplicação LooneyTunes
 - T3 - (07/11) = Apresentação sobre NodeJS
 - T4 - (21/11) = Implementação e Comparação do Projeto no T2
 
 ## O que fazer no T1?
-- ˜Deve ser feita uma apresentação sobre a tecnologia ReactJS˜
-- ˜Deve ser composto por uma estrutura padrão de SLIDES.˜
+- Deve ser feita uma apresentação sobre a tecnologia ReactJS
+- Deve ser composto por uma estrutura padrão de SLIDES.
 
 ## O que fazer no T2?
 Deve ser entregue os seguintes artefatos:
