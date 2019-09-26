@@ -34,11 +34,7 @@ Deve ser entregue os seguintes artefatos:
 # Informações dos Requisitos
 
 ## Objetivo do uniTunes
-Permitir que a comunidade acadêmica universitária possa gerenciar mídias utilizando o sistema. 
-
-## Quais são os Stakeholders
-- acadêmico
-- administrador
+Permitir que a comunidade acadêmica universitária (`academicos` e `administradores`) possa gerenciar mídias utilizando o sistema. 
 
 ## Stakeholder "Academico" 
 Todos os stakeholders que tem um vínculo com uma universidade (tais como alunos, professores, técnicos administrativos e dentre outros). 
@@ -60,16 +56,16 @@ Tem o objetivo de evitar comportamentos inadequados como, por exemplo:
 
 O administrador poderá também `excluir a conta de acadêmicos`, porém o inverso não é possível.
 
-## Outros
+## Mídia Info
 A `mídia` disponibilizada na aplicação uniTunes `poderá ser de livre acesso ou paga`. 
 
 Cada mídia disponibilizada terá um valor `igual ou maior` que `R$ 0,01`. 
 
-A uniTunes terá às seguintes mídias:
-- música (Figura 1)
-- livro (Figura 2)
-- vídeos (Figura 3)
-- podcasts (Figura 4)
+A uniTunes terá às seguintes mídias: `música`, `livro`, `vídeos`, `podcasts`.
+
+As mídias do tipo `música`, `vídeo` e `podcasts` serão `caracterizadas pela duração contabilizada em minutos`.
+
+As mídias do tipo `livro`, por sua vez, será também `caracterizado pelo seu número de páginas`.
 
 Toda mídia é caracterizada por:
 - nome
@@ -83,13 +79,10 @@ Toda mídia é caracterizada por:
 
 As categorias das mídias são encontradas em [`~/docs/categorias.md`](https://github.com/LuisValgoi/unitunes-arq-software/blob/master/doc/categorias.md).
 
-As mídias do tipo `música`, `vídeo` e `podcasts` serão `caracterizadas pela duração contabilizada em minutos`.
-
-As mídias do tipo `livro`, por sua vez, será também `caracterizado pelo seu número de páginas`.
-
-Os stakeholders usarão estas categorias para `classificar as mídias` e `executar buscas mais refinadas` e customizadas.
-
 O sistema deverá ter uma `interface específica para cada tipo de mídia`.
+
+## Funcionalidades
+Os stakeholders usarão as categorias para `classificar as mídias` e `executar buscas mais refinadas` e customizadas.
 
 Os stakeholders do uniTunes poderão:
 - executar uma mídia (exceto para livro)
@@ -121,13 +114,8 @@ Um `comprovante de pagamento será emitido`, contendo:
 - o nome do comprador
 - o nome do vendedor
 
-O administrador do sistema poderá `acompanhar as vendas realizadas` no uniTunes através de um `dashboard`.
-
-Ele poderá `consultar o nome das mídias vendidas` e o `total vendido` por:
-- dia
-- bimestre
-- ano
-- intervalo de data
+O `administrador` do sistema poderá `acompanhar as vendas realizadas` no uniTunes através de um `dashboard`.
+- Ele poderá `consultar o nome das mídias vendidas` e o `total vendido` por: `dia`, `bimestre`, `ano`, `intervalo de data`.
 
 As `mídias compradas` por um stakeholder serão `disponibilizadas na lista de mídias adquiridas` pelo mesmo.
 
@@ -137,9 +125,7 @@ O administrador poderá `verificar a quantidade` e o `valor total` de mídias ve
 
 Os stakeholders poderão `fazer downloads das mídias compradas` e das mídias `de acesso livre`.
 
-Os `criadores de mídia` (Academicos) poderão criar álbuns para melhor organizar as suas músicas.
-
-Um `álbum terá ao menos uma música`.
+Os `criadores de mídia` (Academicos) `poderão criar álbuns`(que vão ter ao menos uma música) para melhor organizar as suas músicas.
 
 Os acadêmicos poderão visualizar:
 - os álbuns novos
