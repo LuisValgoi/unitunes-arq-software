@@ -58,10 +58,7 @@ Os stakeholders do uniTunes poderão:
 - organizar em lista de favoritos
 
 Os stakeholders poderão:
-- criar uma lista de favoritos para cada tipo de mídia
-- visualizar uma lista de favoritos e uma midia desta lista
-- atualizar uma lista de favoritos e uma midia desta lista
-- remover uma lista de favoritos e uma midia desta lista
+- `criar` uma `lista de favoritos` para cada `tipo de mídia`, `visualizar`, `atualizar` e `remover` uma `mídia` de uma lista de favoritos
 
 Todo stakeholder poderá `adicionar créditos (R$)` a sua conta com o objetivo de `comprar alguma mídia`, podendo ser:
 - via cartão de crédito
