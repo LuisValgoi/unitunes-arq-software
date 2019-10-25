@@ -1,17 +1,15 @@
-## Prototipo
-https://xd.adobe.com/view/3a9c3a47-0cb1-4d04-48af-279be3a8d1de-4cad/
 
-## Objetivo do uniTunes
+# Objetivo do uniTunes
 Permitir que a comunidade acadêmica universitária (`academicos` e `administradores`) possa gerenciar mídias utilizando o sistema. 
 
-## Stakeholder "Academico" 
+# Stakeholder "Academico" 
 Todos os stakeholders que tem um vínculo com uma universidade (tais como alunos, professores, técnicos administrativos e dentre outros). 
 
 Ele poderá criar mídias e disponibilizá-las na aplicação. 
 
 Ao criar uma mídia, o acadêmico passará a ter um total controle sobre a mídia criada, podendo visualizá-la, removê-la e atualizá-la. 
 
-## Stakeholder "Administrador"
+# Stakeholder "Administrador"
 É um acadêmico responsável por fiscalizar as atividades realizadas pelos usuários do sistema
 
 Tem o objetivo de evitar comportamentos inadequados como, por exemplo:
@@ -24,7 +22,7 @@ Tem o objetivo de evitar comportamentos inadequados como, por exemplo:
 
 O administrador poderá também `excluir a conta de acadêmicos`, porém o inverso não é possível.
 
-## Mídia Info
+# Mídia Info
 A `mídia` disponibilizada na aplicação uniTunes `poderá ser de livre acesso ou paga`. 
 
 Cada mídia disponibilizada terá um valor `igual ou maior` que `R$ 0,01`. 
@@ -49,7 +47,7 @@ As categorias das mídias são encontradas em [`~/docs/categorias.md`](https://g
 
 O sistema deverá ter uma `interface específica para cada tipo de mídia`.
 
-## Funcionalidades
+# Funcionalidades
 Os stakeholders usarão as categorias para `classificar as mídias` e `executar buscas mais refinadas` e customizadas.
 
 Os stakeholders do uniTunes poderão:
@@ -103,7 +101,7 @@ em 01/03/2019 e um usuário acessa o uniTunes em 10/04/2019, o álbum será clas
 novo (ver Figura 1). Se o acesso ocorre em 05/05/2019, o álbum será classificado como recente (ver Figura
 1). O uniTunes poderá ser web, desktop ou um aplicativo para dispositivos móveis.
 
-## Autenticação
+# Autenticação
 
 `Apenas stakeholders autenticados` poderão ter acesso ao uniTunes.
 
