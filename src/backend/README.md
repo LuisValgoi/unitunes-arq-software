@@ -14,4 +14,4 @@ This folder has the purpose to run the backend of the project
 
 - Run `npm start`
 
-- Access: `http://localhost:3000`
+- Access: `http://localhost:3001`
