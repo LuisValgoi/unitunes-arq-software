@@ -8,7 +8,8 @@ const AcademicSchema = new Schema({
   lastLoginDate: Date,
   password: String,
   university: { type: Schema.Types.ObjectId, ref: "University" },
-  account: { type: Schema.Types.ObjectId, ref: "Account" }
+  account: { type: Schema.Types.ObjectId, ref: "Account" },
+  library: { type: Schema.Types.ObjectId, ref: "Library" },
 }, {
   timestamps: true
 });
