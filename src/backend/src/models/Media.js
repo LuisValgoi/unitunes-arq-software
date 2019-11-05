@@ -5,12 +5,12 @@ const MediaSchema = new Schema({
   description: { type: String, required: true, max: 1000 },
   price: { type: Number, required: true },
   category: { type: String, required: true },
-  authors: [{ type: Schema.Types.ObjectId, ref: "Academic", required: true }],
+  author: [{ type: Schema.Types.ObjectId, ref: "Academic", required: true }],
+  classification: { type: Schema.Types.ObjectId, ref: "Classification" },
   content: Buffer,
-  classificationValue: Number,
+  image: Buffer,
   isApropriated: Boolean,
   isPaid: Boolean,
-  image: Buffer,
 }, {
   discriminatorKey: "type",
   timestamps: true
