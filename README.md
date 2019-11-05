@@ -1,6 +1,21 @@
 # Info 
 This repository was created for the `uniTunes` project @ Unisinos 2019/2
 
+<!-- 
+# Infos Gmail
+- email: unitunes20191t@gmail.com
+- pass: Initial1
+
+# MongoDB User
+- user: unitunes20191t@gmail.com
+- pass: Initial1
+
+# MongoDB Database User
+- user: Global
+- pass: eHlJfs2G9SJvQwjC 
+-->
+
+
 # Authors
 - Luis Henrique Valgoi
 - Vinicius Schuck
