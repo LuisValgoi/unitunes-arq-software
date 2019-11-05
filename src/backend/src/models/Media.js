@@ -4,16 +4,15 @@ const MediaSchema = new Schema({
   name: { type: String, required: true, max: 255 },
   description: { type: String, required: true, max: 1000 },
   price: { type: Number, required: true },
-  authors: {},
-  content: {},
-  category: { type: String, required: true, max: 255 },
-  classificationValue: { type: Number, required: true },
-  isApropriated: { type: Boolean, default: true },
-  isPaid: { type: Boolean, default: true },
-  image: { data: Buffer, contentType: String, required: false },
+  category: { type: String, required: true },
+  authors: [{ type: Schema.Types.ObjectId, ref: "Academic", required: true }],
+  content: Buffer,
+  classificationValue: Number,
+  isApropriated: Boolean,
+  isPaid: Boolean,
+  image: Buffer,
 }, {
   discriminatorKey: "type",
-  collection: "items",
   timestamps: true
 });
 
