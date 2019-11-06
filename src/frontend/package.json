@@ -15,7 +15,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "formatAll": "prettier --print-width 80 --no-semi --single-quote --trailing-comma es5 --write src/frontend/src/**/*.js"
+    "formatAll": "prettier --print-width 80 --no-semi --single-quote --trailing-comma es5 --write src/**/*.js"
   },
   "eslintConfig": {
     "extends": "react-app"
