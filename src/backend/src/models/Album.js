@@ -1,4 +1,4 @@
-const { Schema, model } = require('mongoose')
+const { Schema, model } = require('mongoose');
 
 const AlbumSchema = new Schema(
   {
@@ -8,6 +8,6 @@ const AlbumSchema = new Schema(
   },
   {
     timestamps: true,
-  }
-)
-module.exports = model('Album', AlbumSchema)
+  },
+);
+module.exports = model('Album', AlbumSchema);

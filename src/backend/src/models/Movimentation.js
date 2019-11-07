@@ -1,4 +1,4 @@
-const { Schema, model } = require('mongoose')
+const { Schema, model } = require('mongoose');
 
 const MovimentationSchema = new Schema(
   {
@@ -10,6 +10,6 @@ const MovimentationSchema = new Schema(
   },
   {
     timestamps: true,
-  }
-)
-module.exports = model('Movimentation', MovimentationSchema)
+  },
+);
+module.exports = model('Movimentation', MovimentationSchema);

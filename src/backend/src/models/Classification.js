@@ -1,4 +1,4 @@
-const { Schema, model } = require('mongoose')
+const { Schema, model } = require('mongoose');
 
 const ClassificationSchema = new Schema(
   {
@@ -8,6 +8,6 @@ const ClassificationSchema = new Schema(
   },
   {
     timestamps: true,
-  }
-)
-module.exports = model('Classification', ClassificationSchema)
+  },
+);
+module.exports = model('Classification', ClassificationSchema);

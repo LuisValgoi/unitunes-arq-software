@@ -1,4 +1,4 @@
-const { Schema, model } = require('mongoose')
+const { Schema, model } = require('mongoose');
 
 const MediaSchema = new Schema(
   {
@@ -16,7 +16,7 @@ const MediaSchema = new Schema(
   {
     discriminatorKey: 'type',
     timestamps: true,
-  }
-)
+  },
+);
 
-module.exports = model('Media', MediaSchema)
+module.exports = model('Media', MediaSchema);

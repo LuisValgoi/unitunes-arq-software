@@ -1,4 +1,4 @@
-const { Schema, model } = require('mongoose')
+const { Schema, model } = require('mongoose');
 
 const UniversitySchema = new Schema(
   {
@@ -9,6 +9,6 @@ const UniversitySchema = new Schema(
   },
   {
     timestamps: true,
-  }
-)
-module.exports = model('University', UniversitySchema)
+  },
+);
+module.exports = model('University', UniversitySchema);
