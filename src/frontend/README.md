@@ -1,7 +1,9 @@
 # Frontend Project
+
 This folder has the purpose to run the frontend of the project
 
 # Getting Started
+
 [Reference](https://dev.to/loujaybee/using-create-react-app-with-express/)
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

@@ -15,10 +15,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "formatAll": "prettier --print-width 80 --no-semi --single-quote --trailing-comma es5 --write src/**/*.js"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
+    "lint": "eslint .",
+    "format": "prettier --write \"**/*.+(js|jsx|json|css|md)\""
   },
   "browserslist": {
     "production": [
@@ -33,6 +31,10 @@
     ]
   },
   "devDependencies": {
-    "prettier": "1.18.2"
+    "babel-eslint": "^10.0.3",
+    "eslint-config-prettier": "^6.5.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "^7.16.0",
+    "prettier": "^1.18.2"
   }
 }
