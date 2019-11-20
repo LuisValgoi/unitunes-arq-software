@@ -21,16 +21,6 @@ module.exports = {
     }
   },
 
-  async getMovimentationByUser (req, res) {
-    try {
-      const response = _getByUserId(req, res);
-      return response.movimentation;
-    } catch (e) {
-      console.log(e)
-      res.status(500).send(e);
-    }
-  },
-
   async _getByUserId (req, res) {
     const academicId = req.params.id;
     const academic = await Academic.findById(academicId);

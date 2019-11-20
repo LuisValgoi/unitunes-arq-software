@@ -2,6 +2,7 @@ const { Schema, model } = require('mongoose');
 
 const MovimentationSchema = new Schema(
   {
+    account: { type: Schema.Types.ObjectId, ref: 'Account' },
     amount: { type: Number, required: true },
     seller: { type: Schema.Types.ObjectId, ref: 'Academic' },
     buyer: { type: Schema.Types.ObjectId, ref: 'Academic' },
