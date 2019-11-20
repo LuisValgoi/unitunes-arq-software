@@ -24,6 +24,7 @@ module.exports = {
   async insert(req, res) {
     try {
       const record = await Academic.create(req.body);
+      // TODO: Create an account
       return res.json(record)
     } catch (e) {
       console.log(e)
