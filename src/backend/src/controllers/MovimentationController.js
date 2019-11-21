@@ -4,13 +4,16 @@ module.exports = {
 
   async getAll(req, res) {
     try {
-      const { fromDate, toDate, accountId, seller, buyer } = req.params;
-      query = { 'account': accountId, 'createdAt': { '$gte': fromDate, '$lt': toDate } }
+      const { fromDate, toDate, account, seller, buyer } = req.query;
+      query = { 'account': account }
 
-      if (seller != '')
+      if (fromDate && toDate)
+        query['createdAt'] = { '$gte': fromDate, '$lt': toDate } 
+
+      if (seller)
         query['seller'] = seller
 
-      if (buyer != '')
+      if (buyer)
         query['buyer'] = buyer
 
       return res.json(await Movimentation.find(query));

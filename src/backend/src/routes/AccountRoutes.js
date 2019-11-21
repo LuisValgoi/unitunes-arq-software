@@ -1,8 +1,11 @@
 const express = require('express');
 const routes = express.Router();
-const UniversityController = require('../controllers/UniversityController');
+const AccountController = require('../controllers/AccountController');
 
-routes.get("/", UniversityController.getAll);
-routes.delete("/:id", UniversityController.remove);
+routes.get("/", AccountController.getAll);
+routes.get("/:id", AccountController.getById)
+routes.post("/", AccountController.insert);
+routes.delete("/:id", AccountController.remove);
+routes.put("/:id", AccountController.update);
 
-module.exports = routes; 
+module.exports = routes;

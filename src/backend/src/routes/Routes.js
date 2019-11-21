@@ -9,6 +9,6 @@ const routes = express.Router();
 routes.use('/university', UniversityRoutes);
 routes.use('/academic', AcademicRoutes);
 routes.use('/account', AccountRoutes);
-routes.use('/movimentation', MovimentationRoutes)
+routes.use('/movimentation', MovimentationRoutes);
 
 module.exports = routes; 

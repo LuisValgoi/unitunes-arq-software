@@ -12,24 +12,15 @@ module.exports = {
     }
   },
 
-  async getByUserId (req, res) {
+  async getById(req, res) {
     try {
-      return _getByUserId(req, res);
+      return res.json(await Account.findById(req.params.id));
     } catch (e) {
       console.log(e)
       res.status(500).send(e);
     }
   },
 
-  async _getByUserId (req, res) {
-    const academicId = req.params.id;
-    const academic = await Academic.findById(academicId);
-    const accountId = academic.account;
-
-    return res.json(await Account.findById(accountId));
-  },
-
-  // not being used
   async insert(req, res) {
     try {
       const { currentAmount } = req.body;

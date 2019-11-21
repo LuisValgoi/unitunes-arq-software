@@ -3,8 +3,8 @@ const routes = express.Router();
 const MovimentationController = require('../controllers/MovimentationController');
 
 routes.get("/", MovimentationController.getAll);
-routes.post("/", AcademicController.insert);
-routes.get("/:id", AcademicController.getById);
-routes.put("/:id", AcademicController.update);
+routes.post("/", MovimentationController.insert);
+routes.get("/:id", MovimentationController.getById);
+routes.put("/:id", MovimentationController.update);
 
 module.exports = routes; 

@@ -35,7 +35,7 @@ module.exports = {
   async update(req, res) {
     try {
       const { id } = req.params;
-      const record = await University.findByIdAndUpdate(id, req.body, { new: true });
+      const record = await Academic.findByIdAndUpdate(id, req.body, { new: true });
       return res.json(record);
     } catch (e) {
       console.log(e)
@@ -46,7 +46,7 @@ module.exports = {
   async remove(req, res) {
     try {
       const { id } = req.params;
-      const record = await University.findByIdAndDelete(id);
+      const record = await Academic.findByIdAndDelete(id);
       return res.json(record);
     } catch (e) {
       console.log(e)
