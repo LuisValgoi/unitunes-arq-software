@@ -4,8 +4,9 @@ module.exports = {
 
   async getAll(req, res) {
     try {
-      const { fromDate, toDate, account, seller, buyer } = req.query;
-      query = { 'account': account }
+      const { fromDate, toDate, seller, buyer } = req.query;
+      let account = req.params.id;
+      let query = { account };
 
       if (fromDate && toDate)
         query['createdAt'] = { '$gte': fromDate, '$lt': toDate } 
