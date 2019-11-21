@@ -7,10 +7,10 @@ const RootRoutes = require('./RootRoutes');
 
 const routes = express.Router();
 
-routes.use('/', RootRoutes.listAll)
 routes.use('/university', UniversityRoutes);
 routes.use('/academic', AcademicRoutes);
 routes.use('/account', AccountRoutes);
 routes.use('/movimentation', MovimentationRoutes);
+routes.use('/', RootRoutes.listAll)
 
 module.exports = routes; 
