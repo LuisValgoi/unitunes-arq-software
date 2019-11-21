@@ -10,8 +10,8 @@ const MediaSchema = new Schema(
     classification: { type: Schema.Types.ObjectId, ref: 'Classification' },
     content: Buffer,
     image: Buffer,
-    isApropriated: Boolean,
-    isPaid: Boolean,
+    isAvailable: Boolean,
+    isApropriated: Boolean
   },
   {
     discriminatorKey: 'type',
