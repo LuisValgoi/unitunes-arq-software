@@ -7,7 +7,7 @@ module.exports = {
     try {
       return res.json(await Account.find());
     } catch (e) {
-      console.log(e)
+      console.log(e);
       res.status(500).send(e);
     }
   },
@@ -16,7 +16,7 @@ module.exports = {
     try {
       return res.json(await Account.findById(req.params.id));
     } catch (e) {
-      console.log(e)
+      console.log(e);
       res.status(500).send(e);
     }
   },
@@ -28,7 +28,7 @@ module.exports = {
 
       return res.json(record);
     } catch (e) {
-      console.log(e)
+      console.log(e);
       res.status(500).send(e);
     }
   },
@@ -41,7 +41,7 @@ module.exports = {
 
       return res.json(record);
     } catch (e) {
-      console.log(e)
+      console.log(e);
       res.status(500).send(e);
     }
   },
@@ -53,7 +53,7 @@ module.exports = {
 
       return res.json(record);
     } catch (e) {
-      console.log(e)
+      console.log(e);
       res.status(500).send(e);
     }
   },

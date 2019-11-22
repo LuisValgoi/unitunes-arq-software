@@ -5,7 +5,7 @@ module.exports = {
     try {
       return res.json(await Academic.find());
     } catch (e) {
-      console.log(e)
+      console.log(e);
       res.status(500).send(e);
     }
   },
@@ -16,7 +16,7 @@ module.exports = {
       const response = await Academic.findById(id)
       return res.json(response);
     } catch (e) {
-      console.log(e)
+      console.log(e);
       res.status(500).send(e);
     }
   },
@@ -27,7 +27,7 @@ module.exports = {
       // TODO: Create an account
       return res.json(record)
     } catch (e) {
-      console.log(e)
+      console.log(e);
       res.status(500).send(e);
     }
   },
@@ -38,7 +38,7 @@ module.exports = {
       const record = await Academic.findByIdAndUpdate(id, req.body, { new: true });
       return res.json(record);
     } catch (e) {
-      console.log(e)
+      console.log(e);
       res.status(500).send(e);
     }
   },
@@ -49,7 +49,7 @@ module.exports = {
       const record = await Academic.findByIdAndDelete(id);
       return res.json(record);
     } catch (e) {
-      console.log(e)
+      console.log(e);
       res.status(500).send(e);
     }
   }

@@ -8,7 +8,7 @@ module.exports = {
       let query = { 'isAvailable': true };
       return res.json(await Media.find(query).select(["-content", "-image"]));
     } catch (e) {
-      console.log(e)
+      console.log(e);
       res.status(500).send(e);
     }
   },
@@ -22,7 +22,7 @@ module.exports = {
       const response = await Media.find(query).select(["-content", "-image"]);
       return res.json(response);
     } catch (e) {
-      console.log(e)
+      console.log(e);
       res.status(500).send(e);
     }
   },
@@ -33,7 +33,7 @@ module.exports = {
       const response = await Media.findById(id).select(["-content", "-image"])
       return res.json(response);
     } catch (e) {
-      console.log(e)
+      console.log(e);
       res.status(500).send(e);
     }
   },
@@ -43,7 +43,7 @@ module.exports = {
       const record = await Media.create(req.body);
       return res.json(record)
     } catch (e) {
-      console.log(e)
+      console.log(e);
       res.status(500).send(e);
     }
   },
@@ -54,7 +54,7 @@ module.exports = {
       const record = await Media.findByIdAndUpdate(id, req.body, { new: true });
       return res.json(record);
     } catch (e) {
-      console.log(e)
+      console.log(e);
       res.status(500).send(e);
     }
   },
@@ -65,7 +65,7 @@ module.exports = {
       const record = await Media.findByIdAndDelete(id);
       return res.json(record);
     } catch (e) {
-      console.log(e)
+      console.log(e);
       res.status(500).send(e);
     }
   },
@@ -76,7 +76,7 @@ module.exports = {
       const response = await Media.findById(id).select(["content", "image"]);
       return res.json(response);
     } catch (e) {
-      console.log(e)
+      console.log(e);
       res.status(500).send(e);
     }
   },
@@ -85,7 +85,7 @@ module.exports = {
     try {
       // TODO : add into movimentation
     } catch (e) {
-      console.log(e)
+      console.log(e);
       res.status(500).send(e);
     }
   }

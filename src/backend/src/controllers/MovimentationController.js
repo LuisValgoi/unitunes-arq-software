@@ -19,7 +19,7 @@ module.exports = {
 
       return res.json(await Movimentation.find(query));
     } catch (e) {
-      console.log(e)
+      console.log(e);
       res.status(500).send(e);
     }
   },
@@ -29,7 +29,7 @@ module.exports = {
       let query = { "buyer": userId };
       return res.json(await Movimentation.find(query).select("medias"));
     } catch (e) {
-      console.log(e)
+      console.log(e);
       res.status(500).send(e);
     }
   },
@@ -39,7 +39,7 @@ module.exports = {
       const { id } = req.params;
       return res.json(await Movimentation.findById(id))
     } catch (e) {
-      console.log(e)
+      console.log(e);
       res.status(500).send(e);
     }
   },
@@ -49,7 +49,7 @@ module.exports = {
       const record = await Movimentation.create(req.body);
       return res.json(record);
     } catch (e) {
-      console.log(e)
+      console.log(e);
       res.status(500).send(e);
     }
   },
@@ -59,7 +59,7 @@ module.exports = {
       const record = await Movimentation.findByIdAndUpdate(id, req.body, { new: true });
       return res.json(record);
     } catch (e) {
-      console.log(e)
+      console.log(e);
       res.status(500).send(e);
     }
   }
