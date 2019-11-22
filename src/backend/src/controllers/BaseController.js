@@ -10,7 +10,7 @@ module.exports = function (Service) {
   },
 
   module.insert = async function (req, res) {
-    Service.getById(req, res);
+    Service.insert(req, res);
   },
 
   module.update = async function (req, res) {
