@@ -9,7 +9,7 @@ module.exports = {
       let query = { account };
 
       if (fromDate && toDate)
-        query['createdAt'] = { '$gte': fromDate, '$lt': toDate } 
+        query['createdAt'] = { '$gte': fromDate, '$lt': toDate }
 
       if (seller)
         query['seller'] = seller
@@ -24,7 +24,17 @@ module.exports = {
     }
   },
 
-  async getById (req, res) {
+  async _getMediasByUser(userId) {
+    try {
+      let query = { "buyer": userId };
+      return res.json(await Movimentation.find(query).select("medias"));
+    } catch (e) {
+      console.log(e)
+      res.status(500).send(e);
+    }
+  },
+
+  async getById(req, res) {
     try {
       const { id } = req.params;
       return res.json(await Movimentation.findById(id))
