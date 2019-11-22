@@ -1,4 +1,4 @@
-const University = require('../models/University');
-const BaseController = require("./BaseController")(University);
+const UniversityService = require('../services/UniversityService');
+const BaseController = require("./BaseController")(UniversityService);
 
 module.exports = BaseController;

@@ -1,15 +1,8 @@
-const Academic = require('../models/Academic');
-const BaseController = require("./BaseController")(Academic);
+const AcademicService = require('../services/AcademicService');
+const BaseController = require("./BaseController")(AcademicService);
 
-BaseController.insert = async function () { 
-  try {
-    const record = await Academic.create(req.body);
-    // TODO: Create an account
-    return res.json(record)
-  } catch (e) {
-    console.log(e);
-    res.status(500).send(e);
-  }
+BaseController.insert = async function (req, res) {
+  return AcademicService.insert(req, res);
 };
 
 module.exports = BaseController;
