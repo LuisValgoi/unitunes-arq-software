@@ -23,7 +23,7 @@ BaseService.getAllByAccount = async function (req, res) {
   }
 };
 
-BaseService._getMediasByUser = async function (userId) {
+BaseService.getMediasByUser = async function (userId) {
   try {
     let query = { "buyer": userId };
     return res.json(await Movimentation.find(query).select("medias"));

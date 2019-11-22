@@ -15,7 +15,7 @@ BaseService.getAll = async function (req, res) {
 BaseService.getAllByUser = async function (req, res) {
   try {
     const { userId } = req.params;
-    let mediaIds = await MovimentationService._getMediasByUser(userId);
+    let mediaIds = await MovimentationService.getMediasByUser(userId);
     let query = { '_id': { '$in:': mediaIds } };
 
     const response = await Media.find(query).select(["-content", "-image"]);
