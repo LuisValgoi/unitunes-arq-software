@@ -5,7 +5,8 @@ module.exports = {
 
   async getAll(req, res) {
     try {
-      return res.json(await Media.find().select(["-content", "-image"]));
+      let query = { 'isAvailable': true };
+      return res.json(await Media.find(query).select(["-content", "-image"]));
     } catch (e) {
       console.log(e)
       res.status(500).send(e);
@@ -16,8 +17,8 @@ module.exports = {
     try {
       const { userId } = req.params;
       let mediaIds = await MovimentationController._getMediasByUser(userId);
-
       let query = { '_id': { '$in:': mediaIds } };
+
       const response = await Media.find(query).select(["-content", "-image"]);
       return res.json(response);
     } catch (e) {
