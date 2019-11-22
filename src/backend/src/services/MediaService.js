@@ -58,17 +58,3 @@ BaseService.buy = async function (req, res) {
 };
 
 module.exports = BaseService;
-
-/*
-getById     - retornarMidia
-getAll      - retornarTodasMidias
-xxxxxx      - retornarMidiasAdquiridas
-getContent  - executarConteudo
-insert      - criarMidia
-update      - atualizarMidia
-delete      - removerMidia
-xxxxxx      - disponibilizarMidia
-xxxxxx      - deletarMidia
-download    - baixarMidia
-buy         - comprarMidia
-*/

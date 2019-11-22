@@ -10,14 +10,3 @@ BaseService.getRecentAlbuns = async function () {
 };
 
 module.exports = BaseService;
-
-/*
-getById         - Retornar album
-getAll          - Retornar todos albuns
-UI              - Executar album
-insert          - Criar album 
-delete          - Deletar album
-update          - Atualizar albums
-getNewAlbuns    - Retornar albuns novos
-getRecentAlbuns - Retornar alguns recentes
-*/
