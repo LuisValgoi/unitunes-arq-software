@@ -23,14 +23,7 @@ module.exports = {
 
   async insert(req, res) {
     try {
-      const { name, country, state, address } = req.body;
-      const record = await University.create({
-        name,
-        country,
-        state,
-        address,
-      });
-
+      const record = await University.create(req.body);
       return res.json(record);
     } catch (e) {
       console.log(e)
@@ -41,8 +34,7 @@ module.exports = {
   async update(req, res) {
     try {
       const { id } = req.params;
-      const { name, country, state, address } = req.body;
-      const record = await University.findByIdAndUpdate(id, { name, country, state, address }, { new: true });
+      const record = await University.findByIdAndUpdate(id, req.body, { new: true });
 
       return res.json(record);
     } catch (e) {
