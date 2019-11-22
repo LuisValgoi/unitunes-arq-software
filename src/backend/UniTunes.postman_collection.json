@@ -205,6 +205,68 @@
 			"description": "",
 			"item": [
 				{
+					"name": "GetById",
+					"request": {
+						"url": "http://localhost:3333/university/5dc1f962bafce5626e6ab8d2",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"url": "http://localhost:3333/university/5dc1f962bafce5626e6ab8d2",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Unisinos 3\",\n  \"country\": \"Brasil\",\n  \"state\": \"RS\",\n  \"address\": \"Av Unisinos, 188\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"url": "http://localhost:3333/university/5dc2377f5a128a745a95276e",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Insert",
+					"request": {
+						"url": "http://localhost:3333/university",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Unisinos\",\n  \"country\": \"Brasil\",\n  \"state\": \"RS\",\n  \"address\": \"Av Unisinos, 188\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
 					"name": "GetAll",
 					"request": {
 						"url": "http://localhost:3333/university",
