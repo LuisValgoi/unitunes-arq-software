@@ -19,7 +19,7 @@ BaseController.getAllByAccount = async function (req, res) {
   }
 };
 
-BaseController.generateRecepit = async function (req, res) {
+BaseController.generateReceipt = async function (req, res) {
   // TODO: Implement
 };
 
