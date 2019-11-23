@@ -9,6 +9,21 @@ routes.post('/', MediaController.insert);
 routes.put('/:id', MediaController.update);
 routes.delete('/:id', MediaController.remove);
 routes.get('/:id/content', MediaController.getContent);
+routes.put('/:id/release', MediaController.release);
+routes.get('/:id/download', MediaController.download);
 routes.post('/:id/buy', MediaController.buy);
 
 module.exports = routes;
+
+/*
+getAll                - retornarTodas
+getAllByUser          - retornarsAdquiridas
+getById               - retornar
+insert                - criar
+update                - atualizar
+remove                - remover
+getContent            - executarConteudo
+release               - disponibilizar
+download              - baixar
+buy                   - comprar
+*/
