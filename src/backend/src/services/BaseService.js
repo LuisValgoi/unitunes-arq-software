@@ -14,6 +14,7 @@ module.exports = function (Entity) {
     try {
       const { id } = req.params;
       const response = await Entity.findById(id);
+
       return res.json(response);
     } catch (e) {
       console.log(e);
@@ -23,7 +24,9 @@ module.exports = function (Entity) {
 
   module.insert = async function (req, res) {
     try {
-      const record = await Entity.create(req.body);
+      const payload = req.body;
+      const record = await Entity.create(payload);
+
       return res.json(record);
     } catch (e) {
       console.log(e);
@@ -34,7 +37,8 @@ module.exports = function (Entity) {
   module.update = async function (req, res) {
     try {
       const { id } = req.params;
-      const record = await Entity.findByIdAndUpdate(id, req.body, { new: true });
+      const payload = req.body;
+      const record = await Entity.findByIdAndUpdate(id, payload, { new: true });
 
       return res.json(record);
     } catch (e) {
