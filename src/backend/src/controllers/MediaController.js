@@ -13,18 +13,22 @@ BaseController.buy = async function (req, res) {
   return MediaService.buy(req, res);
 };
 
+BaseController.release = async function (req, res) {
+  // TODO: Implement
+};
+
+
 module.exports = BaseController;
 
 /*
-getById     - retornarMidia
-getAll      - retornarTodasMidias
-xxxxxx      - retornarMidiasAdquiridas
-getContent  - executarConteudo
-insert      - criarMidia
-update      - atualizarMidia
-delete      - removerMidia
-xxxxxx      - disponibilizarMidia
-xxxxxx      - deletarMidia
-download    - baixarMidia
-buy         - comprarMidia
+getById               - retornar
+getAll                - retornarTodas
+getAllByUser          - retornarsAdquiridas
+getContent            - executarConteudo
+insert                - criar
+update                - atualizar
+delete                - remover
+release               - disponibilizar
+download              - baixar
+buy                   - comprar
 */
