@@ -2,8 +2,6 @@ const express = require('express');
 const routes = express.Router();
 const MovimentationController = require('../controllers/MovimentationController');
 
-// TODO: This API should return all the movimentations of a particular account?
-// TODO: Check because does not look good
 routes.get('/account/:id', MovimentationController.getAllByAccount);
 routes.get('/:id', MovimentationController.getById);
 routes.post('/', MovimentationController.insert);

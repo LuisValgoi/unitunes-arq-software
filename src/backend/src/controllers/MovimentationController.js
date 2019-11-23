@@ -14,13 +14,21 @@ BaseController.getAllByAccount = async function (req, res) {
 
     return res.json(data);
   } catch (e) {
-    console.log(MovimentationService, e);
+    console.log("Reported Error:", e);
     res.status(500).send(e);
   }
 };
 
 BaseController.generateReceipt = async function (req, res) {
-  // TODO: Implement
+  try {
+    let id = req.params.id;
+    let data = await MovimentationService.generateReceipt(id);
+
+    return res.json(data);
+  } catch (e) {
+    console.log("Reported Error:", e);
+    res.status(500).send(e);
+  }
 };
 
 
