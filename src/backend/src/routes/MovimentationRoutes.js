@@ -5,8 +5,19 @@ const MovimentationController = require('../controllers/MovimentationController'
 // TODO: This API should return all the movimentations of a particular account?
 // TODO: Check because does not look good
 routes.get('/account/:id', MovimentationController.getAllByAccount);
-routes.post('/', MovimentationController.insert);
 routes.get('/:id', MovimentationController.getById);
+routes.post('/', MovimentationController.insert);
 routes.put('/:id', MovimentationController.update);
+routes.delete('/:id', MovimentationController.remove);
+routes.get('/:id/receipt', MovimentationController.generateReceipt);
 
 module.exports = routes; 
+
+/*
+getAllByAccount     - retornarTodos
+getById             - retornar
+insert              - criar
+update              - atualizar
+remove              - excluir
+generateReceipt     - emitirComprovante
+*/

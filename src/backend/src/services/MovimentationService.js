@@ -1,35 +1,34 @@
 const Movimentation = require('../models/Movimentation');
 const BaseService = require('./BaseService')(Movimentation);
 
-BaseService.getAllByAccount = async function (req, res) {
+BaseService.getAllByAccount = async function (DTO) {
   try {
-    const { fromDate, toDate, seller, buyer } = req.query;
-    let account = req.params.id;
-    let query = { account };
+    Object.keys(DTO).forEach((key) => (!DTO[key]) && delete DTO[key]);
+    let query = Object.assign({}, DTO);
 
-    if (fromDate && toDate)
-      query['createdAt'] = { '$gte': fromDate, '$lt': toDate }
+    if (query['fromDate'] && query['toDate'])
+      query['createdAt'] = { '$gte': query['fromDate'], '$lt': query['toDate'] }
 
-    if (seller)
-      query['seller'] = seller
-
-    if (buyer)
-      query['buyer'] = buyer
-
-    return res.json(await Movimentation.find(query));
+    return await Movimentation.find(query);
   } catch (e) {
     console.log(e);
-    res.status(500).send(e);
   }
 };
 
-BaseService.getMediasByUser = async function (userId) {
+BaseService.getMediasRefsByUser = async function (userId) {
   try {
     let query = { 'buyer': userId };
-    return res.json(await Movimentation.find(query).select('medias'));
+    return await Movimentation.find(query).select('medias');
   } catch (e) {
     console.log(e);
-    res.status(500).send(e);
+  }
+};
+
+BaseService.generateReceipt = async function (userId) {
+  try {
+    // TODO: Implement
+  } catch (e) {
+    console.log(e);
   }
 };
 
