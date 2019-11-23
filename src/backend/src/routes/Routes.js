@@ -8,7 +8,6 @@ const FavoriteRoutes = require('./FavoriteRoutes');
 const LibraryRoutes = require('./LibraryRoutes');
 const RootRoutes = require('./RootRoutes');
 
-
 const routes = express.Router();
 
 routes.use('/university', UniversityRoutes);
