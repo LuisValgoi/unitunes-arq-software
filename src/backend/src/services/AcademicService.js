@@ -1,14 +1,28 @@
 const Academic = require('../models/Academic');
 const BaseService = require('./BaseService')(Academic);
 
-BaseService.insert = async function (req, res) { 
+BaseService.insert = async function (payload) { 
   try {
-    const record = await Academic.create(req.body);
     // TODO: Create an account
-    return res.json(record)
+    return await Academic.create(payload);
   } catch (e) {
-    console.log(e);
-    res.status(500).send(e);
+    console.log(Academic, e);
+  }
+};
+
+BaseService.authenticate = async function (payload) { 
+  try {
+    // TODO: Implement
+  } catch (e) {
+    console.log(Academic, e);
+  }
+};
+
+BaseService.recoverPassword = async function (payload) { 
+  try {
+    // TODO: Implement
+  } catch (e) {
+    console.log(Academic, e);
   }
 };
 
