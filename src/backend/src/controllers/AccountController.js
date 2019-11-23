@@ -1,12 +1,12 @@
 const AccountService = require('../services/AccountService');
 const BaseController = require("./BaseController")(AccountService);
 
-BaseController.addCredit = async function () {
-  // TODO: Implement
+BaseController.addCredit = async function (req, res) {
+  return AccountService.update(req, res);
 };
 
-BaseController.viewCredits = async function () {
-  // TODO: Implement
+BaseController.viewCredit = async function (req, res) {
+  return AccountService.viewCredit(req, res);
 };
 
 module.exports = BaseController;
