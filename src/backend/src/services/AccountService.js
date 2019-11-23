@@ -1,13 +1,11 @@
 const Account = require('../models/Account');
 const BaseService = require('./BaseService')(Account);
 
-BaseService.viewCredit = async function (req, res) {
+BaseService.viewCredit = async function (id) {
   try {
-    const response = await Account.findById(req.params.id).select('currentAmount');
-    return res.json(response);
+    return await Account.findById(id).select('currentAmount');
   } catch (e) {
-    console.log(e);
-    res.status(500).send(e);
+    console.log("Reported Error:", e);
   }
 };
 

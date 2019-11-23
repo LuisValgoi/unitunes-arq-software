@@ -10,3 +10,13 @@ routes.get('/:id/credit', AccountController.viewCredit);
 routes.put('/:id/credit', AccountController.addCredit);
 
 module.exports = routes;
+
+/*
+getAll              - retornarTodos
+getById             - retornar
+insert              - criar
+update              - atualizar
+addCredit           - adicionarCredito
+viewCredits         - visualizarCredito
+remove              - excluir
+*/
