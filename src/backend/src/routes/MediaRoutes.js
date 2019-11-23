@@ -3,6 +3,7 @@ const routes = express.Router();
 const MediaController = require('../controllers/MediaController');
 
 routes.get('/', MediaController.getAll);
+routes.get('/released', MediaController.getAllReleased);
 routes.get('/user/:userId', MediaController.getAllByUser);
 routes.get('/:id', MediaController.getById);
 routes.post('/', MediaController.insert);
@@ -17,6 +18,7 @@ module.exports = routes;
 
 /*
 getAll                - retornarTodas
+getAllAvailables      - retornarTodasDisponibilizadas
 getAllByUser          - retornarsAdquiridas
 getById               - retornar
 insert                - criar

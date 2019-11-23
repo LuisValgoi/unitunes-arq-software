@@ -2,7 +2,7 @@ const Media = require('../models/Media');
 const MovimentationService = require('./MovimentationService');
 const BaseService = require('./BaseService')(Media);
 
-BaseService.getAll = async function () {
+BaseService.getAllReleased = async function () {
   try {
     let query = { 'isAvailable': true };
 
@@ -42,9 +42,9 @@ BaseService.getContent = async function (id) {
 BaseService.release = async function (id) {
   try {
     let fieldToUpdated = { 'isAvailable': true };
-    let update = { $set: fieldToUpdated };
+    let payload = { $set: fieldToUpdated };
 
-    return await Entity.findByIdAndUpdate(id, update);
+    return await Media.findByIdAndUpdate(id, payload, { new: true, useFindAndModify: false });
   } catch (e) {
     console.log("Reported Error:", e);
   }

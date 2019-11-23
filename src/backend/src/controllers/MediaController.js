@@ -1,6 +1,17 @@
 const MediaService = require('../services/MediaService');
 const BaseController = require('./BaseController')(MediaService);
 
+BaseController.getAllReleased = async function (req, res) {
+  try {
+    let data = await MediaService.getAllReleased();
+
+    return res.json(data);
+  } catch (e) {
+    console.log(MediaService, e);
+    res.status(500).send(e);
+  }
+};
+
 BaseController.getAllByUser = async function (req, res) {
   try {
     let userId = req.params.userId;
