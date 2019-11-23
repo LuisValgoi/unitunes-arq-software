@@ -11,16 +11,17 @@ BaseService.getAllByAccount = async function (DTO) {
 
     return await Movimentation.find(query);
   } catch (e) {
-    console.log(e);
+    console.log("Reported Error:", e);
   }
 };
 
 BaseService.getMediasRefsByUser = async function (userId) {
   try {
     let query = { 'buyer': userId };
+
     return await Movimentation.find(query).select('medias');
   } catch (e) {
-    console.log(e);
+    console.log("Reported Error:", e);
   }
 };
 
@@ -28,7 +29,7 @@ BaseService.generateReceipt = async function (userId) {
   try {
     // TODO: Implement
   } catch (e) {
-    console.log(e);
+    console.log("Reported Error:", e);
   }
 };
 

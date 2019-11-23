@@ -5,7 +5,7 @@ module.exports = function (Entity) {
     try {
       return await Entity.find();
     } catch (e) {
-      console.log(Entity, e);
+      console.log("Reported Error:", e);
     }
   }
 
@@ -13,7 +13,7 @@ module.exports = function (Entity) {
     try {
       return await Entity.findById(id);
     } catch (e) {
-      console.log(Entity, e);
+      console.log("Reported Error:", e);
     }
   },
 
@@ -21,7 +21,7 @@ module.exports = function (Entity) {
     try {
       return await Entity.create(payload);
     } catch (e) {
-      console.log(Entity, e);
+      console.log("Reported Error:", e);
     }
   },
 
@@ -29,7 +29,7 @@ module.exports = function (Entity) {
     try {
       return await Entity.findByIdAndUpdate(id, payload, { new: true, useFindAndModify: false });
     } catch (e) {
-      console.log(Entity, e);
+      console.log("Reported Error:", e);
     }
   },
 
@@ -37,7 +37,7 @@ module.exports = function (Entity) {
     try {
       return await Entity.findByIdAndDelete(id);
     } catch (e) {
-      console.log(Entity, e);
+      console.log("Reported Error:", e);
     }
   }
 

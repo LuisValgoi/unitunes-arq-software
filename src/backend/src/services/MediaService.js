@@ -8,7 +8,7 @@ BaseService.getAll = async function () {
 
     return await Media.find(query).select(['-content', '-image']);
   } catch (e) {
-    console.log(Media, e);
+    console.log("Reported Error:", e);
   }
 };
 
@@ -19,7 +19,7 @@ BaseService.getAllByUser = async function (userId) {
 
     return await Media.find(query).select(['-content', '-image']);
   } catch (e) {
-    console.log(Media, e);
+    console.log("Reported Error:", e);
   }
 };
 
@@ -27,7 +27,7 @@ BaseService.getById = async function (id) {
   try {
     return await Media.findById(id).select(['-content', '-image'])
   } catch (e) {
-    console.log(Media, e);
+    console.log("Reported Error:", e);
   }
 };
 
@@ -35,7 +35,7 @@ BaseService.getContent = async function (id) {
   try {
     return await Media.findById(id).select(['content', 'image']);
   } catch (e) {
-    console.log(Media, e);
+    console.log("Reported Error:", e);
   }
 };
 
@@ -46,7 +46,7 @@ BaseService.release = async function (id) {
 
     return await Entity.findByIdAndUpdate(id, update);
   } catch (e) {
-    console.log(Media, e);
+    console.log("Reported Error:", e);
   }
 };
 
@@ -54,7 +54,7 @@ BaseService.download = async function (id) {
   try {
     return await Media.findById(id).select('content');
   } catch (e) {
-    console.log(Media, e);
+    console.log("Reported Error:", e);
   }
 };
 
@@ -62,7 +62,7 @@ BaseService.buy = async function (id) {
   try {
     // TODO : add into movimentation
   } catch (e) {
-    console.log(Media, e);
+    console.log("Reported Error:", e);
   }
 };
 
