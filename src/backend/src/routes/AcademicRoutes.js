@@ -7,8 +7,8 @@ routes.get('/:id', AcademicController.getById);
 routes.post('/', AcademicController.insert);
 routes.put('/:id', AcademicController.update);
 routes.delete('/:id', AcademicController.remove);
-routes.post('/:id', AcademicController.authenticate);
-routes.post('/:id', AcademicController.recoverPassword);
+routes.post('/:id/auth', AcademicController.authenticate);
+routes.post('/:id/password/recovery', AcademicController.recoverPassword);
 
 module.exports = routes; 
 
