@@ -1,5 +1,5 @@
-const MediaService = require("../services/MediaService");
-const BaseController = require("./BaseController")(MediaService);
+const MediaService = require('../services/MediaService');
+const BaseController = require('./BaseController')(MediaService);
 
 BaseController.getAllByUser = async function (req, res) {
   return MediaService.getAllByUser(req, res);

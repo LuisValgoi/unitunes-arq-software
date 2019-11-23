@@ -1,5 +1,5 @@
 const AlbumService = require('../services/AlbumService');
-const BaseController = require("./BaseController")(AlbumService);
+const BaseController = require('./BaseController')(AlbumService);
 
 BaseController.getNewAlbuns = async function (req, res) {
   //TODO: implement

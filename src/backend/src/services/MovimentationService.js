@@ -1,5 +1,5 @@
 const Movimentation = require('../models/Movimentation');
-const BaseService = require("./BaseService")(Movimentation);
+const BaseService = require('./BaseService')(Movimentation);
 
 BaseService.getAllByAccount = async function (req, res) {
   try {
@@ -25,8 +25,8 @@ BaseService.getAllByAccount = async function (req, res) {
 
 BaseService.getMediasByUser = async function (userId) {
   try {
-    let query = { "buyer": userId };
-    return res.json(await Movimentation.find(query).select("medias"));
+    let query = { 'buyer': userId };
+    return res.json(await Movimentation.find(query).select('medias'));
   } catch (e) {
     console.log(e);
     res.status(500).send(e);

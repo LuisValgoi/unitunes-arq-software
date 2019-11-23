@@ -1,5 +1,5 @@
 const Academic = require('../models/Academic');
-const BaseService = require("./BaseService")(Academic);
+const BaseService = require('./BaseService')(Academic);
 
 BaseService.insert = async function (req, res) { 
   try {

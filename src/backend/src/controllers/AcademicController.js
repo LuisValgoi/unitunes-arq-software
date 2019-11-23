@@ -1,5 +1,5 @@
 const AcademicService = require('../services/AcademicService');
-const BaseController = require("./BaseController")(AcademicService);
+const BaseController = require('./BaseController')(AcademicService);
 
 BaseController.authenticate = async function () {
   //TODO: implement

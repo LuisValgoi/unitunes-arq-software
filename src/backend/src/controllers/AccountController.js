@@ -1,5 +1,5 @@
 const AccountService = require('../services/AccountService');
-const BaseController = require("./BaseController")(AccountService);
+const BaseController = require('./BaseController')(AccountService);
 
 BaseController.addCredit = async function (req, res) {
   return AccountService.update(req, res);
