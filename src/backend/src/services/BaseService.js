@@ -1,61 +1,43 @@
 module.exports = function (Entity) {
   let module = {};
 
-  module.getAll = async function (req, res) {
+  module.getAll = async function () {
     try {
-      return res.json(await Entity.find());
+      return await Entity.find();
     } catch (e) {
-      console.log(e);
-      res.status(500).send(e);
+      console.log(Entity, e);
     }
   }
 
-  module.getById = async function (req, res) {
+  module.getById = async function (id) {
     try {
-      const { id } = req.params;
-      const response = await Entity.findById(id);
-
-      return res.json(response);
+      return await Entity.findById(id);
     } catch (e) {
-      console.log(e);
-      res.status(500).send(e);
+      console.log(Entity, e);
     }
   },
 
-  module.insert = async function (req, res) {
+  module.insert = async function (payload) {
     try {
-      const payload = req.body;
-      const record = await Entity.create(payload);
-
-      return res.json(record);
+      return await Entity.create(payload);
     } catch (e) {
-      console.log(e);
-      res.status(500).send(e);
+      console.log(Entity, e);
     }
   },
 
-  module.update = async function (req, res) {
+  module.update = async function (id, payload) {
     try {
-      const { id } = req.params;
-      const payload = req.body;
-      const record = await Entity.findByIdAndUpdate(id, payload, { new: true });
-
-      return res.json(record);
+      return await Entity.findByIdAndUpdate(id, payload, { new: true });
     } catch (e) {
-      console.log(e);
-      res.status(500).send(e);
+      console.log(Entity, e);
     }
   },
 
-  module.remove = async function (req, res) {
+  module.remove = async function (id) {
     try {
-      const { id } = req.params;
-      const record = await Entity.findByIdAndDelete(id);
-
-      return res.json(record);
+      return await Entity.findByIdAndDelete(id);
     } catch (e) {
-      console.log(e);
-      res.status(500).send(e);
+      console.log(Entity, e);
     }
   }
 
