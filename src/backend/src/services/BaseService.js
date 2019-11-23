@@ -27,7 +27,7 @@ module.exports = function (Entity) {
 
   module.update = async function (id, payload) {
     try {
-      return await Entity.findByIdAndUpdate(id, payload, { new: true });
+      return await Entity.findByIdAndUpdate(id, payload, { new: true, useFindAndModify: false });
     } catch (e) {
       console.log(Entity, e);
     }
