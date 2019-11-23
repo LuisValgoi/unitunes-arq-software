@@ -4,7 +4,7 @@ const FavoriteSchema = new Schema(
   {
     media: { type: Schema.Types.ObjectId, ref: 'Media' },
     user: { type: Schema.Types.ObjectId, ref: 'Academic' },
-    type: String,
+    type: Number,
   },
   {
     timestamps: true,
