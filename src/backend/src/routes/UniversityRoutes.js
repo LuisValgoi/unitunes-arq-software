@@ -9,3 +9,11 @@ routes.put('/:id', UniversityController.update);
 routes.delete('/:id', UniversityController.remove);
 
 module.exports = routes; 
+
+/*
+getAll            - retornarTodas
+getById           - retornar
+insert            - criar
+update            - atualizar
+remove            - deletar
+*/
