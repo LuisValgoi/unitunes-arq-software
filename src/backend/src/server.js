@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const routes = require('./routes/Routes');
 const cors = require('cors');
 const server = express();
+require('./utils/String');
 
 try {
   mongoose.connect('mongodb+srv://Global:eHlJfs2G9SJvQwjC@cluster0-imsf4.mongodb.net/unitunes?retryWrites=true&w=majority', {
