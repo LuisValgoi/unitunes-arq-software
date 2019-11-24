@@ -42,7 +42,7 @@ BaseService.insert = async function (model) {
 
     let buyer = UserService.getById(model['buyer']);
     let account = await AccountService.getById(buyer['account']);
-    _validateFunds(account['currentAmount'], model['amount']);
+    _validateFunds(account['currentAmount'], amount);
 
     let admin = await UserService.getAdminSystem();
     let seller = await UserService.getById(model['seller']);
