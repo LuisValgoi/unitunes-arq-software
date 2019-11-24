@@ -1,37 +1,33 @@
 {
+	"variables": [],
 	"info": {
-		"_postman_id": "9feb667f-08fe-4b57-b96c-88a7d2cbedd0",
 		"name": "uniTunes",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"_postman_id": "e2f974b7-7ce6-e918-c4b6-326729a8106e",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [
 		{
 			"name": "User",
+			"description": "",
 			"item": [
 				{
 					"name": "GetAll",
 					"request": {
+						"url": "http://localhost:3333/user",
 						"method": "GET",
 						"header": [],
-						"url": {
-							"raw": "http://localhost:3333/user",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3333",
-							"path": [
-								"user"
-							]
-						}
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
 					},
 					"response": []
 				},
 				{
 					"name": "GetById",
 					"request": {
-						"method": "GET",
-						"header": [],
 						"url": {
 							"raw": "http://localhost:3333/user/:id",
 							"protocol": "http",
@@ -43,19 +39,28 @@
 								"user",
 								":id"
 							],
+							"query": [],
 							"variable": [
 								{
 									"key": "id",
 									"value": ""
 								}
 							]
-						}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
 					},
 					"response": []
 				},
 				{
 					"name": "Insert",
 					"request": {
+						"url": "http://localhost:3333/user",
 						"method": "POST",
 						"header": [
 							{
@@ -67,23 +72,32 @@
 							"mode": "raw",
 							"raw": "{\r\n  \"firstName\": \"João\",\r\n  \"lastName\": \"Carlos\",\r\n  \"login\": \"joao.carlos\",\r\n  \"email\": \"joao.carlos@live.com\",\r\n  \"lastLoginDate\": \"\",\r\n  \"password\": \"123456\",\r\n  \"university\": \"5dc1f962bafce5626e6ab8d2\",\r\n  \"account\": null,\r\n  \"library\": null\r\n}"
 						},
-						"url": {
-							"raw": "http://localhost:3333/user",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3333",
-							"path": [
-								"user"
-							]
-						}
+						"description": ""
 					},
 					"response": []
 				},
 				{
 					"name": "Update",
 					"request": {
+						"url": {
+							"raw": "http://localhost:3333/user/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"user",
+								":id"
+							],
+							"query": [],
+							"variable": [
+								{
+									"key": "id",
+									"value": "5dc4b9cde15ef7202868b6a6"
+								}
+							]
+						},
 						"method": "PUT",
 						"header": [
 							{
@@ -95,32 +109,13 @@
 							"mode": "raw",
 							"raw": "{\r\n    \"firstName\": \"Vinicius\",\r\n    \"lastName\": \"Schuck\",\r\n    \"login\": \"vinicius.schuck\",\r\n    \"email\": \"schuuuck@live.com\",\r\n    \"lastLoginDate\": null,\r\n    \"password\": \"123456\",\r\n    \"university\": \"5dc1f962bafce5626e6ab8d2\",\r\n    \"account\": \"5dd5df7bc10a591ad40a7a35\",\r\n    \"library\": null\r\n}"
 						},
-						"url": {
-							"raw": "http://localhost:3333/user/:id",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3333",
-							"path": [
-								"user",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": "5dc4b9cde15ef7202868b6a6"
-								}
-							]
-						}
+						"description": ""
 					},
 					"response": []
 				},
 				{
 					"name": "Delete",
 					"request": {
-						"method": "DELETE",
-						"header": [],
 						"url": {
 							"raw": "http://localhost:3333/user/:id",
 							"protocol": "http",
@@ -132,21 +127,27 @@
 								"user",
 								":id"
 							],
+							"query": [],
 							"variable": [
 								{
 									"key": "id",
 									"value": ""
 								}
 							]
-						}
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
 					},
 					"response": []
 				},
 				{
 					"name": "Auth",
 					"request": {
-						"method": "POST",
-						"header": [],
 						"url": {
 							"raw": "http://localhost:3333/user/:id/auth",
 							"protocol": "http",
@@ -159,21 +160,27 @@
 								":id",
 								"auth"
 							],
+							"query": [],
 							"variable": [
 								{
 									"key": "id",
 									"value": ""
 								}
 							]
-						}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
 					},
 					"response": []
 				},
 				{
 					"name": "RecoverPass",
 					"request": {
-						"method": "POST",
-						"header": [],
 						"url": {
 							"raw": "http://localhost:3333/user/:id/password/recovery",
 							"protocol": "http",
@@ -187,46 +194,47 @@
 								"password",
 								"recovery"
 							],
+							"query": [],
 							"variable": [
 								{
 									"key": "id",
 									"value": ""
 								}
 							]
-						}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Movimentation",
+			"description": "",
 			"item": [
 				{
 					"name": "GetAll",
 					"request": {
+						"url": "http://localhost:3333/movimentation",
 						"method": "GET",
 						"header": [],
-						"url": {
-							"raw": "http://localhost:3333/movimentation",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3333",
-							"path": [
-								"movimentation"
-							]
-						}
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
 					},
 					"response": []
 				},
 				{
 					"name": "GetAllByAccount",
 					"request": {
-						"method": "GET",
-						"header": [],
 						"url": {
 							"raw": "http://localhost:3333/movimentation/account/:id?",
 							"protocol": "http",
@@ -267,15 +275,20 @@
 									"value": ""
 								}
 							]
-						}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
 					},
 					"response": []
 				},
 				{
 					"name": "GetById",
 					"request": {
-						"method": "GET",
-						"header": [],
 						"url": {
 							"raw": "http://localhost:3333/movimentation/:id",
 							"protocol": "http",
@@ -287,19 +300,28 @@
 								"movimentation",
 								":id"
 							],
+							"query": [],
 							"variable": [
 								{
 									"key": "id",
 									"value": ""
 								}
 							]
-						}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
 					},
 					"response": []
 				},
 				{
 					"name": "Insert",
 					"request": {
+						"url": "http://localhost:3333/movimentation",
 						"method": "POST",
 						"header": [
 							{
@@ -311,23 +333,32 @@
 							"mode": "raw",
 							"raw": "{\r\n  \"account\": \"5dd5df7bc10a591ad40a7a35\",\r\n  \"amount\": \"400\",\r\n  \"seller\": \"5dc4b9cde15ef7202868b6a6\",\r\n  \"buyer\": \"5dd5e34fa7ef6b0ae4f23da3\",\r\n  \"medias\": null,\r\n  \"description\": \"Teste sem mídias\"\r\n}"
 						},
-						"url": {
-							"raw": "http://localhost:3333/movimentation",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3333",
-							"path": [
-								"movimentation"
-							]
-						}
+						"description": ""
 					},
 					"response": []
 				},
 				{
 					"name": "Update",
 					"request": {
+						"url": {
+							"raw": "http://localhost:3333/movimentation/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"movimentation",
+								":id"
+							],
+							"query": [],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						},
 						"method": "PUT",
 						"header": [
 							{
@@ -339,32 +370,13 @@
 							"mode": "raw",
 							"raw": "{\r\n  \"account\": \"5dd5df7bc10a591ad40a7a35\",\r\n  \"amount\": \"200\",\r\n  \"seller\": \"5dc4b9cde15ef7202868b6a6\",\r\n  \"buyer\": \"5dd5e34fa7ef6b0ae4f23da3\",\r\n  \"medias\": null,\r\n  \"description\": \"Teste sem mídias\"\r\n}"
 						},
-						"url": {
-							"raw": "http://localhost:3333/movimentation/:id",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3333",
-							"path": [
-								"movimentation",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": ""
-								}
-							]
-						}
+						"description": ""
 					},
 					"response": []
 				},
 				{
 					"name": "Delete",
 					"request": {
-						"method": "DELETE",
-						"header": [],
 						"url": {
 							"raw": "http://localhost:3333/movimentation/:id",
 							"protocol": "http",
@@ -376,21 +388,27 @@
 								"movimentation",
 								":id"
 							],
+							"query": [],
 							"variable": [
 								{
 									"key": "id",
 									"value": ""
 								}
 							]
-						}
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
 					},
 					"response": []
 				},
 				{
 					"name": "GenerateReceipt",
 					"request": {
-						"method": "GET",
-						"header": [],
 						"url": {
 							"raw": "http://localhost:3333/movimentation/:id/receipt",
 							"protocol": "http",
@@ -403,46 +421,47 @@
 								":id",
 								"receipt"
 							],
+							"query": [],
 							"variable": [
 								{
 									"key": "id",
 									"value": ""
 								}
 							]
-						}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Account",
+			"description": "",
 			"item": [
 				{
 					"name": "GetAll",
 					"request": {
+						"url": "http://localhost:3333/account",
 						"method": "GET",
 						"header": [],
-						"url": {
-							"raw": "http://localhost:3333/account",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3333",
-							"path": [
-								"account"
-							]
-						}
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
 					},
 					"response": []
 				},
 				{
 					"name": "GetById",
 					"request": {
-						"method": "GET",
-						"header": [],
 						"url": {
 							"raw": "http://localhost:3333/account/:id",
 							"protocol": "http",
@@ -454,21 +473,27 @@
 								"account",
 								":id"
 							],
+							"query": [],
 							"variable": [
 								{
 									"key": "id",
 									"value": ""
 								}
 							]
-						}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
 					},
 					"response": []
 				},
 				{
 					"name": "ViewCredit",
 					"request": {
-						"method": "GET",
-						"header": [],
 						"url": {
 							"raw": "http://localhost:3333/account/:id/credit",
 							"protocol": "http",
@@ -481,19 +506,28 @@
 								":id",
 								"credit"
 							],
+							"query": [],
 							"variable": [
 								{
 									"key": "id",
 									"value": ""
 								}
 							]
-						}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
 					},
 					"response": []
 				},
 				{
 					"name": "Insert",
 					"request": {
+						"url": "http://localhost:3333/account",
 						"method": "POST",
 						"header": [
 							{
@@ -505,25 +539,13 @@
 							"mode": "raw",
 							"raw": "{\r\n    \"currentAmount\": \"35\"\r\n}"
 						},
-						"url": {
-							"raw": "http://localhost:3333/account",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3333",
-							"path": [
-								"account"
-							]
-						}
+						"description": ""
 					},
 					"response": []
 				},
 				{
 					"name": "Delete",
 					"request": {
-						"method": "DELETE",
-						"header": [],
 						"url": {
 							"raw": "http://localhost:3333/account/:id",
 							"protocol": "http",
@@ -535,46 +557,47 @@
 								"account",
 								":id"
 							],
+							"query": [],
 							"variable": [
 								{
 									"key": "id",
 									"value": ""
 								}
 							]
-						}
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "University",
+			"description": "",
 			"item": [
 				{
 					"name": "GetAll",
 					"request": {
+						"url": "http://localhost:3333/university",
 						"method": "GET",
 						"header": [],
-						"url": {
-							"raw": "http://localhost:3333/university",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3333",
-							"path": [
-								"university"
-							]
-						}
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
 					},
 					"response": []
 				},
 				{
 					"name": "GetById",
 					"request": {
-						"method": "GET",
-						"header": [],
 						"url": {
 							"raw": "http://localhost:3333/university/:id",
 							"protocol": "http",
@@ -586,19 +609,46 @@
 								"university",
 								":id"
 							],
+							"query": [],
 							"variable": [
 								{
 									"key": "id",
 									"value": ""
 								}
 							]
-						}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
 					},
 					"response": []
 				},
 				{
 					"name": "Update",
 					"request": {
+						"url": {
+							"raw": "http://localhost:3333/university/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"university",
+								":id"
+							],
+							"query": [],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						},
 						"method": "PUT",
 						"header": [
 							{
@@ -610,32 +660,13 @@
 							"mode": "raw",
 							"raw": "{\n  \"name\": \"Feevale 3\",\n  \"country\": \"Brasil\",\n  \"state\": \"RS\",\n  \"address\": \"Av Feevale, 188\"\n}"
 						},
-						"url": {
-							"raw": "http://localhost:3333/university/:id",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3333",
-							"path": [
-								"university",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": ""
-								}
-							]
-						}
+						"description": ""
 					},
 					"response": []
 				},
 				{
 					"name": "Delete",
 					"request": {
-						"method": "DELETE",
-						"header": [],
 						"url": {
 							"raw": "http://localhost:3333/university/:id",
 							"protocol": "http",
@@ -647,19 +678,28 @@
 								"university",
 								":id"
 							],
+							"query": [],
 							"variable": [
 								{
 									"key": "id",
 									"value": ""
 								}
 							]
-						}
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
 					},
 					"response": []
 				},
 				{
 					"name": "Insert",
 					"request": {
+						"url": "http://localhost:3333/university",
 						"method": "POST",
 						"header": [
 							{
@@ -671,70 +711,47 @@
 							"mode": "raw",
 							"raw": "{\n  \"name\": \"Feevale\",\n  \"country\": \"Brasil\",\n  \"state\": \"RS\",\n  \"address\": \"Av Feevale, 188\"\n}"
 						},
-						"url": {
-							"raw": "http://localhost:3333/university",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3333",
-							"path": [
-								"university"
-							]
-						}
+						"description": ""
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Media",
+			"description": "",
 			"item": [
 				{
 					"name": "GetAll",
 					"request": {
+						"url": "http://localhost:3333/media",
 						"method": "GET",
 						"header": [],
-						"url": {
-							"raw": "http://localhost:3333/media",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3333",
-							"path": [
-								"media"
-							]
-						}
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
 					},
 					"response": []
 				},
 				{
 					"name": "GetAllReleased",
 					"request": {
+						"url": "http://localhost:3333/media/released",
 						"method": "GET",
 						"header": [],
-						"url": {
-							"raw": "http://localhost:3333/media/released",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3333",
-							"path": [
-								"media",
-								"released"
-							]
-						}
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
 					},
 					"response": []
 				},
 				{
 					"name": "GetById",
 					"request": {
-						"method": "GET",
-						"header": [],
 						"url": {
 							"raw": "http://localhost:3333/media/:id",
 							"protocol": "http",
@@ -746,19 +763,28 @@
 								"media",
 								":id"
 							],
+							"query": [],
 							"variable": [
 								{
 									"key": "id",
 									"value": ""
 								}
 							]
-						}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
 					},
 					"response": []
 				},
 				{
 					"name": "Insert",
 					"request": {
+						"url": "http://localhost:3333/media",
 						"method": "POST",
 						"header": [
 							{
@@ -770,23 +796,32 @@
 							"mode": "raw",
 							"raw": "{\n  \"name\": \"Name\",\n  \"description\": \"Description\",\n  \"price\": 0.1,\n  \"category\": \"Category\",\n  \"author\": \"5dd5e34fa7ef6b0ae4f23da3\",\n  \"classification\": null,\n  \"content\": null,\n  \"image\": null,\n  \"isAvailable\": true,\n  \"isApropriated\": false\n}"
 						},
-						"url": {
-							"raw": "http://localhost:3333/media",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3333",
-							"path": [
-								"media"
-							]
-						}
+						"description": ""
 					},
 					"response": []
 				},
 				{
 					"name": "Update",
 					"request": {
+						"url": {
+							"raw": "http://localhost:3333/media/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"media",
+								":id"
+							],
+							"query": [],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						},
 						"method": "PUT",
 						"header": [
 							{
@@ -798,32 +833,13 @@
 							"mode": "raw",
 							"raw": "{\n  \"name\": \"Name\",\n  \"description\": \"Description 2\",\n  \"price\": 0.1,\n  \"category\": \"Category\",\n  \"author\": \"5dd5e34fa7ef6b0ae4f23da3\",\n  \"classification\": null,\n  \"content\": null,\n  \"image\": null,\n  \"isAvailable\": true,\n  \"isApropriated\": false\n}"
 						},
-						"url": {
-							"raw": "http://localhost:3333/media/:id",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3333",
-							"path": [
-								"media",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": ""
-								}
-							]
-						}
+						"description": ""
 					},
 					"response": []
 				},
 				{
 					"name": "Delete",
 					"request": {
-						"method": "DELETE",
-						"header": [],
 						"url": {
 							"raw": "http://localhost:3333/media/:id",
 							"protocol": "http",
@@ -835,21 +851,27 @@
 								"media",
 								":id"
 							],
+							"query": [],
 							"variable": [
 								{
 									"key": "id",
 									"value": ""
 								}
 							]
-						}
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
 					},
 					"response": []
 				},
 				{
 					"name": "GetContent",
 					"request": {
-						"method": "GET",
-						"header": [],
 						"url": {
 							"raw": "http://localhost:3333/media/:id/content",
 							"protocol": "http",
@@ -862,21 +884,27 @@
 								":id",
 								"content"
 							],
+							"query": [],
 							"variable": [
 								{
 									"key": "id",
 									"value": ""
 								}
 							]
-						}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
 					},
 					"response": []
 				},
 				{
 					"name": "Release",
 					"request": {
-						"method": "PUT",
-						"header": [],
 						"url": {
 							"raw": "http://localhost:3333/media/:id/release",
 							"protocol": "http",
@@ -889,21 +917,27 @@
 								":id",
 								"release"
 							],
+							"query": [],
 							"variable": [
 								{
 									"key": "id",
 									"value": ""
 								}
 							]
-						}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
 					},
 					"response": []
 				},
 				{
 					"name": "Download",
 					"request": {
-						"method": "GET",
-						"header": [],
 						"url": {
 							"raw": "http://localhost:3333/media/:id/download",
 							"protocol": "http",
@@ -916,46 +950,47 @@
 								":id",
 								"download"
 							],
+							"query": [],
 							"variable": [
 								{
 									"key": "id",
 									"value": ""
 								}
 							]
-						}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Favorite",
+			"description": "",
 			"item": [
 				{
 					"name": "GetAll",
 					"request": {
+						"url": "http://localhost:3333/favorite",
 						"method": "GET",
 						"header": [],
-						"url": {
-							"raw": "http://localhost:3333/favorite",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3333",
-							"path": [
-								"favorite"
-							]
-						}
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
 					},
 					"response": []
 				},
 				{
 					"name": "GetById",
 					"request": {
-						"method": "GET",
-						"header": [],
 						"url": {
 							"raw": "http://localhost:3333/favorite/:id",
 							"protocol": "http",
@@ -967,21 +1002,27 @@
 								"favorite",
 								":id"
 							],
+							"query": [],
 							"variable": [
 								{
 									"key": "id",
 									"value": ""
 								}
 							]
-						}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
 					},
 					"response": []
 				},
 				{
 					"name": "GetAllByUser",
 					"request": {
-						"method": "GET",
-						"header": [],
 						"url": {
 							"raw": "http://localhost:3333/favorite/user/:id",
 							"protocol": "http",
@@ -994,19 +1035,28 @@
 								"user",
 								":id"
 							],
+							"query": [],
 							"variable": [
 								{
 									"key": "id",
 									"value": ""
 								}
 							]
-						}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
 					},
 					"response": []
 				},
 				{
 					"name": "Insert",
 					"request": {
+						"url": "http://localhost:3333/favorite",
 						"method": "POST",
 						"header": [
 							{
@@ -1018,23 +1068,32 @@
 							"mode": "raw",
 							"raw": "{\n\t\"media\": \"5dd952809bd0280254b43d37\",\n\t\"user\": \"5dc4b9cde15ef7202868b6a6\",\n\t\"type\": 1\n}"
 						},
-						"url": {
-							"raw": "http://localhost:3333/favorite",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3333",
-							"path": [
-								"favorite"
-							]
-						}
+						"description": ""
 					},
 					"response": []
 				},
 				{
 					"name": "Update",
 					"request": {
+						"url": {
+							"raw": "http://localhost:3333/favorite/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"favorite",
+								":id"
+							],
+							"query": [],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						},
 						"method": "PUT",
 						"header": [
 							{
@@ -1046,32 +1105,13 @@
 							"mode": "raw",
 							"raw": "{\n\t\"media\": \"5dd952809bd0280254b43d37\",\n\t\"user\": \"5dc4b9cde15ef7202868b6a6\",\n\t\"type\": 4\n}"
 						},
-						"url": {
-							"raw": "http://localhost:3333/favorite/:id",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3333",
-							"path": [
-								"favorite",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": ""
-								}
-							]
-						}
+						"description": ""
 					},
 					"response": []
 				},
 				{
 					"name": "Delete",
 					"request": {
-						"method": "DELETE",
-						"header": [],
 						"url": {
 							"raw": "http://localhost:3333/favorite/:id",
 							"protocol": "http",
@@ -1083,62 +1123,53 @@
 								"favorite",
 								":id"
 							],
+							"query": [],
 							"variable": [
 								{
 									"key": "id",
 									"value": ""
 								}
 							]
-						}
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Classification",
+			"description": "",
 			"item": [
 				{
 					"name": "Insert",
 					"request": {
+						"url": "http://localhost:3333/classification",
 						"method": "POST",
 						"header": [
 							{
 								"key": "Content-Type",
-								"name": "Content-Type",
 								"value": "application/json",
-								"type": "text"
+								"description": ""
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"media\": \"5ddaa9bcda818471f36883f0\",\r\n  \"value\": 7.9,\r\n  \"doneBy\": \"5ddaab4de77f0f7253dc20aa\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
+							"raw": "{\r\n  \"media\": \"5ddaa9bcda818471f36883f0\",\r\n  \"value\": 67.9,\r\n  \"doneBy\": \"5ddaab4de77f0f7253dc20aa\"\r\n}"
 						},
-						"url": {
-							"raw": "http://localhost:3333/classification",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3333",
-							"path": [
-								"classification"
-							]
-						}
+						"description": ""
 					},
 					"response": []
 				},
 				{
 					"name": "GetAllByMedia",
 					"request": {
-						"method": "GET",
-						"header": [],
 						"url": {
 							"raw": "http://localhost:3333/classification/media/:id",
 							"protocol": "http",
@@ -1151,21 +1182,27 @@
 								"media",
 								":id"
 							],
+							"query": [],
 							"variable": [
 								{
 									"key": "id",
 									"value": "5ddaa9bcda818471f36883f0"
 								}
 							]
-						}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
 					},
 					"response": []
 				},
 				{
 					"name": "GetById",
 					"request": {
-						"method": "GET",
-						"header": [],
 						"url": {
 							"raw": "http://localhost:3333/classification/:id",
 							"protocol": "http",
@@ -1177,21 +1214,27 @@
 								"classification",
 								":id"
 							],
+							"query": [],
 							"variable": [
 								{
 									"key": "id",
 									"value": "5ddaba5a8651723d0066d5e8"
 								}
 							]
-						}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
 					},
 					"response": []
 				},
 				{
 					"name": "GetScoreByMedia",
 					"request": {
-						"method": "GET",
-						"header": [],
 						"url": {
 							"raw": "http://localhost:3333/classification/media/:id/score",
 							"protocol": "http",
@@ -1205,19 +1248,65 @@
 								":id",
 								"score"
 							],
+							"query": [],
 							"variable": [
 								{
 									"key": "id",
 									"value": "5ddaa9bcda818471f36883f0"
 								}
 							]
-						}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GetAll",
+					"request": {
+						"url": "http://localhost:3333/classification",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"url": {
+							"raw": "http://localhost:3333/classification/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"classification",
+								":id"
+							],
+							"query": [],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		}
-	],
-	"protocolProfileBehavior": {}
+	]
 }
