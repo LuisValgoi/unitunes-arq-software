@@ -53,7 +53,11 @@ BaseService.buy = async function (movimentation) {
     let result = await MovimentationService.insert(movimentation);
 
     for (let item of movimentation['medias']) {
-      await LibraryService.insert({ 'user': movimentation['buyer'], 'media': item });
+      let libraryPayload = { 
+        'user': movimentation['buyer'],
+        'media': item 
+      };
+      await LibraryService.insert(libraryPayload);
     }
 
     return result;
