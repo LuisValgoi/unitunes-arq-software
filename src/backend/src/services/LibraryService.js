@@ -1,20 +1,15 @@
-const FavoriteService = require('./FavoriteService');
-const MediaService = require('./MediaService');
+const Library = require('../models/Library');
+const BaseService = require('./BaseService')(Library);
 
-module.exports = {
-  async getAllByUser(userId) {
-    try {
-      let favorites = await FavoriteService.getAllByUser(userId);
-      let medias = await MediaService.getAllByUser(userId);
-      // TODO: Get all albums by user
+BaseService.getAllByUser = async function (userId) {
+  try {
+    let query = { 'user': userId };
+    let data = await Library.find(query);
 
-      return {
-        'medias': medias,
-        'albums': null,
-        'favorites': favorites
-      };
-    } catch (e) {
-      console.log("Reported Error:", e);
-    }
+    return data;
+  } catch (e) {
+    console.log("Reported Error:", e);
   }
-}
+};
+
+module.exports = BaseService;

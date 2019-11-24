@@ -16,5 +16,5 @@ BaseController.getAllByUser = async function (req, res) {
 module.exports = BaseController;
 
 /*
-getAllByUser          - retornaFavoritosPorUsuario
+getAllByUser          - retornaMidiasCompradasPorUsuario
 */
