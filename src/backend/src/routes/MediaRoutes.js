@@ -4,7 +4,7 @@ const MediaController = require('../controllers/MediaController');
 
 routes.get('/', MediaController.getAll);
 routes.get('/released', MediaController.getAllReleased);
-routes.get('/user/:userId', MediaController.getAllByUser);
+routes.get('/user/:id', MediaController.getAllByUser);
 routes.get('/:id', MediaController.getById);
 routes.post('/', MediaController.insert);
 routes.put('/:id', MediaController.update);

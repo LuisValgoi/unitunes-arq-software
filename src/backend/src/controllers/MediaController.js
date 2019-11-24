@@ -14,7 +14,7 @@ BaseController.getAllReleased = async function (req, res) {
 
 BaseController.getAllByUser = async function (req, res) {
   try {
-    let userId = req.params.userId;
+    let userId = req.params.id;
     let data = await MediaService.getAllByUser(userId);
 
     return res.json(data);
