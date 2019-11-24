@@ -40,6 +40,31 @@ BaseController.login = async function (req, res) {
   }
 };
 
+BaseController.logout = async function (req, res) {
+  try {
+    req.user.tokens = req.user.tokens.filter((token) => {
+      return token.token != req.token;
+    });
+    await req.user.save();
+    res.send();
+  } catch (e) {
+    console.log('Reported Error:', e);
+    res.status(500).send(e);
+  }
+};
+
+BaseController.logoutAll = async function (req, res) {
+  try {
+    req.user.tokens.splice(0, req.user.tokens.length);
+    await req.user.save();
+    res.send();
+  } catch (e) {
+    console.log('Reported Error:', e);
+    res.status(500).send(e);
+  }
+};
+
+
 BaseController.recoverPassword = async function (req, res) {
   try {
     let payload = req.body;

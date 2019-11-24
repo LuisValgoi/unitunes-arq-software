@@ -4,6 +4,8 @@ const auth = require('../middleware/auth');
 const UserController = require('../controllers/UserController');
 
 routes.get('/me', auth, UserController.me);
+routes.post('/me/logout', auth, UserController.logout);
+routes.post('/me/logoutAll', auth, UserController.logoutAll);
 routes.get('/', UserController.getAll);
 routes.get('/:id', UserController.getById);
 routes.post('/', UserController.insert);
@@ -23,4 +25,6 @@ update              - atualizar
 remove              - deletar
 recoverPassword     - recuperarSenha
 login               - autenticar
+logout              - logout
+logoutAll           - logoutTodosAparelhos
 */
