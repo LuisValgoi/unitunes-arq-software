@@ -2,6 +2,7 @@ const express = require('express');
 const routes = express.Router();
 const MovimentationController = require('../controllers/MovimentationController');
 
+routes.get('/', MovimentationController.getAll);
 routes.get('/account/:id', MovimentationController.getAllByAccount);
 routes.get('/:id', MovimentationController.getById);
 routes.post('/', MovimentationController.insert);
