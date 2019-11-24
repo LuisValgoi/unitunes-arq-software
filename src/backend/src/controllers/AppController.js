@@ -1,6 +1,6 @@
 module.exports = {
   root(req, res) {
-    const availableAPIs = [
+    let availableAPIs = [
       '/university',
       '/user',
       '/account',
