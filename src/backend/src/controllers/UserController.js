@@ -14,6 +14,15 @@ BaseController.insert = async function (req, res) {
   }
 };
 
+BaseController.me = async function (req, res) {
+  try {
+    res.json(req.user);
+  } catch (e) {
+    console.log('Reported Error:', e);
+    res.status(500).send(e);
+  }
+};
+
 BaseController.login = async function (req, res) {
   try {
     let user = await UserService.findByCredentials(req.body.email, req.body.assword);
