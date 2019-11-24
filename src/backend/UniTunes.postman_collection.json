@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "9feb667f-08fe-4b57-b96c-88a7d2cbedd0",
+		"_postman_id": "5cbb5cdb-06ea-4f7f-8968-1a178de2bbf5",
 		"name": "uniTunes",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -46,7 +46,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": ""
+									"value": "5ddaf11d24d8bf14881c91c0"
 								}
 							]
 						}
@@ -65,7 +65,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"firstName\": \"João\",\r\n  \"lastName\": \"Carlos\",\r\n  \"login\": \"joao.carlos\",\r\n  \"email\": \"joao.carlos@live.com\",\r\n  \"lastLoginDate\": \"\",\r\n  \"password\": \"123456\",\r\n  \"university\": \"5dc1f962bafce5626e6ab8d2\",\r\n  \"account\": null,\r\n  \"library\": null\r\n}"
+							"raw": "{\r\n  \"firstName\": \"Lucas\",\r\n  \"lastName\": \"Silva\",\r\n  \"login\": \"lucas.silva\",\r\n  \"email\": \"lucas.silva@live.com\",\r\n  \"lastLoginDate\": \"\",\r\n  \"password\": \"123456\",\r\n  \"university\": \"5dc1f962bafce5626e6ab8d2\"\r\n}"
 						},
 						"url": {
 							"raw": "http://localhost:3333/user",
@@ -457,7 +457,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": ""
+									"value": "5ddaf11d24d8bf14881c91bf"
 								}
 							]
 						}
@@ -539,6 +539,49 @@
 								{
 									"key": "id",
 									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"currentAmount\": \"10\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/account/:id/credit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"account",
+								":id",
+								"credit"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "5ddaf11d24d8bf14881c91bf"
 								}
 							]
 						}
@@ -920,6 +963,49 @@
 								{
 									"key": "id",
 									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"value\": 3.0,\r\n    \"seller\": \"5ddaa945da818471f36883ed\",\r\n    \"buyer\": \"5ddaf11d24d8bf14881c91c0\",\r\n    \"description\": \"Testes\"\r\n}  \r\n ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/media/:id/buy",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"media",
+								":id",
+								"buy"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "5ddaa9c6da818471f36883f1"
 								}
 							]
 						}

@@ -4,66 +4,38 @@ const LibraryService = require('./LibraryService');
 const BaseService = require('./BaseService')(Media);
 
 BaseService.getAllReleased = async function () {
-  try {
-    let query = { 'isAvailable': true };
-
-    return await Media.find(query).select(['-content', '-image']);
-  } catch (e) {
-    console.log('Reported Error:', e);
-  }
+  let query = { 'isAvailable': true };
+  return await Media.find(query).select(['-content', '-image']);
 };
 
 BaseService.getById = async function (id) {
-  try {
-    return await Media.findById(id).select(['-content', '-image'])
-  } catch (e) {
-    console.log('Reported Error:', e);
-  }
+  return await Media.findById(id).select(['-content', '-image'])
 };
 
 BaseService.getContent = async function (id) {
-  try {
-    return await Media.findById(id).select(['content', 'image']);
-  } catch (e) {
-    console.log('Reported Error:', e);
-  }
+  return await Media.findById(id).select(['content', 'image']);
 };
 
 BaseService.release = async function (id) {
-  try {
-    let fieldToUpdated = { 'isAvailable': true };
-    let payload = { $set: fieldToUpdated };
+  let fieldToUpdated = { 'isAvailable': true };
+  let payload = { $set: fieldToUpdated };
 
-    return await Media.findByIdAndUpdate(id, payload, { new: true, useFindAndModify: false });
-  } catch (e) {
-    console.log('Reported Error:', e);
-  }
+  return await Media.findByIdAndUpdate(id, payload, { new: true, useFindAndModify: false });
 };
 
 BaseService.download = async function (id) {
-  try {
-    return await Media.findById(id).select('content');
-  } catch (e) {
-    console.log('Reported Error:', e);
-  }
+  return await Media.findById(id).select('content');
 };
 
 BaseService.buy = async function (movimentation) {
-  try {
-    let result = await MovimentationService.insert(movimentation);
+  let result = await MovimentationService.insert(movimentation);
 
-    for (let item of movimentation['medias']) {
-      let libraryPayload = { 
-        'user': movimentation['buyer'],
-        'media': item 
-      };
-      await LibraryService.insert(libraryPayload);
-    }
+  await LibraryService.insert({
+    'user': movimentation['buyer'],
+    'media': movimentation['media']
+  });
 
-    return result;
-  } catch (e) {
-    console.log('Reported Error:', e);
-  }
+  return result;
 };
 
 module.exports = BaseService;
