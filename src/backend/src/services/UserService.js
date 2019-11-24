@@ -1,9 +1,12 @@
 const User = require('../models/User');
+const AccountService = require('./AccountService');
 const BaseService = require('./BaseService')(User);
 
 BaseService.insert = async function (payload) { 
   try {
-    // TODO: Create an account
+    let account = await AccountService.insert(0);
+    payload['account'] = account['_id'];
+
     return await User.create(payload);
   } catch (e) {
     console.log("Reported Error:", e);
