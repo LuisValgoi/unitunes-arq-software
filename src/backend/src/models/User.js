@@ -38,6 +38,7 @@ const UserSchema = new Schema(
     university: { type: Schema.Types.ObjectId, ref: 'University' },
     account: { type: Schema.Types.ObjectId, ref: 'Account' },
     library: { type: Schema.Types.ObjectId, ref: 'Library' },
+    role: { type: String, default: 'academic' }
   },
   {
     timestamps: true,

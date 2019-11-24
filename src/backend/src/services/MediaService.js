@@ -50,15 +50,13 @@ BaseService.download = async function (id) {
 
 BaseService.buy = async function (movimentation) {
   try {
-    let movimentation = await MovimentationService.insert(movimentation);
+    let result = await MovimentationService.insert(movimentation);
 
-    for (let item in movimentation['medias']) {
+    for (let item of movimentation['medias']) {
       await LibraryService.insert({ 'user': movimentation['buyer'], 'media': item });
     }
 
-    // TODO: Update account value
-
-    return movimentation;
+    return result;
   } catch (e) {
     console.log("Reported Error:", e);
   }
