@@ -69,11 +69,11 @@ function _validateFunds(account, model) {
 }
 
 function _getSellerAmount(amount) {
-  return amount * 0.70;
+  return amount * 0.90;
 }
 
 function _getAdminAmount(amount) {
-  return amount - seller;
+  return amount - 0.10;
 }
 
 module.exports = BaseService;
