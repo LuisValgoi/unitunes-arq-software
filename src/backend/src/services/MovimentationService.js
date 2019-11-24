@@ -73,7 +73,7 @@ function _getSellerAmount(amount) {
 }
 
 function _getAdminAmount(amount) {
-  return amount - 0.10;
+  return amount * 0.10;
 }
 
 module.exports = BaseService;
