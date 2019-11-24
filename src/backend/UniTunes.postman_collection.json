@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "5cbb5cdb-06ea-4f7f-8968-1a178de2bbf5",
+		"_postman_id": "59847940-6dbd-4d46-95cb-97f1ec9a0b35",
 		"name": "uniTunes",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -65,7 +65,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"firstName\": \"Lucas\",\r\n  \"lastName\": \"Silva\",\r\n  \"login\": \"lucas.silva\",\r\n  \"email\": \"lucas.silva@live.com\",\r\n  \"lastLoginDate\": \"\",\r\n  \"password\": \"123456\",\r\n  \"university\": \"5dc1f962bafce5626e6ab8d2\"\r\n}"
+							"raw": "{\r\n  \"firstName\": \"João\",\r\n  \"lastName\": \"Carlos\",\r\n  \"login\": \"joao.carlos\",\r\n  \"email\": \"joao.carlos@live.com\",\r\n  \"lastLoginDate\": \"\",\r\n  \"password\": \"123456789\",\r\n  \"university\": \"5dc1f962bafce5626e6ab8d2\",\r\n  \"account\": null,\r\n  \"library\": null\r\n}"
 						},
 						"url": {
 							"raw": "http://localhost:3333/user",
@@ -121,6 +121,10 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "http://localhost:3333/user/:id",
 							"protocol": "http",
@@ -143,37 +147,14 @@
 					"response": []
 				},
 				{
-					"name": "Auth",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:3333/user/:id/auth",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3333",
-							"path": [
-								"user",
-								":id",
-								"auth"
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": ""
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "RecoverPass",
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "http://localhost:3333/user/:id/password/recovery",
 							"protocol": "http",
@@ -192,6 +173,134 @@
 									"key": "id",
 									"value": ""
 								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Me",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGRiMDZmY2ZmNDU1OTE1NmI5MGZlM2IiLCJpYXQiOjE1NzQ2MzY2MzV9.KXzOaqC9GLnNhhYbVZGOks5EaExuctTbCZKsQXTa-Rw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/user/me",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"user",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"joao.carlos@live.com\",\n\t\"password\": \"123456789\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGRiMDZmY2ZmNDU1OTE1NmI5MGZlM2IiLCJpYXQiOjE1NzQ2MzczNzd9.Sh7FOuldjzqp0RyC2BnbZWJim-Sdbc9ZfUr_ZrN-L08",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/user/me/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"user",
+								"me",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LogoutAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGRiMDZmY2ZmNDU1OTE1NmI5MGZlM2IiLCJpYXQiOjE1NzQ2MzczNzd9.Sh7FOuldjzqp0RyC2BnbZWJim-Sdbc9ZfUr_ZrN-L08",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/user/me/logoutAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"user",
+								"me",
+								"logoutAll"
 							]
 						}
 					},
@@ -365,6 +474,10 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "http://localhost:3333/movimentation/:id",
 							"protocol": "http",
@@ -524,6 +637,10 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "http://localhost:3333/account/:id",
 							"protocol": "http",
@@ -679,6 +796,10 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "http://localhost:3333/university/:id",
 							"protocol": "http",
@@ -867,6 +988,10 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "http://localhost:3333/media/:id",
 							"protocol": "http",
@@ -920,6 +1045,10 @@
 					"request": {
 						"method": "PUT",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "http://localhost:3333/media/:id/release",
 							"protocol": "http",
@@ -1158,6 +1287,10 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "http://localhost:3333/favorite/:id",
 							"protocol": "http",
@@ -1192,19 +1325,12 @@
 						"header": [
 							{
 								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
+								"value": "application/json"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"media\": \"5ddaa9bcda818471f36883f0\",\r\n  \"value\": 7.9,\r\n  \"doneBy\": \"5ddaab4de77f0f7253dc20aa\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
+							"raw": "{\r\n  \"media\": \"5ddaa9bcda818471f36883f0\",\r\n  \"value\": 67.9,\r\n  \"doneBy\": \"5ddaab4de77f0f7253dc20aa\"\r\n}"
 						},
 						"url": {
 							"raw": "http://localhost:3333/classification",
@@ -1295,6 +1421,51 @@
 								{
 									"key": "id",
 									"value": "5ddaa9bcda818471f36883f0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/classification",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"classification"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/classification/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"classification",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
 								}
 							]
 						}

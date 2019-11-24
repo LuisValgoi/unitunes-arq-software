@@ -9,4 +9,16 @@ BaseService.addCredit = async function (id, amount) {
   return await Account.findByIdAndUpdate(id, { $inc: { 'currentAmount': amount }}, { new: true, useFindAndModify: false });
 };
 
+BaseService.generateAccountIdForUserCreation = async function () {
+  try {
+    let payload = {
+      currentAmount: 0
+    };
+    let data = await Account.create(payload);
+    return data._id;
+  } catch (e) {
+    console.log('Reported Error:', e);
+  }
+};
+
 module.exports = BaseService;

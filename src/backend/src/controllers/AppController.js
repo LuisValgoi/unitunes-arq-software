@@ -1,6 +1,6 @@
 module.exports = {
   root(req, res) {
-    const availableAPIs = [
+    let availableAPIs = [
       '/university',
       '/user',
       '/account',
@@ -9,11 +9,5 @@ module.exports = {
       '/favorite'];
 
     res.json(availableAPIs);
-  },
-  loginGet(req, res) {
-  },
-  loginPost(req, res) {
-  },
-  logout(req, res) {
   }
 }
