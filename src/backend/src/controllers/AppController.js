@@ -2,11 +2,10 @@ module.exports = {
   root(req, res) {
     const availableAPIs = [
       '/university',
-      '/academic',
+      '/user',
       '/account',
       '/movimentation',
       '/media',
-      '/library',
       '/favorite'];
 
     res.json(availableAPIs);

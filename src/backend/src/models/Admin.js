@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose');
-const Academic = require('./Academic');
+const User = require('./User');
 
-const AdminSchema = Academic.discriminator('Admin', new Schema());
+const AdminSchema = User.discriminator('Admin', new Schema());
 module.exports = model('Admin', AdminSchema);

@@ -1,10 +1,10 @@
-const Academic = require('../models/Academic');
-const BaseService = require('./BaseService')(Academic);
+const User = require('../models/User');
+const BaseService = require('./BaseService')(User);
 
 BaseService.insert = async function (payload) { 
   try {
     // TODO: Create an account
-    return await Academic.create(payload);
+    return await User.create(payload);
   } catch (e) {
     console.log("Reported Error:", e);
   }

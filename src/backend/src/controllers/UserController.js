@@ -1,10 +1,10 @@
-const AcademicService = require('../services/AcademicService');
-const BaseController = require('./BaseController')(AcademicService);
+const UserService = require('../services/UserService');
+const BaseController = require('./BaseController')(UserService);
 
 BaseController.insert = async function (req, res) {
   try {
     let payload = req.body;
-    let data = await AcademicService.insert(payload);
+    let data = await UserService.insert(payload);
 
     return res.json(data);
   } catch (e) {
@@ -16,7 +16,7 @@ BaseController.insert = async function (req, res) {
 BaseController.authenticate = async function (req, res) {
   try {
     let payload = req.body;
-    let data = await AcademicService.authenticate(payload);
+    let data = await UserService.authenticate(payload);
 
     return res.json(data);
   } catch (e) {
@@ -28,7 +28,7 @@ BaseController.authenticate = async function (req, res) {
 BaseController.recoverPassword = async function (req, res) {
   try {
     let payload = req.body;
-    let data = await AcademicService.recoverPassword(payload);
+    let data = await UserService.recoverPassword(payload);
 
     return res.json(data);
   } catch (e) {
