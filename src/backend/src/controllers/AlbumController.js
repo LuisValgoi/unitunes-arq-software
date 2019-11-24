@@ -2,22 +2,25 @@ const AlbumService = require('../services/AlbumService');
 const BaseController = require('./BaseController')(AlbumService);
 
 BaseController.getNewAlbuns = async function (req, res) {
-  //TODO: implement
+  try {
+    let data = await AlbumService.getNewAlbuns();
+
+    return res.json(data);
+  } catch (e) {
+    console.log("Reported Error:", e);
+    res.status(500).send(e);
+  }
 };
 
 BaseController.getRecentAlbuns = async function (req, res) {
-  //TODO: implement
+  try {
+    let data = await AlbumService.getRecentAlbuns();
+
+    return res.json(data);
+  } catch (e) {
+    console.log("Reported Error:", e);
+    res.status(500).send(e);
+  }
 };
 
 module.exports = BaseController;
-
-/*
-getById         - Retornar album
-getAll          - Retornar todos albuns
-UI              - Executar album
-insert          - Criar album 
-delete          - Deletar album
-update          - Atualizar albums
-getNewAlbuns    - Retornar albuns novos
-getRecentAlbuns - Retornar alguns recentes
-*/
