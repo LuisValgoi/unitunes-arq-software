@@ -1,18 +1,9 @@
 const express = require('express');
 const session = require('express-session');
-const mongoose = require('mongoose');
 const routes = require('./routes/Routes');
 const cors = require('cors');
 const server = express();
-
-try {
-  mongoose.connect(process.env.MONGODB_URL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-  });
-} catch (error) {
-  console.log('Error connecting to database. Ex: ' + error);
-}
+require('./db/config')
 
 // server uses
 server.use(cors());
