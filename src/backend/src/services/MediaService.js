@@ -15,10 +15,9 @@ BaseService.getAllReleased = async function () {
 BaseService.getAllByUser = async function (userId) {
   try {
     let mediaIds = await MovimentationService.getMediasRefsByUser(userId);
-    let query = { '_id': { '$in:': mediaIds } };
-    let data = await Media.find(query).select(['-content', '-image'])
+    let query = { _id: { $in: mediaIds } };
 
-    return data;
+    return await Media.find(query).select(['-content', '-image'])
   } catch (e) {
     console.log("Reported Error:", e);
   }
