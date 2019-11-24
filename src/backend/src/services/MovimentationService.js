@@ -42,7 +42,7 @@ BaseService.insert = async function (model) {
 
     let buyer = UserService.getById(model['buyer']);
     let account = await AccountService.getById(buyer['account']);
-    _validateFunds(account, model);
+    _validateFunds(account['currentAmount'], model['amount']);
 
     let admin = await UserService.getAdminSystem();
     let seller = await UserService.getById(model['seller']);
@@ -63,8 +63,8 @@ function _validateAmount(amount) {
   }
 }
 
-function _validateFunds(account, model) {
-  if (account['currentAmount'] < model['amount'])
+function _validateFunds(currentAmount, amount) {
+  if (currentAmount < amount)
     throw new Error({ error: 'InsufficientFundsException' });
 }
 
