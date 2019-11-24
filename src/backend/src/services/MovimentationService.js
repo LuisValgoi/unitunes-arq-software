@@ -39,9 +39,9 @@ BaseService.insert = async function (model) {
   try {
     if (model['amount'] > 0) {
       let buyer = UserService.getById(model['buyer'])
-      let accountBuyer = await AccountService.getById(buyer['account'])
+      let account = await AccountService.getById(buyer['account'])
 
-      if (accountBuyer['currentAmount'] < model['amount'])
+      if (account['currentAmount'] < model['amount'])
         throw new Error('InsufficientFundsException');
 
       let admin = await UserService.getAdminSystem()
@@ -52,7 +52,7 @@ BaseService.insert = async function (model) {
 
       await AccountService.update(seller['account'], sellerValue);
       await AccountService.update(admin['account'], adminValue)
-      await AccountService.update(buyer['account'], -Math.abs(model['amount']))
+      await AccountService.update(buyer['account'], - Math.abs(model['amount']))
     }
 
     return await Movimentation.create(model);
