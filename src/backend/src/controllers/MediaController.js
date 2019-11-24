@@ -7,7 +7,7 @@ BaseController.getAllReleased = async function (req, res) {
 
     return res.json(data);
   } catch (e) {
-    console.log(MediaService, e);
+    console.log("Reported Error:", e);
     res.status(500).send(e);
   }
 };
@@ -19,7 +19,7 @@ BaseController.getAllByUser = async function (req, res) {
 
     return res.json(data);
   } catch (e) {
-    console.log(MediaService, e);
+    console.log("Reported Error:", e);
     res.status(500).send(e);
   }
 };
@@ -31,7 +31,7 @@ BaseController.getContent = async function (req, res) {
 
     return res.json(data);
   } catch (e) {
-    console.log(MediaService, e);
+    console.log("Reported Error:", e);
     res.status(500).send(e);
   }
 };
@@ -43,7 +43,7 @@ BaseController.release = async function (req, res) {
 
     return res.json(data);
   } catch (e) {
-    console.log(MediaService, e);
+    console.log("Reported Error:", e);
     res.status(500).send(e);
   }
 };
@@ -55,7 +55,7 @@ BaseController.download = async function (req, res) {
 
     return res.json(data);
   } catch (e) {
-    console.log(MediaService, e);
+    console.log("Reported Error:", e);
     res.status(500).send(e);
   }
 };
@@ -67,7 +67,7 @@ BaseController.buy = async function (req, res) {
 
     return res.json(data);
   } catch (e) {
-    console.log(MediaService, e);
+    console.log("Reported Error:", e);
     res.status(500).send(e);
   }
 };

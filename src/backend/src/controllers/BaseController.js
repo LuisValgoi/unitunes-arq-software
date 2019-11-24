@@ -7,7 +7,7 @@ module.exports = function (Service) {
 
       return res.json(data);
     } catch (e) {
-      console.log(Service, e);
+      console.log("Reported Error:", e);
       res.status(500).send(e);
     }
   }
@@ -19,7 +19,7 @@ module.exports = function (Service) {
 
       return res.json(data);
     } catch (e) {
-      console.log(Service, e);
+      console.log("Reported Error:", e);
       res.status(500).send(e);
     }
   },
@@ -31,7 +31,7 @@ module.exports = function (Service) {
 
       return res.json(data);
     } catch (e) {
-      console.log(Service, e);
+      console.log("Reported Error:", e);
       res.status(500).send(e);
     }
   },
@@ -44,7 +44,7 @@ module.exports = function (Service) {
 
       return res.json(data);
     } catch (e) {
-      console.log(Service, e);
+      console.log("Reported Error:", e);
       res.status(500).send(e);
     }
   },
@@ -56,7 +56,7 @@ module.exports = function (Service) {
 
       return res.json(data);
     } catch (e) {
-      console.log(Service, e);
+      console.log("Reported Error:", e);
       res.status(500).send(e);
     }
   }
