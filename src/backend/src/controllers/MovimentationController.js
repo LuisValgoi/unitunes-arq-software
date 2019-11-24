@@ -31,5 +31,17 @@ BaseController.generateReceipt = async function (req, res) {
   }
 };
 
+BaseController.getAllBySeller = async function (req, res) {
+  try {
+    let id = req.params.id;
+    let data = await MovimentationService.getAllBySeller(id);
+
+    return res.json(data);
+  } catch (e) {
+    console.log("Reported Error:", e);
+    res.status(500).send(e);
+  }
+};
+
 
 module.exports = BaseController;

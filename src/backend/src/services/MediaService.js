@@ -1,5 +1,6 @@
 const Media = require('../models/Media');
 const MovimentationService = require('./MovimentationService');
+const LibraryService = require('./LibraryService');
 const BaseService = require('./BaseService')(Media);
 
 BaseService.getAllReleased = async function () {
@@ -7,17 +8,6 @@ BaseService.getAllReleased = async function () {
     let query = { 'isAvailable': true };
 
     return await Media.find(query).select(['-content', '-image']);
-  } catch (e) {
-    console.log("Reported Error:", e);
-  }
-};
-
-BaseService.getAllByUser = async function (userId) {
-  try {
-    let mediaIds = await MovimentationService.getMediasRefsByUser(userId);
-    let query = { _id: { $in: mediaIds } };
-
-    return await Media.find(query).select(['-content', '-image'])
   } catch (e) {
     console.log("Reported Error:", e);
   }
@@ -58,9 +48,17 @@ BaseService.download = async function (id) {
   }
 };
 
-BaseService.buy = async function (id) {
+BaseService.buy = async function (movimentation) {
   try {
-    // TODO : add into movimentation
+    let movimentation = await MovimentationService.insert(movimentation);
+
+    for (let item in movimentation['medias']) {
+      await LibraryService.insert({ 'user': movimentation['buyer'], 'media': item });
+    }
+
+    // TODO: Update account value
+
+    return movimentation;
   } catch (e) {
     console.log("Reported Error:", e);
   }

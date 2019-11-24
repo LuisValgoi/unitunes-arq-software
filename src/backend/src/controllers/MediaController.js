@@ -12,18 +12,6 @@ BaseController.getAllReleased = async function (req, res) {
   }
 };
 
-BaseController.getAllByUser = async function (req, res) {
-  try {
-    let userId = req.params.id;
-    let data = await MediaService.getAllByUser(userId);
-
-    return res.json(data);
-  } catch (e) {
-    console.log("Reported Error:", e);
-    res.status(500).send(e);
-  }
-};
-
 BaseController.getContent = async function (req, res) {
   try {
     let id = req.params.id;
@@ -62,8 +50,8 @@ BaseController.download = async function (req, res) {
 
 BaseController.buy = async function (req, res) {
   try {
-    let id = req.params.id;
-    let data = await MediaService.buy(id);
+    let payload = req.body;
+    let data = await MediaService.buy(payload);
 
     return res.json(data);
   } catch (e) {

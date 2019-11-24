@@ -9,6 +9,7 @@ routes.post('/', MovimentationController.insert);
 routes.put('/:id', MovimentationController.update);
 routes.delete('/:id', MovimentationController.remove);
 routes.get('/:id/receipt', MovimentationController.generateReceipt);
+routes.post('/seller/:id', MovimentationController.getAllBySeller);
 
 module.exports = routes; 
 
@@ -19,4 +20,5 @@ insert              - criar
 update              - atualizar
 remove              - excluir
 generateReceipt     - emitirComprovante
+getAllBySeller      - retornaMovitaçãoDoUsuario
 */

@@ -15,11 +15,11 @@ BaseService.getAllByAccount = async function (DTO) {
   }
 };
 
-BaseService.getMediasRefsByUser = async function (userId) {
+BaseService.getAllBySeller = async function (userId) {
   try {
-    let query = { 'buyer': userId };
+    let query = { 'seller': userId };
 
-    return await Movimentation.find(query).select('medias');
+    return await Movimentation.find(query);
   } catch (e) {
     console.log("Reported Error:", e);
   }
