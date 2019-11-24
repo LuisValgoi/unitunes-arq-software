@@ -51,6 +51,7 @@ BaseController.download = async function (req, res) {
 BaseController.buy = async function (req, res) {
   try {
     let payload = req.body;
+    payload['media'] = req.params.id
     let data = await MediaService.buy(payload);
 
     return res.json(data);
