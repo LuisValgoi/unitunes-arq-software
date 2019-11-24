@@ -1,4 +1,7 @@
 const { Schema, model } = require('mongoose');
+const mongoose = require('mongoose');
+
+mongoose.pluralize(null);
 
 const UniversitySchema = new Schema(
   {
@@ -9,6 +12,7 @@ const UniversitySchema = new Schema(
   },
   {
     timestamps: true,
+    collection: 'University'
   },
 );
 module.exports = model('University', UniversitySchema);

@@ -5,6 +5,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
 mongoose.set('useCreateIndex', true);
+mongoose.pluralize(null);
 
 const UserSchema = new Schema(
   {
@@ -40,6 +41,7 @@ const UserSchema = new Schema(
   },
   {
     timestamps: true,
+    collection: 'User'
   },
 );
 
@@ -51,6 +53,15 @@ UserSchema.pre('save', async function (next) {
   }
   next();
 });
+
+// UserSchema.pre('findOneAndUpdate', async function (next) {
+//   // Hash the password before saving the user model
+//   const user = this._update;
+//   if (user.isModified('password')) {
+//     user.password = await bcrypt.hash(user.password, 8);
+//   }
+//   next();
+// });
 
 UserSchema.methods.generateAuthToken = async function () {
   // Generate an auth token for the user

@@ -1,4 +1,7 @@
 const { Schema, model } = require('mongoose');
+const mongoose = require('mongoose');
+
+mongoose.pluralize(null);
 
 const AlbumSchema = new Schema(
   {
@@ -8,6 +11,7 @@ const AlbumSchema = new Schema(
   },
   {
     timestamps: true,
+    collection: 'Album'
   },
 );
 module.exports = model('Album', AlbumSchema);

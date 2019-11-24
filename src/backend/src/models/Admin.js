@@ -1,5 +1,10 @@
 const { Schema, model } = require('mongoose');
+const mongoose = require('mongoose');
 const User = require('./User');
 
-const AdminSchema = User.discriminator('Admin', new Schema());
+mongoose.pluralize(null);
+
+const AdminSchema = User.discriminator('Admin', new Schema(null, {
+    collection: 'Admin'
+}));
 module.exports = model('Admin', AdminSchema);

@@ -1,4 +1,7 @@
 const { Schema, model } = require('mongoose');
+const mongoose = require('mongoose');
+
+mongoose.pluralize(null);
 
 const AccountSchema = new Schema(
   {
@@ -6,6 +9,7 @@ const AccountSchema = new Schema(
   },
   {
     timestamps: true,
+    collection: 'Account'
   },
 );
 module.exports = model('Account', AccountSchema);

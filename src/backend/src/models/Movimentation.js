@@ -1,4 +1,7 @@
 const { Schema, model } = require('mongoose');
+const mongoose = require('mongoose');
+
+mongoose.pluralize(null);
 
 const MovimentationSchema = new Schema(
   {
@@ -11,6 +14,7 @@ const MovimentationSchema = new Schema(
   },
   {
     timestamps: true,
+    collection: 'Movimentation'
   },
 );
 module.exports = model('Movimentation', MovimentationSchema);

@@ -1,4 +1,7 @@
 const { Schema, model } = require('mongoose');
+const mongoose = require('mongoose');
+
+mongoose.pluralize(null);
 
 const MediaSchema = new Schema(
   {
@@ -14,8 +17,8 @@ const MediaSchema = new Schema(
     isApropriated: Boolean
   },
   {
-    discriminatorKey: 'type',
     timestamps: true,
+    collection: 'Media'
   },
 );
 

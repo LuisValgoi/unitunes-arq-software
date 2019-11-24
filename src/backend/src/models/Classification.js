@@ -1,4 +1,7 @@
 const { Schema, model } = require('mongoose');
+const mongoose = require('mongoose');
+
+mongoose.pluralize(null);
 
 const ClassificationSchema = new Schema(
   {
@@ -8,6 +11,7 @@ const ClassificationSchema = new Schema(
   },
   {
     timestamps: true,
+    collection: 'Classification'
   },
 );
 module.exports = model('Classification', ClassificationSchema);

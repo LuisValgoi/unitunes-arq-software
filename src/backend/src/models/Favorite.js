@@ -1,4 +1,7 @@
 const { Schema, model } = require('mongoose');
+const mongoose = require('mongoose');
+
+mongoose.pluralize(null);
 
 const FavoriteSchema = new Schema(
   {
@@ -8,6 +11,7 @@ const FavoriteSchema = new Schema(
   },
   {
     timestamps: true,
+    collection: 'Favorite'
   },
 );
 module.exports = model('Favorite', FavoriteSchema);
