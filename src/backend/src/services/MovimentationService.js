@@ -37,28 +37,43 @@ BaseService.generateReceipt = async function (userId) {
 
 BaseService.insert = async function (model) {
   try {
-    if (model['amount'] > 0) {
-      let buyer = UserService.getById(model['buyer'])
-      let account = await AccountService.getById(buyer['account'])
+    let amount = model['amount'];
+    _validateAmount(amount);
 
-      if (account['currentAmount'] < model['amount'])
-        throw new Error('InsufficientFundsException');
+    let buyer = UserService.getById(model['buyer']);
+    let account = await AccountService.getById(buyer['account']);
+    _validateFunds(account, model);
 
-      let admin = await UserService.getAdminSystem()
-      let seller = await UserService.getById(model['seller'])
+    let admin = await UserService.getAdminSystem();
+    let seller = await UserService.getById(model['seller']);
 
-      let sellerValue = model['amount'] * 0.70;
-      let adminValue = model['amount'] - seller;
-
-      await AccountService.update(seller['account'], sellerValue);
-      await AccountService.update(admin['account'], adminValue)
-      await AccountService.update(buyer['account'], - Math.abs(model['amount']))
-    }
+    await AccountService.update(seller['account'], _getSellerAmount(amount));
+    await AccountService.update(admin['account'], _getAdminAmount(amount));
+    await AccountService.update(buyer['account'], - Math.abs(amount));
 
     return await Movimentation.create(model);
   } catch (e) {
     console.log("Reported Error:", e);
   }
 };
+
+function _validateAmount(amount) {
+  if (amount <= 0) {
+    throw new Error({ error: 'UnexistenceAmount' });
+  }
+}
+
+function _validateFunds(account, model) {
+  if (account['currentAmount'] < model['amount'])
+    throw new Error({ error: 'InsufficientFundsException' });
+}
+
+function _getSellerAmount(amount) {
+  return amount * 0.70;
+}
+
+function _getAdminAmount(amount) {
+  return amount - seller;
+}
 
 module.exports = BaseService;
