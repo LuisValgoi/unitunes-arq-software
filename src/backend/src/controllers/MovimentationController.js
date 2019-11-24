@@ -14,7 +14,7 @@ BaseController.getAllByAccount = async function (req, res) {
 
     return res.json(data);
   } catch (e) {
-    console.log("Reported Error:", e);
+    console.log('Reported Error:', e);
     res.status(500).send(e);
   }
 };
@@ -26,7 +26,7 @@ BaseController.generateReceipt = async function (req, res) {
 
     return res.json(data);
   } catch (e) {
-    console.log("Reported Error:", e);
+    console.log('Reported Error:', e);
     res.status(500).send(e);
   }
 };
@@ -38,7 +38,7 @@ BaseController.getAllBySeller = async function (req, res) {
 
     return res.json(data);
   } catch (e) {
-    console.log("Reported Error:", e);
+    console.log('Reported Error:', e);
     res.status(500).send(e);
   }
 };

@@ -8,7 +8,7 @@ BaseService.getAllByUser = async function (userId) {
 
     return data;
   } catch (e) {
-    console.log("Reported Error:", e);
+    console.log('Reported Error:', e);
   }
 };
 

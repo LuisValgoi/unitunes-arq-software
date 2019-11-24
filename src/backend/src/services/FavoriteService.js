@@ -7,7 +7,7 @@ BaseService.getAllByUser = async function (userId) {
 
     return await Favorite.find(query);
   } catch (e) {
-    console.log("Reported Error:", e);
+    console.log('Reported Error:', e);
   }
 };
 

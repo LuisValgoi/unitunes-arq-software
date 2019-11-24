@@ -9,7 +9,7 @@ BaseService.insert = async function (payload) {
 
     return await User.create(payload);
   } catch (e) {
-    console.log("Reported Error:", e);
+    console.log('Reported Error:', e);
   }
 };
 
@@ -17,7 +17,7 @@ BaseService.authenticate = async function (payload) {
   try {
     // TODO: Implement
   } catch (e) {
-    console.log("Reported Error:", e);
+    console.log('Reported Error:', e);
   }
 };
 
@@ -25,7 +25,7 @@ BaseService.recoverPassword = async function (payload) {
   try {
     // TODO: Implement
   } catch (e) {
-    console.log("Reported Error:", e);
+    console.log('Reported Error:', e);
   }
 };
 
@@ -34,7 +34,7 @@ BaseService.getAdminSystem = async function () {
     let query = { 'role': 'admin'}
     return await User.findOne(query);
   } catch (e) {
-    console.log("Reported Error:", e);
+    console.log('Reported Error:', e);
   }
 };
 

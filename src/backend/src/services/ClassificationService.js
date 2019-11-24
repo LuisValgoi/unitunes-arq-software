@@ -7,7 +7,7 @@ BaseService.getAllByMedia = async function (id) {
 
     return await Classification.find(query);
   } catch (e) {
-    console.log("Reported Error:", e);
+    console.log('Reported Error:', e);
   }
 };
 
@@ -23,7 +23,7 @@ BaseService.getScoreByMedia = async function (id) {
 
     return count / result.length;
   } catch (e) {
-    console.log("Reported Error:", e);
+    console.log('Reported Error:', e);
   }
 };
 

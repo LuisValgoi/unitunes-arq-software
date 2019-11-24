@@ -13,7 +13,7 @@ BaseService.getAllByAccount = async function (DTO) {
 
     return await Movimentation.find(query);
   } catch (e) {
-    console.log("Reported Error:", e);
+    console.log('Reported Error:', e);
   }
 };
 
@@ -23,7 +23,7 @@ BaseService.getAllBySeller = async function (userId) {
 
     return await Movimentation.find(query);
   } catch (e) {
-    console.log("Reported Error:", e);
+    console.log('Reported Error:', e);
   }
 };
 
@@ -31,7 +31,7 @@ BaseService.generateReceipt = async function (userId) {
   try {
     // TODO: Implement
   } catch (e) {
-    console.log("Reported Error:", e);
+    console.log('Reported Error:', e);
   }
 };
 
@@ -53,7 +53,7 @@ BaseService.insert = async function (model) {
 
     return await Movimentation.create(model);
   } catch (e) {
-    console.log("Reported Error:", e);
+    console.log('Reported Error:', e);
   }
 };
 
