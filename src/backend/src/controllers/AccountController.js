@@ -5,7 +5,7 @@ BaseController.addCredit = async function (req, res) {
   try {
     let newCurrentAmout = req.body.currentAmount;
     let id = req.params.id;
-    let data = await AccountService.update(id, { 'currentAmount': newCurrentAmout });
+    let data = await AccountService.addCredit(id, newCurrentAmout);
 
     return res.json(data);
   } catch (e) {

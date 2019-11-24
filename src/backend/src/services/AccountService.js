@@ -2,11 +2,11 @@ const Account = require('../models/Account');
 const BaseService = require('./BaseService')(Account);
 
 BaseService.viewCredit = async function (id) {
-  try {
-    return await Account.findById(id).select('currentAmount');
-  } catch (e) {
-    console.log('Reported Error:', e);
-  }
+  return await Account.findById(id).select('currentAmount');
+};
+
+BaseService.addCredit = async function (id, amount) {
+  return await Account.findByIdAndUpdate(id, { $inc: { 'currentAmount': amount }}, { new: true, useFindAndModify: false });
 };
 
 BaseService.generateAccountIdForUserCreation = async function () {

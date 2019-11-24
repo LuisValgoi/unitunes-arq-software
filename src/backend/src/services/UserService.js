@@ -19,6 +19,7 @@ BaseService.insert = async function (payload) {
 BaseService.getAdminSystem = async function () {
   try {
     let query = { 'role': 'admin' }
+
     return await User.findOne(query);
   } catch (e) {
     console.log('Reported Error:', e);
