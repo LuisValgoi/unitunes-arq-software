@@ -7,8 +7,8 @@ routes.get('/:id', UserController.getById);
 routes.post('/', UserController.insert);
 routes.put('/:id', UserController.update);
 routes.delete('/:id', UserController.remove);
-routes.post('/:id/auth', UserController.authenticate);
-routes.post('/:id/password/recovery', UserController.recoverPassword);
+routes.post('/password/recovery', UserController.recoverPassword);
+routes.post('/login', UserController.login);
 
 module.exports = routes; 
 

@@ -5,20 +5,26 @@ BaseController.insert = async function (req, res) {
   try {
     let payload = req.body;
     let data = await UserService.insert(payload);
+    let token = await UserService.generateAuthToken(data);
 
-    return res.json(data);
+    return res.json({ data, token });
   } catch (e) {
     console.log('Reported Error:', e);
     res.status(500).send(e);
   }
 };
 
-BaseController.authenticate = async function (req, res) {
+BaseController.login = async function (req, res) {
   try {
-    let payload = req.body;
-    let data = await UserService.authenticate(payload);
+    let user = await UserService.findByCredentials(req.body.email, req.body.assword);
 
-    return res.json(data);
+    if (!user) {
+      return res.status(401).send({ error: 'Login failed! Check authentication credentials' })
+    }
+
+    const token = await UserService.generateAuthToken(user);
+    res.json({ user, token });
+
   } catch (e) {
     console.log('Reported Error:', e);
     res.status(500).send(e);
