@@ -6,6 +6,7 @@ const MovimentationRoutes = require('./MovimentationRoutes');
 const MediaRoutes = require('./MediaRoutes');
 const FavoriteRoutes = require('./FavoriteRoutes');
 const LibraryRoutes = require('./LibraryRoutes');
+const ClassificationRoutes = require('./ClassificationRoutes');
 const AppRoutes = require('./AppRoutes');
 
 const routes = express.Router();
@@ -17,6 +18,7 @@ routes.use('/movimentation', MovimentationRoutes);
 routes.use('/media', MediaRoutes);
 routes.use('/favorite', FavoriteRoutes);
 routes.use('/library', LibraryRoutes);
+routes.use('/classification', ClassificationRoutes);
 routes.use('/', AppRoutes);
 
 module.exports = routes; 
