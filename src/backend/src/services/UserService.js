@@ -6,62 +6,42 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
 BaseService.insert = async function (payload) {
-  try {
-    let accountId = await AccountService.generateAccountIdForUserCreation();
-    payload['account'] = accountId;
+  let accountId = await AccountService.generateAccountIdForUserCreation();
+  payload['account'] = accountId;
 
-    return await User.create(payload);
-  } catch (e) {
-    console.log('Reported Error:', e);
-  }
+  return await User.create(payload);
 };
 
 BaseService.getAdminSystem = async function () {
-  try {
-    let query = { 'role': 'admin' }
+  let query = { 'role': 'admin' }
 
-    return await User.findOne(query);
-  } catch (e) {
-    console.log('Reported Error:', e);
-  }
+  return await User.findOne(query);
 };
 
 BaseService.recoverPassword = async function (payload) {
-  try {
-    // TODO: Implement
-  } catch (e) {
-    console.log('Reported Error:', e);
-  }
+  // TODO: Implement
 };
 
 BaseService.findByCredentials = async function (email, password) {
-  try {
-    let user = await User.findOne({ email });
-    if (!user) {
-      throw new Error({ error: 'Invalid login credentials' });
-    }
-
-    let isPasswordMatch = await bcrypt.compare(password, user.password);
-    if (!isPasswordMatch) {
-      throw new Error({ error: 'Invalid login credentials' });
-    }
-
-    return user;
-  } catch (e) {
-    console.log('Reported Error:', e);
+  let user = await User.findOne({ email });
+  if (!user) {
+    throw new Error({ error: 'Invalid login credentials' });
   }
+
+  let isPasswordMatch = await bcrypt.compare(password, user.password);
+  if (!isPasswordMatch) {
+    throw new Error({ error: 'Invalid login credentials' });
+  }
+
+  return user;
 };
 
 BaseService.generateAuthToken = async function (user) {
-  try {
-    let token = jwt.sign({ _id: user._id }, process.env.JWT_KEY);
-    user.tokens = user.tokens.concat({ token });
-    await user.save();
+  let token = jwt.sign({ _id: user._id }, process.env.JWT_KEY);
+  user.tokens = user.tokens.concat({ token });
+  await user.save();
 
-    return token;
-  } catch (e) {
-    console.log('Reported Error:', e);
-  }
+  return token;
 };
 
 module.exports = BaseService;
