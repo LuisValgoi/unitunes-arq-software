@@ -18,7 +18,6 @@ module.exports = routes;
 /*
 getAll                - retornarTodas
 getAllAvailables      - retornarTodasDisponibilizadas
-getAllByUser          - retornarsAdquiridas
 getById               - retornar
 insert                - criar
 update                - atualizar
