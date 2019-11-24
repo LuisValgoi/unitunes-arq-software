@@ -27,7 +27,7 @@ BaseService.getAllBySeller = async function (userId) {
   }
 };
 
-BaseService.generateReceipt = async function (userId) {
+BaseService.generateReceipt = async function (id) {
   try {
     // TODO: Implement
   } catch (e) {
