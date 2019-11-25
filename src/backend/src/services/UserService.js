@@ -4,7 +4,7 @@ const BaseService = require('./BaseService')(User);
 
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const EmailHelper = require('../util/email/EmailHelper');
+const EmailHelper = require('../util/EmailHelper');
 
 BaseService.insert = async function (payload) {
   let accountId = await AccountService.generateAccountIdForUserCreation();
