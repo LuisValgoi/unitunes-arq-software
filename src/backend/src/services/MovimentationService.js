@@ -35,7 +35,14 @@ BaseService.generateReceipt = async function (id) {
   _validateSeller(seller);
   let sellerName = `${seller.firstName} ${seller.lastName}`;
 
-  return `Description: ${description} | Value: ${value} | Created At: ${createdAt} | Buyer: ${buyerName} | Seller: ${sellerName}`;
+  return {
+    description: description,
+    value: value,
+    createdAt: createdAt,
+    buyer: buyerName,
+    seller: sellerName,
+    text: description + value + buyerName + sellerName + createdAt
+  };
 };
 
 BaseService.insert = async function (model) {
@@ -57,7 +64,7 @@ BaseService.insert = async function (model) {
 };
 
 function _validateMovimentation(movimentation) {
-  if(!movimentation) {
+  if (!movimentation) {
     throw new Error('MovimentationNotFound');
   }
 }
