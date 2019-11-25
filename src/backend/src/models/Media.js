@@ -14,7 +14,8 @@ const MediaSchema = new Schema(
     content: Buffer,
     image: Buffer,
     isAvailable: Boolean,
-    isApropriated: Boolean
+    isApropriated: Boolean,
+    isAvailableSince: Date
   },
   {
     timestamps: true,

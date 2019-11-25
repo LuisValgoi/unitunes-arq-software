@@ -17,7 +17,7 @@ BaseService.getContent = async function (id) {
 };
 
 BaseService.release = async function (id) {
-  let fieldToUpdated = { 'isAvailable': true };
+  let fieldToUpdated = { 'isAvailable': true, 'isAvailableSince': new Date() };
   let payload = { $set: fieldToUpdated };
 
   return await Media.findByIdAndUpdate(id, payload, { new: true, useFindAndModify: false });
