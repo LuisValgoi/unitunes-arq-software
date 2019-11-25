@@ -20,7 +20,22 @@ BaseService.getAllBySeller = async function (userId) {
 };
 
 BaseService.generateReceipt = async function (id) {
-   // TODO: Implement
+  let movimentation = await Movimentation.findById(id).select(["description", "value", "createdAt", "buyer", "seller"]);
+  _validateMovimentation(movimentation);
+
+  let description = movimentation.description;
+  let value = movimentation.value;
+  let createdAt = movimentation.createdAt;
+
+  let buyer = await UserService.getById(movimentation.buyer);
+  _validateBuyer(buyer);
+  let buyerName = `${buyer.firstName} ${buyer.lastName}`;
+
+  let seller = await UserService.getById(movimentation.seller);
+  _validateSeller(seller);
+  let sellerName = `${seller.firstName} ${seller.lastName}`;
+
+  return `Description: ${description} | Value: ${value} | Created At: ${createdAt} | Buyer: ${buyerName} | Seller: ${sellerName}`;
 };
 
 BaseService.insert = async function (model) {
@@ -41,9 +56,27 @@ BaseService.insert = async function (model) {
   return await Movimentation.create(model);
 };
 
+function _validateMovimentation(movimentation) {
+  if(!movimentation) {
+    throw new Error('MovimentationNotFound');
+  }
+}
+
+function _validateBuyer(buyer) {
+  if (!buyer) {
+    throw new Error('BuyerNotFound');
+  }
+}
+
+function _validateSeller(seller) {
+  if (!seller) {
+    throw new Error('SellerNotFound');
+  }
+}
+
 function _validateAmount(value) {
   if (value <= 0) {
-    throw new Error({ error: 'UnexistenceAmount' });
+    throw new Error('UnexistenceAmount');
   }
 }
 
