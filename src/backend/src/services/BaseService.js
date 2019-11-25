@@ -9,6 +9,10 @@ module.exports = function (Entity) {
     return await Entity.findById(id);
   },
 
+  module.getBy = async function (query) {
+    return await Entity.findOne(query);
+  },
+
   module.insert = async function (payload) {
     return await Entity.create(payload);
   },
