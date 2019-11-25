@@ -4,6 +4,7 @@ const BaseService = require('./BaseService')(User);
 
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const EmailHelper = require('../util/email/EmailHelper');
 
 BaseService.insert = async function (payload) {
   let accountId = await AccountService.generateAccountIdForUserCreation();
@@ -18,20 +19,19 @@ BaseService.getAdminSystem = async function () {
   return await User.findOne(query);
 };
 
-BaseService.recoverPassword = async function (payload) {
-  // TODO: Implement
+BaseService.recoverPassword = async function (email, newPassword) {
+  let userUpdated = await User.findOneAndUpdate({ email }, { password: newPassword }, { new: true, useFindAndModify: false });
+  // EmailHelper.sendEmail(newPassword, email);
+
+  return { pass: userUpdated.password };
 };
 
 BaseService.findByCredentials = async function (email, password) {
   let user = await User.findOne({ email });
-  if (!user) {
-    throw new Error('InvalidLoginCredentials');
-  }
+  validateUser(user);
 
   let isPasswordMatch = await bcrypt.compare(password, user.password);
-  if (!isPasswordMatch) {
-    throw new Error('InvalidLoginCredentials');
-  }
+  validatePasswordMatch(isPasswordMatch);
 
   return user;
 };
@@ -43,5 +43,21 @@ BaseService.generateAuthToken = async function (user) {
 
   return token;
 };
+
+BaseService.generateRandomString = async function () {
+
+};
+
+function validateUser(user) {
+  if (!user) {
+    throw new Error('UserNotFoundByEmail');
+  }
+}
+
+function validatePasswordMatch(isPasswordMatch) {
+  if (!isPasswordMatch) {
+    throw new Error('UserNInvalidLoginCredentialsotFound');
+  }
+}
 
 module.exports = BaseService;

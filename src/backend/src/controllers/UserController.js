@@ -1,5 +1,6 @@
 const UserService = require('../services/UserService');
 const BaseController = require('./BaseController')(UserService);
+const StringHelper = require('../util/StringHelper');
 
 BaseController.insert = async function (req, res) {
   try {
@@ -64,11 +65,10 @@ BaseController.logoutAll = async function (req, res) {
   }
 };
 
-
 BaseController.recoverPassword = async function (req, res) {
   try {
-    let payload = req.body;
-    let data = await UserService.recoverPassword(payload);
+    let newPassword = StringHelper.generateRandomString();
+    let data = await UserService.recoverPassword(req.body.email, newPassword);
 
     return res.json(data);
   } catch (e) {

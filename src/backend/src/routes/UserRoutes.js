@@ -6,12 +6,12 @@ const UserController = require('../controllers/UserController');
 routes.get('/me', auth, UserController.me);
 routes.post('/me/logout', auth, UserController.logout);
 routes.post('/me/logoutAll', auth, UserController.logoutAll);
+routes.post('/me/password/recovery', UserController.recoverPassword);
 routes.get('/', UserController.getAll);
 routes.get('/:id', UserController.getById);
 routes.post('/', UserController.insert);
 routes.put('/:id', UserController.update);
 routes.delete('/:id', UserController.remove);
-routes.post('/password/recovery', UserController.recoverPassword);
 routes.post('/login', UserController.login);
 
 module.exports = routes; 
