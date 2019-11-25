@@ -6,5 +6,5 @@ try {
     useUnifiedTopology: true
   });
 } catch (error) {
-  console.log('Error connecting to database. Ex: ' + error);
+  console.log('Error connecting to database', error);
 }

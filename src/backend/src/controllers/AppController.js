@@ -6,7 +6,8 @@ module.exports = {
       '/account',
       '/movimentation',
       '/media',
-      '/favorite'];
+      '/favorite'
+    ];
 
     res.json(availableAPIs);
   }
