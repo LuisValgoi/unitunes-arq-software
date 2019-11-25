@@ -1,0 +1,4 @@
+module.exports = {
+  PASSWORD_LENGTH: 10,
+  PASSWORD_CHARACTERS: 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+};
