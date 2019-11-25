@@ -69,6 +69,8 @@ BaseController.recoverPassword = async function (req, res) {
   try {
     let newPassword = StringHelper.generateRandomString();
     let data = await UserService.recoverPassword(req.body.email, newPassword);
+    let newReq = await revogeSessionAfterRecovery(req);
+    BaseController.logoutAll(newReq, res);
 
     return res.json(data);
   } catch (e) {
@@ -76,5 +78,11 @@ BaseController.recoverPassword = async function (req, res) {
     res.status(500).send(e);
   }
 };
+
+async function revogeSessionAfterRecovery(req) {
+  let user = await UserService.getBy({ email: req.body.email });
+  req.user = user;
+  return req;
+}
 
 module.exports = BaseController;
