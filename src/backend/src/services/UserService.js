@@ -25,12 +25,12 @@ BaseService.recoverPassword = async function (payload) {
 BaseService.findByCredentials = async function (email, password) {
   let user = await User.findOne({ email });
   if (!user) {
-    throw new Error({ error: 'Invalid login credentials' });
+    throw new Error('InvalidLoginCredentials');
   }
 
   let isPasswordMatch = await bcrypt.compare(password, user.password);
   if (!isPasswordMatch) {
-    throw new Error({ error: 'Invalid login credentials' });
+    throw new Error('InvalidLoginCredentials');
   }
 
   return user;
