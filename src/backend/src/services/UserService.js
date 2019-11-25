@@ -20,10 +20,10 @@ BaseService.getAdminSystem = async function () {
 };
 
 BaseService.recoverPassword = async function (email, newPassword) {
-  let userUpdated = await User.findOneAndUpdate({ email }, { password: newPassword }, { new: true, useFindAndModify: false });
-  // EmailHelper.sendEmail(newPassword, email);
+  let user = await User.findOneAndUpdate({ email }, { password: newPassword }, { new: true, useFindAndModify: false });
+  validateUser(user);
 
-  return { pass: userUpdated.password };
+  return EmailHelper.sendMail(user.firstName, newPassword, user.email).catch(console.error);
 };
 
 BaseService.findByCredentials = async function (email, password) {
