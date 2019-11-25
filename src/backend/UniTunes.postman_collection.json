@@ -320,7 +320,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"email\": \"joao.carlos@live.com\"\n}",
+							"raw": "{\n\"email\": \"luisvalgoi@gmail.com\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -328,7 +328,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3333/user/me/password/recovery",
+							"raw": "http://localhost:3333/user/me/password/recover",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -338,7 +338,7 @@
 								"user",
 								"me",
 								"password",
-								"recovery"
+								"recover"
 							]
 						}
 					},
