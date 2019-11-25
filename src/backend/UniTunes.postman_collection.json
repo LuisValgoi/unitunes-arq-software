@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "59847940-6dbd-4d46-95cb-97f1ec9a0b35",
+		"_postman_id": "699efea8-93f4-4e66-809f-c7db1297b323",
 		"name": "uniTunes",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -418,7 +418,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"account\": \"5dd5df7bc10a591ad40a7a35\",\r\n  \"amount\": \"400\",\r\n  \"seller\": \"5dc4b9cde15ef7202868b6a6\",\r\n  \"buyer\": \"5dd5e34fa7ef6b0ae4f23da3\",\r\n  \"medias\": null,\r\n  \"description\": \"Teste sem mídias\"\r\n}"
+							"raw": "{\r\n  \"account\": \"5dd5df7bc10a591ad40a7a35\",\r\n  \"value\": 0.6,\r\n  \"seller\": \"5ddb06fcff4559156b90fe3b\",\r\n  \"buyer\": \"5ddb06fcff4559156b90fe3b\",\r\n  \"medias\": null,\r\n  \"description\": \"Description Atualizada\"\r\n}"
 						},
 						"url": {
 							"raw": "http://localhost:3333/movimentation",
@@ -446,10 +446,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"account\": \"5dd5df7bc10a591ad40a7a35\",\r\n  \"amount\": \"200\",\r\n  \"seller\": \"5dc4b9cde15ef7202868b6a6\",\r\n  \"buyer\": \"5dd5e34fa7ef6b0ae4f23da3\",\r\n  \"medias\": null,\r\n  \"description\": \"Teste sem mídias\"\r\n}"
+							"raw": "{\r\n  \"account\": \"5dd5df7bc10a591ad40a7a35\",\r\n  \"value\": 0.6,\r\n  \"seller\": \"5ddb06fcff4559156b90fe3b\",\r\n  \"buyer\": \"5ddb06fcff4559156b90fe3b\",\r\n  \"medias\": null,\r\n  \"description\": \"Description Atualizada\"\r\n}"
 						},
 						"url": {
-							"raw": "http://localhost:3333/movimentation/:id",
+							"raw": "http://localhost:3333/movimentation/5ddaf67196cec74ae8aebc17",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -457,13 +457,7 @@
 							"port": "3333",
 							"path": [
 								"movimentation",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": ""
-								}
+								"5ddaf67196cec74ae8aebc17"
 							]
 						}
 					},
