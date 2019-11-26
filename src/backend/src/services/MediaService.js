@@ -12,7 +12,7 @@ BaseService.getAllReleased = async function () {
 };
 
 BaseService.getAllNews = async function () {
-  let minDate = DateHelper.getDateDeacreasedBy(new Date(), 60);
+  let minDate = DateHelper.getDateDeacreasedBy(new Date(), 40);
   let query = QueryHelper.getCreatedAtGreaterThan(minDate);
 
   return await Media.find(query);
