@@ -20,10 +20,9 @@ BaseService.getAdminSystem = async function () {
 };
 
 BaseService.remove = async function (userId, currentUser) {
-  if (currentUser['role'] != 'admin')
-    throw new Error('AccessDeniedException');
-
+  validateUserAdmin(currentUser);
   payload = { 'active': false };
+
   return await User.findByIdAndDelete(userId,  payload, { new: true, useFindAndModify: false });
 };
 
@@ -59,6 +58,12 @@ BaseService.generateRandomString = async function () {
 function validateUser(user) {
   if (!user || user['active'] == false) {
     throw new Error('UserNotFoundByEmail');
+  }
+}
+
+function validateUserAdmin(user) {
+  if (currentUser['role'] != 'admin') {
+    throw new Error('AccessDeniedException');
   }
 }
 
