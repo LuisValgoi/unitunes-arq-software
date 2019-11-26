@@ -34,7 +34,6 @@ BaseController.getAllRecents = async function (req, res) {
   }
 };
 
-
 BaseController.getContent = async function (req, res) {
   try {
     let id = req.params.id;
