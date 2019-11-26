@@ -1,19 +1,21 @@
 const Album = require('../models/Album');
 const BaseService = require('./BaseService')(Album);
+
 const DateHelper = require('../util/DateHelper');
+const QueryHelper = require('../util/QueryHelper');
 
 BaseService.getAllNews = async function () {
-  let query = DateHelper.getQueryConsideringGivenDays(40);
+  let minDate = DateHelper.getDateDeacreasedBy(new Date(), 40);
+  let query = QueryHelper.getCreatedAtGreaterThan(minDate);
   let albums = await Album.find(query);
   return albums;
 };
 
 BaseService.getAllRecents = async function () {
-  let query = DateHelper.getQueryConsideringGivenDays(60);
+  let minDate = DateHelper.getDateDeacreasedBy(new Date(), 60);
+  let query = QueryHelper.getCreatedAtGreaterThan(minDate);
   let albums = await Album.find(query);
   return albums;
 };
-
-
 
 module.exports = BaseService;
