@@ -1,12 +1,13 @@
 const express = require('express');
 const routes = express.Router();
+const auth = require('../middleware/auth');
 const ClassificationController = require('../controllers/ClassificationController');
 
-routes.get('/', ClassificationController.getAll);
-routes.get('/:id', ClassificationController.getById);
-routes.get('/media/:id', ClassificationController.getAllByMedia);
-routes.get('/media/:id/score', ClassificationController.getScoreByMedia);
-routes.post('/', ClassificationController.insert);
-routes.delete('/:id', ClassificationController.remove);
+routes.get('/', auth, ClassificationController.getAll);
+routes.get('/:id', auth, ClassificationController.getById);
+routes.get('/media/:id', auth, ClassificationController.getAllByMedia);
+routes.get('/media/:id/score', auth, ClassificationController.getScoreByMedia);
+routes.post('/', auth, ClassificationController.insert);
+routes.delete('/:id', auth, ClassificationController.remove);
 
 module.exports = routes;

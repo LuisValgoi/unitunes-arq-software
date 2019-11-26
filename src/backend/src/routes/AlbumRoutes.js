@@ -1,14 +1,15 @@
 const express = require('express');
 const routes = express.Router();
+const auth = require('../middleware/auth');
 const AlbumController = require('../controllers/AlbumController');
 
-routes.get('/', AlbumController.getAll);
-routes.get('/news', AlbumController.getAllNews);
-routes.get('/recents', AlbumController.getAllRecents);
-routes.get('/:id', AlbumController.getById);
-routes.post('/', AlbumController.insert);
-routes.put('/:id', AlbumController.update);
-routes.delete('/:id', AlbumController.remove);
+routes.get('/', auth, AlbumController.getAll);
+routes.get('/news', auth, AlbumController.getAllNews);
+routes.get('/recents', auth, AlbumController.getAllRecents);
+routes.get('/:id', auth, AlbumController.getById);
+routes.post('/', auth, AlbumController.insert);
+routes.put('/:id', auth, AlbumController.update);
+routes.delete('/:id', auth,AlbumController.remove);
 
 module.exports = routes;
 
