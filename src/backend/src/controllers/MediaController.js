@@ -61,4 +61,16 @@ BaseController.buy = async function (req, res) {
   }
 };
 
+BaseController.setMidiaInappropriate = async function (req, res) {
+  try {
+    let mediaId = req.params.id
+    let data = await MediaService.setMidiaInappropriate(mediaId, req.user);
+
+    return res.json(data);
+  } catch (e) {
+    console.log('Reported Error:', e);
+    res.status(500).send(e);
+  }
+};
+
 module.exports = BaseController;

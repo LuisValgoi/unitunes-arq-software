@@ -1,17 +1,19 @@
 const express = require('express');
 const routes = express.Router();
+const auth = require('../middleware/auth');
 const MediaController = require('../controllers/MediaController');
 
-routes.get('/', MediaController.getAll);
-routes.get('/released', MediaController.getAllReleased);
-routes.get('/:id', MediaController.getById);
-routes.post('/', MediaController.insert);
-routes.put('/:id', MediaController.update);
-routes.delete('/:id', MediaController.remove);
-routes.get('/:id/content', MediaController.getContent);
-routes.put('/:id/release', MediaController.release);
-routes.get('/:id/download', MediaController.download);
-routes.post('/:id/buy', MediaController.buy);
+routes.get('/', auth, MediaController.getAll);
+routes.get('/released', auth, MediaController.getAllReleased);
+routes.get('/:id', auth, MediaController.getById);
+routes.post('/', auth, MediaController.insert);
+routes.put('/:id', auth, MediaController.update);
+routes.delete('/:id', auth, MediaController.remove);
+routes.get('/:id/content', auth, MediaController.getContent);
+routes.put('/:id/release', auth, MediaController.release);
+routes.get('/:id/download', auth, MediaController.download);
+routes.post('/:id/buy', auth, MediaController.buy);
+routes.post('/:id/inappropriate', auth, MediaController.setMidiaInappropriate);
 
 module.exports = routes;
 
