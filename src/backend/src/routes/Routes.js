@@ -7,6 +7,7 @@ const MediaRoutes = require('./MediaRoutes');
 const FavoriteRoutes = require('./FavoriteRoutes');
 const LibraryRoutes = require('./LibraryRoutes');
 const ClassificationRoutes = require('./ClassificationRoutes');
+const AlbumRoutes = require('./AlbumRoutes');
 const AppRoutes = require('./AppRoutes');
 
 const routes = express.Router();
@@ -19,6 +20,7 @@ routes.use('/media', MediaRoutes);
 routes.use('/favorite', FavoriteRoutes);
 routes.use('/library', LibraryRoutes);
 routes.use('/classification', ClassificationRoutes);
+routes.use('/album', AlbumRoutes);
 routes.use('/', AppRoutes);
 
 module.exports = routes; 

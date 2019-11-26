@@ -1,9 +1,9 @@
 const AlbumService = require('../services/AlbumService');
 const BaseController = require('./BaseController')(AlbumService);
 
-BaseController.getNewAlbuns = async function (req, res) {
+BaseController.getAllNews = async function (req, res) {
   try {
-    let data = await AlbumService.getNewAlbuns();
+    let data = await AlbumService.getAllNews();
 
     return res.json(data);
   } catch (e) {
@@ -12,9 +12,9 @@ BaseController.getNewAlbuns = async function (req, res) {
   }
 };
 
-BaseController.getRecentAlbuns = async function (req, res) {
+BaseController.getAllRecents = async function (req, res) {
   try {
-    let data = await AlbumService.getRecentAlbuns();
+    let data = await AlbumService.getAllRecents();
 
     return res.json(data);
   } catch (e) {
