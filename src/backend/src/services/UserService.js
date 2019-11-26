@@ -62,7 +62,7 @@ function validateUser(user) {
 }
 
 function validateUserAdmin(user) {
-  if (currentUser['role'] != 'admin') {
+  if (user['role'] != 'admin') {
     throw new Error('AccessDeniedException');
   }
 }
