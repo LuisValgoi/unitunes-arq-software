@@ -3,6 +3,8 @@ const routes = express.Router();
 const MediaController = require('../controllers/MediaController');
 
 routes.get('/', MediaController.getAll);
+routes.get('/news', MediaController.getAllNews);
+routes.get('/recents', MediaController.getAllRecents);
 routes.get('/released', MediaController.getAllReleased);
 routes.get('/:id', MediaController.getById);
 routes.post('/', MediaController.insert);

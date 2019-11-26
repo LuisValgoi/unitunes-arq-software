@@ -12,6 +12,29 @@ BaseController.getAllReleased = async function (req, res) {
   }
 };
 
+BaseController.getAllNews = async function (req, res) {
+  try {
+    let data = await MediaService.getAllNews();
+
+    return res.json(data);
+  } catch (e) {
+    console.log('Reported Error:', e);
+    res.status(500).send(e);
+  }
+};
+
+BaseController.getAllRecents = async function (req, res) {
+  try {
+    let data = await MediaService.getAllRecents();
+
+    return res.json(data);
+  } catch (e) {
+    console.log('Reported Error:', e);
+    res.status(500).send(e);
+  }
+};
+
+
 BaseController.getContent = async function (req, res) {
   try {
     let id = req.params.id;
