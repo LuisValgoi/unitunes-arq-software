@@ -25,6 +25,12 @@ BaseService.getAllRecents = async function () {
   return await Media.find(query);
 };
 
+BaseService.getAllAuthored = async function (userId) {
+  let query = { author: { $elemMatch: { $eq: userId} } };
+
+  return await Media.find(query);
+};
+
 BaseService.getById = async function (id) {
   return await Media.findById(id).select(['-content', '-image'])
 };
