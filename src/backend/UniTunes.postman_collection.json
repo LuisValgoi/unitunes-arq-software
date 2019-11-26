@@ -147,38 +147,6 @@
 					"response": []
 				},
 				{
-					"name": "RecoverPass",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "http://localhost:3333/user/:id/password/recovery",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3333",
-							"path": [
-								"user",
-								":id",
-								"password",
-								"recovery"
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": ""
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "Me",
 					"request": {
 						"auth": {
@@ -1208,6 +1176,36 @@
 							"path": [
 								"media",
 								"recents"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Authored",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGRiMDZmY2ZmNDU1OTE1NmI5MGZlM2IiLCJpYXQiOjE1NzQ3Mzk0ODB9.GzdRfXrgeV-immRa5besRP8dKC4pedWeP7SdQuD_qto",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/media/authored",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"media",
+								"authored"
 							]
 						}
 					},
