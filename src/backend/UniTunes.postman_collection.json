@@ -964,7 +964,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"name\": \"Name\",\n  \"description\": \"Description\",\n  \"price\": 0.1,\n  \"category\": \"Category\",\n  \"author\": \"5dd5e34fa7ef6b0ae4f23da3\",\n  \"classification\": null,\n  \"content\": null,\n  \"image\": null,\n  \"isAvailable\": true,\n  \"isApropriated\": false\n}"
+							"raw": "{\n  \"name\": \"333\",\n  \"description\": \"444\",\n  \"price\": 0.1,\n  \"category\": \"Category\",\n  \"author\": \"5dd5e34fa7ef6b0ae4f23da3\",\n  \"classification\": null,\n  \"content\": null,\n  \"image\": null,\n  \"isAvailable\": true,\n  \"isAvailableSince\": null,\n  \"isApropriated\": false\n}"
 						},
 						"url": {
 							"raw": "http://localhost:3333/media",
@@ -992,7 +992,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"name\": \"Name\",\n  \"description\": \"Description 2\",\n  \"price\": 0.1,\n  \"category\": \"Category\",\n  \"author\": \"5dd5e34fa7ef6b0ae4f23da3\",\n  \"classification\": null,\n  \"content\": null,\n  \"image\": null,\n  \"isAvailable\": true,\n  \"isApropriated\": false\n}"
+							"raw": "{\n  \"name\": \"Name\",\n  \"description\": \"Description 2\",\n  \"price\": 0.1,\n  \"category\": \"Category\",\n  \"author\": \"5dd5e34fa7ef6b0ae4f23da3\",\n  \"classification\": null,\n  \"content\": null,\n  \"image\": null,\n  \"isAvailable\": true,\n  \"isAvailableSince\": null,\n  \"isApropriated\": false\n}"
 						},
 						"url": {
 							"raw": "http://localhost:3333/media/:id",
@@ -1492,6 +1492,200 @@
 							"port": "3333",
 							"path": [
 								"classification",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Album",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/album",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"album"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Recents",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/album/recents",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"album",
+								"recents"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "News",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/album/news",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"album",
+								"news"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/album/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"album",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Insert",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\" : \"name 03\",\n\t\"description\": \"desc 03\",\n\t\"medias\": null\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/album",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"album"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"medias\": null,\n    \"name\": \"name 03\",\n    \"description\": \"desc 03\",\n    \"createdAt\": \"2019-10-10T00:18:33.389Z\",\n    \"updatedAt\": \"2019-11-26T00:19:12.013Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/album/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"album",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/album/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"album",
 								":id"
 							],
 							"variable": [
