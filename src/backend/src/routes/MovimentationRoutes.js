@@ -1,15 +1,17 @@
 const express = require('express');
 const routes = express.Router();
 const MovimentationController = require('../controllers/MovimentationController');
+const auth = require('../middleware/auth');
 
-routes.get('/', MovimentationController.getAll);
-routes.get('/account/:id', MovimentationController.getAllByAccount);
-routes.get('/:id', MovimentationController.getById);
-routes.post('/', MovimentationController.insert);
-routes.put('/:id', MovimentationController.update);
-routes.delete('/:id', MovimentationController.remove);
-routes.get('/:id/receipt', MovimentationController.generateReceipt);
-routes.post('/seller/:id', MovimentationController.getAllBySeller);
+routes.get('/', auth, MovimentationController.getAll);
+routes.get('/account/:id', auth, MovimentationController.getAllByAccount);
+routes.get('/:id', auth, MovimentationController.getById);
+routes.post('/', auth, MovimentationController.insert);
+routes.put('/:id', auth, MovimentationController.update);
+routes.delete('/:id', auth, MovimentationController.remove);
+routes.get('/:id/receipt', auth, MovimentationController.generateReceipt);
+routes.post('/seller/:id', auth, MovimentationController.getAllBySeller);
+routes.get('/sales', auth, MovimentationController.getSalesValue);
 
 module.exports = routes; 
 
