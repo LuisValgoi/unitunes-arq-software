@@ -79,6 +79,20 @@ BaseController.recoverPassword = async function (req, res) {
   }
 };
 
+BaseController.remove = async function (req, res) {
+  try {
+    let currentUser = req.user;
+    let userId = req.params.id;
+
+    let data = await Service.remove(userId, currentUser);
+
+    return res.json(data);
+  } catch (e) {
+    console.log('Reported Error:', e);
+    res.status(500).send(e);
+  }
+};
+
 async function revogeSessionAfterRecovery(req) {
   let user = await UserService.getBy({ email: req.body.email });
   req.user = user;

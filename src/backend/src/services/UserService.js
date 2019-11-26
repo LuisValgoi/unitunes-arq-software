@@ -19,6 +19,14 @@ BaseService.getAdminSystem = async function () {
   return await User.findOne(query);
 };
 
+BaseService.remove = async function (userId, currentUser) {
+  if (currentUser['role'] != 'admin')
+    throw new Error('AccessDeniedException');
+
+  payload = { 'active': false };
+  return await User.findByIdAndDelete(userId,  payload, { new: true, useFindAndModify: false });
+};
+
 BaseService.recoverPassword = async function (email, newPassword) {
   let user = await User.findOneAndUpdate({ email }, { password: newPassword }, { new: true, useFindAndModify: false });
   validateUser(user);
@@ -49,7 +57,7 @@ BaseService.generateRandomString = async function () {
 };
 
 function validateUser(user) {
-  if (!user) {
+  if (!user || user['active'] == false) {
     throw new Error('UserNotFoundByEmail');
   }
 }
