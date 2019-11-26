@@ -2,6 +2,7 @@ const Movimentation = require('../models/Movimentation');
 const AccountService = require('./AccountService');
 const UserService = require('./UserService');
 const BaseService = require('./BaseService')(Movimentation);
+const UserHelper = require('../util/UserHelper');
 
 BaseService.getAllByAccount = async function (DTO) {
   Object.keys(DTO).forEach((key) => (!DTO[key]) && delete DTO[key]);
@@ -62,6 +63,21 @@ BaseService.insert = async function (model) {
 
   return await Movimentation.create(model);
 };
+
+BaseService.getSalesValue = async function (currentUser) {
+  UserHelper.validateUserAdmin(currentUser);
+
+  return await Movimentation.aggregate([
+    {
+      $group:
+      {
+        _id: null,
+        amount: { $sum: "$value" },
+        mediaCount: { $sum: "$media"}
+      } 
+    }
+  ])
+}
 
 function _validateMovimentation(movimentation) {
   if (!movimentation) {

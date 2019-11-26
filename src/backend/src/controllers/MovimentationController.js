@@ -43,5 +43,16 @@ BaseController.getAllBySeller = async function (req, res) {
   }
 };
 
+BaseController.getSalesValue = async function (req, res) {
+  try {
+    let data = await MovimentationService.getSalesValue(req.user);
+
+    return res.json(data);
+  } catch (e) {
+    console.log('Reported Error:', e);
+    res.status(500).send(e);
+  }
+};
+
 
 module.exports = BaseController;

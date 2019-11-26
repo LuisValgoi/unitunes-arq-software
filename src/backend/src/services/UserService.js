@@ -5,6 +5,7 @@ const BaseService = require('./BaseService')(User);
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const EmailHelper = require('../util/EmailHelper');
+const UserHelper = require('../util/UserHelper');
 
 BaseService.insert = async function (payload) {
   let accountId = await AccountService.generateAccountIdForUserCreation();
@@ -19,19 +20,26 @@ BaseService.getAdminSystem = async function () {
   return await User.findOne(query);
 };
 
+BaseService.remove = async function (userId, currentUser) {
+  UserHelper.validateUserAdmin(currentUser);
+  payload = { 'active': false };
+
+  return await User.findByIdAndDelete(userId,  payload, { new: true, useFindAndModify: false });
+};
+
 BaseService.recoverPassword = async function (email, newPassword) {
   let user = await User.findOneAndUpdate({ email }, { password: newPassword }, { new: true, useFindAndModify: false });
-  validateUser(user);
+  UserHelper.validateUser(user);
 
   return EmailHelper.sendMail(user.firstName, newPassword, user.email).catch(console.error);
 };
 
 BaseService.findByCredentials = async function (email, password) {
   let user = await User.findOne({ email });
-  validateUser(user);
+  UserHelper.validateUser(user);
 
   let isPasswordMatch = await bcrypt.compare(password, user.password);
-  validatePasswordMatch(isPasswordMatch);
+  UserHelper.validatePasswordMatch(isPasswordMatch);
 
   return user;
 };
@@ -47,17 +55,5 @@ BaseService.generateAuthToken = async function (user) {
 BaseService.generateRandomString = async function () {
 
 };
-
-function validateUser(user) {
-  if (!user) {
-    throw new Error('UserNotFoundByEmail');
-  }
-}
-
-function validatePasswordMatch(isPasswordMatch) {
-  if (!isPasswordMatch) {
-    throw new Error('UserNInvalidLoginCredentialsotFound');
-  }
-}
 
 module.exports = BaseService;
