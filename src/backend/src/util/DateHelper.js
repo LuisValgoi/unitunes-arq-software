@@ -8,7 +8,7 @@ module.exports = {
   },
 
   getQueryConsideringGivenDays(day) {
-    let minDate = calculateDate(new Date(), day);
+    let minDate = this.calculateDate(new Date(), day);
     let query = {
       createdAt: {
         $gte: minDate,
