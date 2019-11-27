@@ -3,7 +3,9 @@ const session = require('express-session');
 const routes = require('./routes/Routes');
 const cors = require('cors');
 const server = express();
-require('./db/config')
+global._ = require('./errors/ErrorThrower');
+require('./db/config');
+
 
 // server uses
 server.use(cors());
