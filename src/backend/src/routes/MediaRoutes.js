@@ -4,19 +4,19 @@ const MediaController = require('../controllers/MediaController');
 
 const auth = require('../middleware/auth');
 
-routes.get('/', MediaController.getAll);
-routes.get('/news', MediaController.getAllNews);
-routes.get('/recents', MediaController.getAllRecents);
-routes.get('/released', MediaController.getAllReleased);
+routes.get('/', auth, MediaController.getAll);
+routes.get('/news', auth, MediaController.getAllNews);
+routes.get('/recents', auth, MediaController.getAllRecents);
+routes.get('/released', auth, MediaController.getAllReleased);
 routes.get('/authored', auth, MediaController.getAllAuthored);
-routes.get('/:id', MediaController.getById);
-routes.post('/', MediaController.insert);
-routes.put('/:id', MediaController.update);
-routes.delete('/:id', MediaController.remove);
-routes.get('/:id/content', MediaController.getContent);
-routes.put('/:id/release', MediaController.release);
-routes.get('/:id/download', MediaController.download);
-routes.post('/:id/buy', MediaController.buy);
+routes.get('/:id', auth, MediaController.getById);
+routes.post('/', auth, MediaController.insert);
+routes.put('/:id', auth, MediaController.update);
+routes.delete('/:id', auth, MediaController.remove);
+routes.get('/:id/content', auth, MediaController.getContent);
+routes.put('/:id/release', auth, MediaController.release);
+routes.get('/:id/download', auth, MediaController.download);
+routes.post('/:id/buy', auth, MediaController.buy);
 
 module.exports = routes;
 
