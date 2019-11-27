@@ -31,7 +31,7 @@ BaseService.recoverPassword = async function (email, newPassword) {
   let user = await User.findOneAndUpdate({ email }, { password: newPassword }, { new: true, useFindAndModify: false });
   UsersValidator.validateUser(user);
 
-  return EmailHelper.sendMail(user.firstName, newPassword, user.email).catch(console.error);
+  return EmailHelper.sendMail(user.firstName, newPassword, user.email);
 };
 
 BaseService.findByCredentials = async function (email, password) {
