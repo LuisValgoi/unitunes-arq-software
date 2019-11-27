@@ -8,8 +8,10 @@ BaseController.getAllByUser = async function (req, res) {
 
     return res.json(data);
   } catch (e) {
-    console.log('Reported Error:', e);
-    res.status(500).send(e);
+    res.status(e.code).send({
+      code: e.code,
+      message: e.message
+    });
   }
 };
 

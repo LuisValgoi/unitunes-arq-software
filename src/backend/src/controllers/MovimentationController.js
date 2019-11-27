@@ -14,8 +14,10 @@ BaseController.getAllByAccount = async function (req, res) {
 
     return res.json(data);
   } catch (e) {
-    console.log('Reported Error:', e);
-    res.status(500).send(e);
+    res.status(e.code).send({
+      code: e.code,
+      message: e.message
+    });
   }
 };
 
@@ -26,8 +28,10 @@ BaseController.generateReceipt = async function (req, res) {
 
     return res.json(data);
   } catch (e) {
-    console.log('Reported Error:', e);
-    res.status(500).send(e);
+    res.status(e.code).send({
+      code: e.code,
+      message: e.message
+    });
   }
 };
 
@@ -38,8 +42,10 @@ BaseController.getAllBySeller = async function (req, res) {
 
     return res.json(data);
   } catch (e) {
-    console.log('Reported Error:', e);
-    res.status(500).send(e);
+    res.status(e.code).send({
+      code: e.code,
+      message: e.message
+    });
   }
 };
 
@@ -49,8 +55,10 @@ BaseController.getSalesValue = async function (req, res) {
 
     return res.json(data);
   } catch (e) {
-    console.log('Reported Error:', e);
-    res.status(500).send(e);
+    res.status(e.code).send({
+      code: e.code,
+      message: e.message
+    });
   }
 };
 

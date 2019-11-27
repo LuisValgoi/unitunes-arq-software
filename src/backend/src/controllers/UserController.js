@@ -10,8 +10,10 @@ BaseController.insert = async function (req, res) {
 
     return res.json({ data, token });
   } catch (e) {
-    console.log('Reported Error:', e);
-    res.status(500).send(e);
+    res.status(e.code).send({
+      code: e.code,
+      message: e.message
+    });
   }
 };
 
@@ -19,8 +21,10 @@ BaseController.me = async function (req, res) {
   try {
     res.json(req.user);
   } catch (e) {
-    console.log('Reported Error:', e);
-    res.status(500).send(e);
+    res.status(e.code).send({
+      code: e.code,
+      message: e.message
+    });
   }
 };
 
@@ -36,8 +40,10 @@ BaseController.login = async function (req, res) {
     res.json({ user, token });
 
   } catch (e) {
-    console.log('Reported Error:', e);
-    res.status(500).send(e);
+    res.status(e.code).send({
+      code: e.code,
+      message: e.message
+    });
   }
 };
 
@@ -49,8 +55,10 @@ BaseController.logout = async function (req, res) {
     await req.user.save();
     res.send();
   } catch (e) {
-    console.log('Reported Error:', e);
-    res.status(500).send(e);
+    res.status(e.code).send({
+      code: e.code,
+      message: e.message
+    });
   }
 };
 
@@ -60,8 +68,10 @@ BaseController.logoutAll = async function (req, res) {
     await req.user.save();
     res.send();
   } catch (e) {
-    console.log('Reported Error:', e);
-    res.status(500).send(e);
+    res.status(e.code).send({
+      code: e.code,
+      message: e.message
+    });
   }
 };
 
@@ -74,8 +84,10 @@ BaseController.recoverPassword = async function (req, res) {
 
     return res.json(data);
   } catch (e) {
-    console.log('Reported Error:', e);
-    res.status(500).send(e);
+    res.status(e.code).send({
+      code: e.code,
+      message: e.message
+    });
   }
 };
 
@@ -88,8 +100,10 @@ BaseController.remove = async function (req, res) {
 
     return res.json(data);
   } catch (e) {
-    console.log('Reported Error:', e);
-    res.status(500).send(e);
+    res.status(e.code).send({
+      code: e.code,
+      message: e.message
+    });
   }
 };
 

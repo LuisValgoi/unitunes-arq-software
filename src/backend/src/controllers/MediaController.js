@@ -7,8 +7,10 @@ BaseController.getAllReleased = async function (req, res) {
 
     return res.json(data);
   } catch (e) {
-    console.log('Reported Error:', e);
-    res.status(500).send(e);
+    res.status(e.code).send({
+      code: e.code,
+      message: e.message
+    });
   }
 };
 
@@ -18,8 +20,10 @@ BaseController.getAllNews = async function (req, res) {
 
     return res.json(data);
   } catch (e) {
-    console.log('Reported Error:', e);
-    res.status(500).send(e);
+    res.status(e.code).send({
+      code: e.code,
+      message: e.message
+    });
   }
 };
 
@@ -29,8 +33,10 @@ BaseController.getAllRecents = async function (req, res) {
 
     return res.json(data);
   } catch (e) {
-    console.log('Reported Error:', e);
-    res.status(500).send(e);
+    res.status(e.code).send({
+      code: e.code,
+      message: e.message
+    });
   }
 };
 
@@ -41,8 +47,10 @@ BaseController.getAllAuthored = async function (req, res) {
 
     return res.json(data);
   } catch (e) {
-    console.log('Reported Error:', e);
-    res.status(500).send(e);
+    res.status(e.code).send({
+      code: e.code,
+      message: e.message
+    });
   }
 };
 
@@ -53,8 +61,10 @@ BaseController.getContent = async function (req, res) {
 
     return res.json(data);
   } catch (e) {
-    console.log('Reported Error:', e);
-    res.status(500).send(e);
+    res.status(e.code).send({
+      code: e.code,
+      message: e.message
+    });
   }
 };
 
@@ -65,8 +75,10 @@ BaseController.release = async function (req, res) {
 
     return res.json(data);
   } catch (e) {
-    console.log('Reported Error:', e);
-    res.status(500).send(e);
+    res.status(e.code).send({
+      code: e.code,
+      message: e.message
+    });
   }
 };
 
@@ -77,8 +89,10 @@ BaseController.download = async function (req, res) {
 
     return res.json(data);
   } catch (e) {
-    console.log('Reported Error:', e);
-    res.status(500).send(e);
+    res.status(e.code).send({
+      code: e.code,
+      message: e.message
+    });
   }
 };
 
@@ -90,8 +104,10 @@ BaseController.buy = async function (req, res) {
 
     return res.json(data);
   } catch (e) {
-    console.log('Reported Error:', e);
-    res.status(500).send(e);
+    res.status(e.code).send({
+      code: e.code,
+      message: e.message
+    });
   }
 };
 
@@ -102,8 +118,10 @@ BaseController.setMidiaInappropriate = async function (req, res) {
 
     return res.json(data);
   } catch (e) {
-    console.log('Reported Error:', e);
-    res.status(500).send(e);
+    res.status(e.code).send({
+      code: e.code,
+      message: e.message
+    });
   }
 };
 
