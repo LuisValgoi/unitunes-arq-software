@@ -1,7 +1,8 @@
 const express = require('express');
 const routes = express.Router();
-const auth = require('../middleware/auth');
 const ClassificationController = require('../controllers/ClassificationController');
+
+const auth = require('../middleware/auth');
 
 routes.get('/', auth, ClassificationController.getAll);
 routes.get('/:id', auth, ClassificationController.getById);

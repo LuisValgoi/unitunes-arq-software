@@ -1,7 +1,8 @@
 const express = require('express');
 const routes = express.Router();
-const auth = require('../middleware/auth');
 const FavoriteController = require('../controllers/FavoriteController');
+
+const auth = require('../middleware/auth');
 
 routes.get('/', auth, FavoriteController.getAll);
 routes.get('/user/:id', auth, FavoriteController.getAllByUser);

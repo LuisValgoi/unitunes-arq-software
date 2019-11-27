@@ -1,7 +1,8 @@
 const express = require('express');
 const routes = express.Router();
-const auth = require('../middleware/auth');
 const UniversityController = require('../controllers/UniversityController');
+
+const auth = require('../middleware/auth');
 
 routes.get('/', auth, UniversityController.getAll);
 routes.get('/:id', auth, UniversityController.getById);

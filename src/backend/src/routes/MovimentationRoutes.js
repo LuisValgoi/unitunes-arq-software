@@ -1,6 +1,7 @@
 const express = require('express');
 const routes = express.Router();
 const MovimentationController = require('../controllers/MovimentationController');
+
 const auth = require('../middleware/auth');
 
 routes.get('/', auth, MovimentationController.getAll);

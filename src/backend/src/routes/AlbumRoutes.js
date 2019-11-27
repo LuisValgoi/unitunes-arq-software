@@ -1,7 +1,8 @@
 const express = require('express');
 const routes = express.Router();
-const auth = require('../middleware/auth');
 const AlbumController = require('../controllers/AlbumController');
+
+const auth = require('../middleware/auth');
 
 routes.get('/', auth, AlbumController.getAll);
 routes.get('/news', auth, AlbumController.getAllNews);
