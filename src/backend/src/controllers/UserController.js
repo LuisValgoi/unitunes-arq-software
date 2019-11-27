@@ -25,14 +25,12 @@ BaseController.me = async function (req, res) {
 BaseController.login = async function (req, res) {
   try {
     let user = await UserService.findByCredentials(req.body.email, req.body.password);
-
     if (!user) {
       return res.status(401).send({ error: 'Login failed! Check authentication credentials' })
     }
 
     let token = await UserService.generateAuthToken(user);
     res.json({ user, token });
-
   } catch (e) {
     ErrorThrower.redirect(res, e);
   }
