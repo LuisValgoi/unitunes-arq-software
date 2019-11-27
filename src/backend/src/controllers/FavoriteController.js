@@ -8,7 +8,7 @@ BaseController.getAllByUser = async function (req, res) {
 
     return res.json(data);
   } catch (e) {
-    ErrorThrower.redirect(res, e);
+    Thrower.redirect(res, e);
   }
 };
 

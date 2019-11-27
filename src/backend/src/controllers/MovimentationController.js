@@ -14,7 +14,7 @@ BaseController.getAllByAccount = async function (req, res) {
 
     return res.json(data);
   } catch (e) {
-    ErrorThrower.redirect(res, e);
+    Thrower.redirect(res, e);
   }
 };
 
@@ -25,7 +25,7 @@ BaseController.generateReceipt = async function (req, res) {
 
     return res.json(data);
   } catch (e) {
-    ErrorThrower.redirect(res, e);
+    Thrower.redirect(res, e);
   }
 };
 
@@ -36,7 +36,7 @@ BaseController.getAllBySeller = async function (req, res) {
 
     return res.json(data);
   } catch (e) {
-    ErrorThrower.redirect(res, e);
+    Thrower.redirect(res, e);
   }
 };
 
@@ -46,7 +46,7 @@ BaseController.getSalesValue = async function (req, res) {
 
     return res.json(data);
   } catch (e) {
-    ErrorThrower.redirect(res, e);
+    Thrower.redirect(res, e);
   }
 };
 

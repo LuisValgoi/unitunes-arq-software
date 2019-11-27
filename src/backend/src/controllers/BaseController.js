@@ -7,7 +7,7 @@ module.exports = function (Service) {
 
       return res.json(data);
     } catch (e) {
-      ErrorThrower.redirect(res, e);
+      Thrower.redirect(res, e);
     }
   }
 
@@ -18,7 +18,7 @@ module.exports = function (Service) {
 
       return res.json(data);
     } catch (e) {
-      ErrorThrower.redirect(res, e);
+      Thrower.redirect(res, e);
     }
   },
 
@@ -29,7 +29,7 @@ module.exports = function (Service) {
 
       return res.json(data);
     } catch (e) {
-      ErrorThrower.redirect(res, e);
+      Thrower.redirect(res, e);
     }
   },
 
@@ -41,7 +41,7 @@ module.exports = function (Service) {
 
       return res.json(data);
     } catch (e) {
-      ErrorThrower.redirect(res, e);
+      Thrower.redirect(res, e);
     }
   },
 
@@ -52,7 +52,7 @@ module.exports = function (Service) {
 
       return res.json(data);
     } catch (e) {
-      ErrorThrower.redirect(res, e);
+      Thrower.redirect(res, e);
     }
   }
 

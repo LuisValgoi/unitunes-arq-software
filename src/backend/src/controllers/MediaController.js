@@ -7,7 +7,7 @@ BaseController.getAllReleased = async function (req, res) {
 
     return res.json(data);
   } catch (e) {
-    ErrorThrower.redirect(res, e);
+    Thrower.redirect(res, e);
   }
 };
 
@@ -17,7 +17,7 @@ BaseController.getAllNews = async function (req, res) {
 
     return res.json(data);
   } catch (e) {
-    ErrorThrower.redirect(res, e);
+    Thrower.redirect(res, e);
   }
 };
 
@@ -27,7 +27,7 @@ BaseController.getAllRecents = async function (req, res) {
 
     return res.json(data);
   } catch (e) {
-    ErrorThrower.redirect(res, e);
+    Thrower.redirect(res, e);
   }
 };
 
@@ -38,7 +38,7 @@ BaseController.getAllAuthored = async function (req, res) {
 
     return res.json(data);
   } catch (e) {
-    ErrorThrower.redirect(res, e);
+    Thrower.redirect(res, e);
   }
 };
 
@@ -49,7 +49,7 @@ BaseController.getContent = async function (req, res) {
 
     return res.json(data);
   } catch (e) {
-    ErrorThrower.redirect(res, e);
+    Thrower.redirect(res, e);
   }
 };
 
@@ -74,7 +74,7 @@ BaseController.download = async function (req, res) {
 
     return res.json(data);
   } catch (e) {
-    ErrorThrower.redirect(res, e);
+    Thrower.redirect(res, e);
   }
 };
 
@@ -86,7 +86,7 @@ BaseController.buy = async function (req, res) {
 
     return res.json(data);
   } catch (e) {
-    ErrorThrower.redirect(res, e);
+    Thrower.redirect(res, e);
   }
 };
 
@@ -97,7 +97,7 @@ BaseController.setMidiaInappropriate = async function (req, res) {
 
     return res.json(data);
   } catch (e) {
-    ErrorThrower.redirect(res, e);
+    Thrower.redirect(res, e);
   }
 };
 

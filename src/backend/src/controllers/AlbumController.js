@@ -7,7 +7,7 @@ BaseController.getAllNews = async function (req, res) {
 
     return res.json(data);
   } catch (e) {
-    ErrorThrower.redirect(res, e);
+    Thrower.redirect(res, e);
   }
 };
 
@@ -17,7 +17,7 @@ BaseController.getAllRecents = async function (req, res) {
 
     return res.json(data);
   } catch (e) {
-    ErrorThrower.redirect(res, e);
+    Thrower.redirect(res, e);
   }
 };
 

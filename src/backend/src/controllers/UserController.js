@@ -10,7 +10,7 @@ BaseController.insert = async function (req, res) {
 
     return res.json({ data, token });
   } catch (e) {
-    ErrorThrower.redirect(res, e);
+    Thrower.redirect(res, e);
   }
 };
 
@@ -18,7 +18,7 @@ BaseController.me = async function (req, res) {
   try {
     res.json(req.user);
   } catch (e) {
-    ErrorThrower.redirect(res, e);
+    Thrower.redirect(res, e);
   }
 };
 
@@ -32,7 +32,7 @@ BaseController.login = async function (req, res) {
     let token = await UserService.generateAuthToken(user);
     res.json({ user, token });
   } catch (e) {
-    ErrorThrower.redirect(res, e);
+    Thrower.redirect(res, e);
   }
 };
 
@@ -44,7 +44,7 @@ BaseController.logout = async function (req, res) {
     await req.user.save();
     res.send();
   } catch (e) {
-    ErrorThrower.redirect(res, e);
+    Thrower.redirect(res, e);
   }
 };
 
@@ -54,7 +54,7 @@ BaseController.logoutAll = async function (req, res) {
     await req.user.save();
     res.send();
   } catch (e) {
-    ErrorThrower.redirect(res, e);
+    Thrower.redirect(res, e);
   }
 };
 
@@ -67,7 +67,7 @@ BaseController.recoverPassword = async function (req, res) {
 
     return res.json(data);
   } catch (e) {
-    ErrorThrower.redirect(res, e);
+    Thrower.redirect(res, e);
   }
 };
 
@@ -80,7 +80,7 @@ BaseController.remove = async function (req, res) {
 
     return res.json(data);
   } catch (e) {
-    ErrorThrower.redirect(res, e);
+    Thrower.redirect(res, e);
   }
 };
 
