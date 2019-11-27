@@ -1,14 +1,15 @@
 const express = require('express');
 const routes = express.Router();
-const auth = require('../middleware/auth');
 const AccountController = require('../controllers/AccountController');
 
+const auth = require('../middleware/auth');
+
 routes.get('/', auth, AccountController.getAll);
-routes.get('/:id', atuh,  AccountController.getById)
+routes.get('/:id', auth, AccountController.getById)
 routes.post('/', auth, AccountController.insert);
 routes.delete('/:id', auth, AccountController.remove);
 routes.get('/:id/credit', auth, AccountController.viewCredit);
-routes.put('/:id/credit', atuh, AccountController.addCredit);
+routes.put('/:id/credit', auth, AccountController.addCredit);
 
 module.exports = routes;
 
