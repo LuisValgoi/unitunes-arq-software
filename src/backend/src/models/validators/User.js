@@ -1,17 +1,17 @@
 module.exports = {
   validateUser(user) {
     if (!user || user['active'] == false) {
-      throw new Error('UserNotFoundByEmail');
+      throw new NotFoundError(Constants.EXCEPTIONS.USER_NOT_FOUND);
     }
   },
   validateUserAdmin(user) {
     if (user['role'] != 'admin') {
-      throw new Error('AccessDeniedException');
+      throw new UnauthorizedError(Constants.EXCEPTIONS.UNAUTHORIZED);
     }
   },
   validatePasswordMatch(isPasswordMatch) {
     if (!isPasswordMatch) {
-      throw new Error('UserNInvalidLoginCredentialsotFound');
+      throw new UnauthorizedError(Constants.EXCEPTIONS.LOGIN_FAILED);
     }
   }
 };
