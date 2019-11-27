@@ -27,7 +27,7 @@ BaseService.getAllRecents = async function () {
 };
 
 BaseService.getAllAuthored = async function (userId) {
-  let query = { author: { $elemMatch: { $eq: userId} } };
+  let query = { author: { $elemMatch: { $eq: userId } } };
 
   return await Media.find(query);
 };
@@ -54,10 +54,11 @@ BaseService.download = async function (id) {
 BaseService.buy = async function (movimentation) {
   let data = await MovimentationService.insert(movimentation);
 
-  await LibraryService.insert({
+  let libraryPayload = {
     'user': movimentation['buyer'],
     'media': movimentation['media']
-  });
+  };
+  await LibraryService.insert(libraryPayload);
 
   return data;
 };
@@ -66,7 +67,7 @@ BaseService.setMidiaInappropriate = async function (mediaId, currentUser) {
   UsersValidator.validateUserAdmin(currentUser);
   payload = { 'isApropriated': false };
 
-  return await Media.findByIdAndDelete(mediaId,  payload, { new: true, useFindAndModify: false });
+  return await Media.findByIdAndDelete(mediaId, payload, { new: true, useFindAndModify: false });
 };
 
 module.exports = BaseService;
