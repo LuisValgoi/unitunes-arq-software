@@ -8,10 +8,7 @@ BaseController.getAllByMedia = async function (req, res) {
 
     return res.json(data);
   } catch (e) {
-    res.status(e.code).send({
-      code: e.code,
-      message: e.message
-    });
+    ErrorThrower.redirect(res, e);
   }
 };
 
@@ -22,10 +19,7 @@ BaseController.getScoreByMedia = async function (req, res) {
 
     return res.json(data);
   } catch (e) {
-    res.status(e.code).send({
-      code: e.code,
-      message: e.message
-    });
+    ErrorThrower.redirect(res, e);
   }
 };
 

@@ -14,10 +14,7 @@ BaseController.getAllByAccount = async function (req, res) {
 
     return res.json(data);
   } catch (e) {
-    res.status(e.code).send({
-      code: e.code,
-      message: e.message
-    });
+    ErrorThrower.redirect(res, e);
   }
 };
 
@@ -28,10 +25,7 @@ BaseController.generateReceipt = async function (req, res) {
 
     return res.json(data);
   } catch (e) {
-    res.status(e.code).send({
-      code: e.code,
-      message: e.message
-    });
+    ErrorThrower.redirect(res, e);
   }
 };
 
@@ -42,10 +36,7 @@ BaseController.getAllBySeller = async function (req, res) {
 
     return res.json(data);
   } catch (e) {
-    res.status(e.code).send({
-      code: e.code,
-      message: e.message
-    });
+    ErrorThrower.redirect(res, e);
   }
 };
 
@@ -55,10 +46,7 @@ BaseController.getSalesValue = async function (req, res) {
 
     return res.json(data);
   } catch (e) {
-    res.status(e.code).send({
-      code: e.code,
-      message: e.message
-    });
+    ErrorThrower.redirect(res, e);
   }
 };
 

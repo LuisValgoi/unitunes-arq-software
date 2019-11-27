@@ -10,10 +10,7 @@ BaseController.insert = async function (req, res) {
 
     return res.json({ data, token });
   } catch (e) {
-    res.status(e.code).send({
-      code: e.code,
-      message: e.message
-    });
+    ErrorThrower.redirect(res, e);
   }
 };
 
@@ -21,10 +18,7 @@ BaseController.me = async function (req, res) {
   try {
     res.json(req.user);
   } catch (e) {
-    res.status(e.code).send({
-      code: e.code,
-      message: e.message
-    });
+    ErrorThrower.redirect(res, e);
   }
 };
 
@@ -40,10 +34,7 @@ BaseController.login = async function (req, res) {
     res.json({ user, token });
 
   } catch (e) {
-    res.status(e.code).send({
-      code: e.code,
-      message: e.message
-    });
+    ErrorThrower.redirect(res, e);
   }
 };
 
@@ -55,10 +46,7 @@ BaseController.logout = async function (req, res) {
     await req.user.save();
     res.send();
   } catch (e) {
-    res.status(e.code).send({
-      code: e.code,
-      message: e.message
-    });
+    ErrorThrower.redirect(res, e);
   }
 };
 
@@ -68,10 +56,7 @@ BaseController.logoutAll = async function (req, res) {
     await req.user.save();
     res.send();
   } catch (e) {
-    res.status(e.code).send({
-      code: e.code,
-      message: e.message
-    });
+    ErrorThrower.redirect(res, e);
   }
 };
 
@@ -84,10 +69,7 @@ BaseController.recoverPassword = async function (req, res) {
 
     return res.json(data);
   } catch (e) {
-    res.status(e.code).send({
-      code: e.code,
-      message: e.message
-    });
+    ErrorThrower.redirect(res, e);
   }
 };
 
@@ -100,10 +82,7 @@ BaseController.remove = async function (req, res) {
 
     return res.json(data);
   } catch (e) {
-    res.status(e.code).send({
-      code: e.code,
-      message: e.message
-    });
+    ErrorThrower.redirect(res, e);
   }
 };
 

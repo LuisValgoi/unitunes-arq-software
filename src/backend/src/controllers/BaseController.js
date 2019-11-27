@@ -7,10 +7,7 @@ module.exports = function (Service) {
 
       return res.json(data);
     } catch (e) {
-      res.status(e.code).send({
-      code: e.code,
-      message: e.message
-    });
+      ErrorThrower.redirect(res, e);
     }
   }
 
@@ -21,10 +18,7 @@ module.exports = function (Service) {
 
       return res.json(data);
     } catch (e) {
-      res.status(e.code).send({
-      code: e.code,
-      message: e.message
-    });
+      ErrorThrower.redirect(res, e);
     }
   },
 
@@ -35,10 +29,7 @@ module.exports = function (Service) {
 
       return res.json(data);
     } catch (e) {
-      res.status(e.code).send({
-      code: e.code,
-      message: e.message
-    });
+      ErrorThrower.redirect(res, e);
     }
   },
 
@@ -50,10 +41,7 @@ module.exports = function (Service) {
 
       return res.json(data);
     } catch (e) {
-      res.status(e.code).send({
-      code: e.code,
-      message: e.message
-    });
+      ErrorThrower.redirect(res, e);
     }
   },
 
@@ -64,10 +52,7 @@ module.exports = function (Service) {
 
       return res.json(data);
     } catch (e) {
-      res.status(e.code).send({
-      code: e.code,
-      message: e.message
-    });
+      ErrorThrower.redirect(res, e);
     }
   }
 
