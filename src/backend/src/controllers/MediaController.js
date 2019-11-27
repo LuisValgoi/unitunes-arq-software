@@ -60,10 +60,7 @@ BaseController.release = async function (req, res) {
 
     return res.json(data);
   } catch (e) {
-    res.status(e.code).send({
-      code: e.code,
-      message: e.message
-    });
+    Thrower.redirect(res, e);
   }
 };
 

@@ -20,10 +20,7 @@ const auth = async function (req, res, next) {
 
     next();
   } catch (e) {
-    res.status(e.code).send({
-      code: e.code,
-      message: e.message
-    });
+    Thrower.redirect(res, e);
   }
 }
 module.exports = auth;

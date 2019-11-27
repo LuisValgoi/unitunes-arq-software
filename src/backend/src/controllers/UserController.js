@@ -26,7 +26,8 @@ BaseController.login = async function (req, res) {
   try {
     let user = await UserService.findByCredentials(req.body.email, req.body.password);
     if (!user) {
-      return res.status(401).send({ error: 'Login failed! Check authentication credentials' })
+      Thrower.redirect(res, e);
+      throw new UnauthorizedError(Constants.EXCEPTIONS.LOGIN_FAILED);
     }
 
     let token = await UserService.generateAuthToken(user);
@@ -75,7 +76,6 @@ BaseController.remove = async function (req, res) {
   try {
     let currentUser = req.user;
     let userId = req.params.id;
-
     let data = await Service.remove(userId, currentUser);
 
     return res.json(data);
