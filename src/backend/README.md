@@ -1,4 +1,4 @@
-# Frontend Project
+# Backend Project
 This folder has the purpose to run the backend of the project
 
 # Getting Started
@@ -12,3 +12,6 @@ This folder has the purpose to run the backend of the project
 - Run `npm run dev`
 
 - Access: `http://localhost:3333/`
+
+# Notes
+As this app requires auth, make sure to have a user in the database and be logged in.
