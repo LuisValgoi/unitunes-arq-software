@@ -12,7 +12,7 @@ let EXCEPTIONS = {
   BAD_REQUEST: 'Bad Request',
   NOT_FOUND: 'Not Found',
   PERSISTENCE: 'Persistence',
-  UNAUTHORIZED: 'Resource not authorized! Check if you are logged in.',
+  UNAUTHORIZED: 'Resource not authorized! Check your token session or if you are logged in.',
   LOGIN_FAILED: 'Login failed! Check your authentication credentials.',
   USER_NOT_FOUND: 'User Not Found! Check if your session has expired.'
 };
