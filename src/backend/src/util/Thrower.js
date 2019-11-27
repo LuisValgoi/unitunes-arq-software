@@ -1,8 +1,8 @@
 class Thrower {
   static redirect(res, error) {
     res.status(error.code).send({
-      code: error.code,
-      message: error.message
+      code: error ? error.code : 0,
+      message: error ? error.message : 'N/A'
     });
   }
 }
