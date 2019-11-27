@@ -16,12 +16,16 @@ let EXCEPTIONS = {
   LOGIN_FAILED: 'Login failed! Check your authentication credentials.',
   USER_NOT_FOUND: 'User Not Found! Check if your session has expired.'
 };
+let GOOD_MESSAGES = {
+  EMAIL_SENT_SUCCESS: 'Email sent sucessfully!'
+}
 
 class Constants {
   static get PASSWORD_LENGTH() { return PASSWORD_LENGTH; }
   static get PASSWORD_CHARACTERS() { return PASSWORD_CHARACTERS; }
   static get CATEGORIES() { return CATEGORIES; }
   static get EXCEPTIONS() { return EXCEPTIONS; }
+  static get GOOD_MESSAGES() { return GOOD_MESSAGES; }
 }
 
 module.exports = Constants;
