@@ -1,5 +1,3 @@
-const Constants = require('./Constants');
-
 module.exports = {
   generateRandomString() {
     let newStringLength = Constants.PASSWORD_LENGTH;

@@ -1,18 +1,26 @@
-const Categories = require('./Categories');
+const Categories = require('../util/Categories');
 
-module.exports = {
-  PASSWORD_LENGTH: 10,
-  PASSWORD_CHARACTERS: 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789',
-  CATEGORIES: {
-    MUSIC: Categories.getMusic(),
-    BOOK: Categories.getBook(),
-    MOVIE: Categories.getMovie(),
-    PODCAST: Categories.getPodcast(),
-  },
-  EXCEPTIONS: {
-    BAD_REQUEST: 'Bad Request',
-    NOT_FOUND: 'Not Found',
-    PERSISTENCE: 'Persistence',
-    UNAUTHORIZED: 'Not authorized to access this resource!'
-  }
+let PASSWORD_LENGTH = 10;
+let PASSWORD_CHARACTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+let CATEGORIES = {
+  MUSIC: Categories.getMusic(),
+  BOOK: Categories.getBook(),
+  MOVIE: Categories.getMovie(),
+  PODCAST: Categories.getPodcast(),
 };
+let EXCEPTIONS = {
+  BAD_REQUEST: 'Bad Request',
+  NOT_FOUND: 'Not Found',
+  PERSISTENCE: 'Persistence',
+  UNAUTHORIZED: 'Not authorized to access this resource!',
+  LOGIN_FAILED: 'Login failed! Check authentication credentials'
+};
+
+class Constants {
+  static get PASSWORD_LENGTH() { return PASSWORD_LENGTH; }
+  static get PASSWORD_CHARACTERS() { return PASSWORD_CHARACTERS; }
+  static get CATEGORIES() { return CATEGORIES; }
+  static get EXCEPTIONS() { return EXCEPTIONS; }
+}
+
+module.exports = Constants;
