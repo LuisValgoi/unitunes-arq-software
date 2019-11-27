@@ -8,4 +8,11 @@ BaseService.getAllByUser = async function (userId) {
   return data;
 };
 
+BaseService.getById = async function (userId, mediaId) {
+  let query = { 'user': userId, 'media': mediaId };
+  let data = await Library.find(query);
+
+  return data;
+};
+
 module.exports = BaseService;
