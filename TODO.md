@@ -1,0 +1,8 @@
+- implementar: expirar a sessao
+- implementar: validacoes na hora da persistencia x regra de negocio
+- implementar: `o criador da mídia deve ser notificado` com o motivo da remoção da sua midia. 
+- implementar: `criar` uma `lista de favoritos` para cada `tipo de mídia`
+- implementar: Adm poderá `consultar o nome das mídias vendidas` e o `total vendido` por: `dia`, `bimestre`, `ano`, `intervalo de data`.
+- implementar: As `mídias compradas` por um stakeholder serão `disponibilizadas na lista de mídias adquiridas` pelo mesmo.
+- implementar: O stakeholder poderá `visualizar, a qualquer momento, os seus créditos`.
+- implementar: O administrador poderá `verificar a quantidade` e o `valor total` de mídias vendidas `até a data corrente`.

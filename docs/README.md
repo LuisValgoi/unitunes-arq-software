@@ -43,8 +43,6 @@ Toda mídia é caracterizada por:
 - data de criação
 - categoria
 
-As categorias das mídias são encontradas em [`~/docs/categorias.md`](https://github.com/LuisValgoi/unitunes-arq-software/blob/master/docs/categorias.md).
-
 O sistema deverá ter uma `interface específica para cada tipo de mídia`.
 
 # Funcionalidades
