@@ -1,4 +1,4 @@
-class ErrorThrower {
+class Thrower {
   static redirect(res, error) {
     res.status(error.code).send({
       code: error.code,
@@ -7,4 +7,4 @@ class ErrorThrower {
   }
 }
 
-module.exports = ErrorThrower;
+module.exports = Thrower;
