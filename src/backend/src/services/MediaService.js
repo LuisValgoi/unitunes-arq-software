@@ -2,7 +2,7 @@ const Media = require('../models/Media');
 const MovimentationService = require('./MovimentationService');
 const LibraryService = require('./LibraryService');
 const BaseService = require('./BaseService')(Media);
-const UserHelper = require('../util/UserHelper');
+const UsersValidator = require('../models/validators/User');
 
 const DateHelper = require('../util/DateHelper');
 const QueryHelper = require('../util/QueryHelper');
@@ -63,7 +63,7 @@ BaseService.buy = async function (movimentation) {
 };
 
 BaseService.setMidiaInappropriate = async function (mediaId, currentUser) {
-  UserHelper.validateUserAdmin(currentUser);
+  UsersValidator.validateUserAdmin(currentUser);
   payload = { 'isApropriated': false };
 
   return await Media.findByIdAndDelete(mediaId,  payload, { new: true, useFindAndModify: false });

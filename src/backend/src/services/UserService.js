@@ -5,7 +5,7 @@ const BaseService = require('./BaseService')(User);
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const EmailHelper = require('../util/EmailHelper');
-const UserHelper = require('../util/UserHelper');
+const UsersValidator = require('../models/validators/User');
 
 BaseService.insert = async function (payload) {
   let accountId = await AccountService.generateAccountIdForUserCreation();
@@ -21,7 +21,7 @@ BaseService.getAdminSystem = async function () {
 };
 
 BaseService.remove = async function (userId, currentUser) {
-  UserHelper.validateUserAdmin(currentUser);
+  UsersValidator.validateUserAdmin(currentUser);
   payload = { 'active': false };
 
   return await User.findByIdAndDelete(userId,  payload, { new: true, useFindAndModify: false });
@@ -29,17 +29,17 @@ BaseService.remove = async function (userId, currentUser) {
 
 BaseService.recoverPassword = async function (email, newPassword) {
   let user = await User.findOneAndUpdate({ email }, { password: newPassword }, { new: true, useFindAndModify: false });
-  UserHelper.validateUser(user);
+  UsersValidator.validateUser(user);
 
   return EmailHelper.sendMail(user.firstName, newPassword, user.email).catch(console.error);
 };
 
 BaseService.findByCredentials = async function (email, password) {
   let user = await User.findOne({ email });
-  UserHelper.validateUser(user);
+  UsersValidator.validateUser(user);
 
   let isPasswordMatch = await bcrypt.compare(password, user.password);
-  UserHelper.validatePasswordMatch(isPasswordMatch);
+  UsersValidator.validatePasswordMatch(isPasswordMatch);
 
   return user;
 };
