@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "699efea8-93f4-4e66-809f-c7db1297b323",
+		"_postman_id": "091cea71-439f-4778-90df-32ca3a6f361a",
 		"name": "uniTunes",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -241,7 +241,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"email\": \"bruna.ferri@outlook.com\",\n\t\"password\": \"123456789\"\n}",
+							"raw": "{\n\t\"email\": \"vinicius.schuck@live.com\",\n\t\"password\": \"123456789\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -657,6 +657,40 @@
 								{
 									"key": "id",
 									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetSalesDetails",
+					"request": {
+						"auth": {
+							"type": "bearer"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/movimentation/sales/details?fromDate&toDate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"movimentation",
+								"sales",
+								"details"
+							],
+							"query": [
+								{
+									"key": "fromDate",
+									"value": null
+								},
+								{
+									"key": "toDate",
+									"value": null
 								}
 							]
 						}
@@ -2363,6 +2397,64 @@
 								{
 									"key": "enable",
 									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Library",
+			"item": [
+				{
+					"name": "GetAllByUser",
+					"request": {
+						"auth": {
+							"type": "bearer"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/library/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"library",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"request": {
+						"auth": {
+							"type": "bearer"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/library/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"library",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
 								}
 							]
 						}

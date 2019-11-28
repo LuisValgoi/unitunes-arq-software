@@ -13,6 +13,7 @@ routes.delete('/:id', auth, MovimentationController.remove);
 routes.get('/:id/receipt', auth, MovimentationController.generateReceipt);
 routes.post('/seller/:id', auth, MovimentationController.getAllBySeller);
 routes.get('/sales', auth, MovimentationController.getSalesValue);
+routes.get('/sales/details', auth, MovimentationController.getSalesDetails);
 
 module.exports = routes; 
 

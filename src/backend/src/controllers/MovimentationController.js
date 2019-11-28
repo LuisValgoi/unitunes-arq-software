@@ -50,5 +50,16 @@ BaseController.getSalesValue = async function (req, res) {
   }
 };
 
+BaseController.getSalesDetails = async function (req, res) {
+  try {
+    let fromDate = req.query.fromDate;
+    let toDate = req.query.toDate;
+    let data = await MovimentationService.getSalesDetails(fromDate, toDate, req.user);
+
+    return res.json(data);
+  } catch (e) {
+    Thrower.redirect(res, e);
+  }
+};
 
 module.exports = BaseController;

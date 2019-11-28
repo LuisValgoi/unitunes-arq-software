@@ -71,14 +71,33 @@ BaseService.getSalesValue = async function (currentUser) {
 
   return await Movimentation.aggregate([
     {
-      $group:
-      {
+      $group: {
         _id: null,
         amount: { $sum: '$value' },
         mediaCount: { $sum: '$media'}
       } 
     }
   ])
+}
+
+BaseService.getSalesDetails = async function (fromDate, toDate, currentUser) {
+  UsersValidator.validateUserAdmin(currentUser);
+
+  let query = [{
+    $group: {
+      _id: $_id,
+      mediaCount: { $sum: '$media'}
+    }
+  }]
+
+  if (fromDate && toDate) {
+    query.push({
+      $match: {
+        createdAt: { $gte: fromDate, $lte: toDate}
+      }
+    })
+  }
+  return await Movimentation.aggregate(query);
 }
 
 function _getSellerAmount(value) {
