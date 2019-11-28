@@ -10,9 +10,9 @@ routes.post('/me/logoutAll', auth, UserController.logoutAll);
 routes.post('/me/password/recover', UserController.recoverPassword);
 routes.get('/', auth, UserController.getAll);
 routes.get('/:id', auth, UserController.getById);
-routes.post('/', auth, UserController.insert);
 routes.put('/:id', auth, UserController.update);
 routes.delete('/:id', auth, UserController.remove);
+routes.post('/signup', UserController.signUp);
 routes.post('/login', UserController.login);
 
 module.exports = routes; 

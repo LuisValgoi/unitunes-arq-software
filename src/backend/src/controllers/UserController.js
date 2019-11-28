@@ -2,21 +2,22 @@ const UserService = require('../services/UserService');
 const BaseController = require('./BaseController')(UserService);
 const StringHelper = require('../util/StringHelper');
 
-BaseController.insert = async function (req, res) {
+
+BaseController.me = async function (req, res) {
+  try {
+    res.json(req.user);
+  } catch (e) {
+    Thrower.redirect(res, e);
+  }
+};
+
+BaseController.signUp = async function (req, res) {
   try {
     let payload = req.body;
     let data = await UserService.insert(payload);
     let token = await UserService.generateAuthToken(data);
 
     return res.json({ data, token });
-  } catch (e) {
-    Thrower.redirect(res, e);
-  }
-};
-
-BaseController.me = async function (req, res) {
-  try {
-    res.json(req.user);
   } catch (e) {
     Thrower.redirect(res, e);
   }
