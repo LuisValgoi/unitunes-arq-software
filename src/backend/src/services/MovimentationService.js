@@ -69,36 +69,43 @@ BaseService.insert = async function (model) {
 BaseService.getSalesValue = async function (currentUser) {
   UsersValidator.validateUserAdmin(currentUser);
 
-  return await Movimentation.aggregate([
-    {
-      $group: {
-        _id: null,
-        amount: { $sum: '$value' },
-        mediaCount: { $sum: '$media'}
-      } 
+  let query = [];
+  let groupBy = {
+    $group: {
+      _id: null,
+      amount: { $sum: '$value' },
+      count: { $sum: 1 }
     }
-  ])
-}
+  };
+  query.push(groupBy);
+
+  return await Movimentation.aggregate(query);
+};
 
 BaseService.getSalesDetails = async function (fromDate, toDate, currentUser) {
   UsersValidator.validateUserAdmin(currentUser);
 
-  let query = [{
-    $group: {
-      _id: $_id,
-      mediaCount: { $sum: '$media'}
-    }
-  }]
-
+  let query = [];
   if (fromDate && toDate) {
-    query.push({
+    let createdAt = {
       $match: {
-        createdAt: { $gte: fromDate, $lte: toDate}
+        createdAt: { $gte: new Date(fromDate), $lte: new Date(toDate) }
       }
-    })
+    };
+    query.push(createdAt);
   }
+
+  let groupBy = {
+    $group: {
+      _id: '$media',
+      amount: { $sum: '$value' },
+      count: { $sum: 1 }
+    }
+  };
+  query.push(groupBy);
+
   return await Movimentation.aggregate(query);
-}
+};
 
 function _getSellerAmount(value) {
   return value * 0.90;
