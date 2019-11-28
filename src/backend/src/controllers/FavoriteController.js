@@ -12,6 +12,18 @@ BaseController.getAllByUser = async function (req, res) {
   }
 };
 
+BaseController.removeMedia = async function (req, res) {
+  try {
+    let mediaId = req.params.id;
+    let userId = req.user._id;
+    let data = await FavoriteService.removeMedia(mediaId, userId);
+
+    return res.json(data);
+  } catch (e) {
+    Thrower.redirect(res, e);
+  }
+};
+
 module.exports = BaseController;
 
 /*

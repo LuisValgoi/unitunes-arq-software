@@ -10,5 +10,6 @@ routes.get('/:id', auth, FavoriteController.getById);
 routes.post('/', auth, FavoriteController.insert);
 routes.put('/:id', auth, FavoriteController.update);
 routes.delete('/:id', auth, FavoriteController.remove);
+routes.delete('/media/:id', auth, FavoriteController.removeMedia);
 
 module.exports = routes;

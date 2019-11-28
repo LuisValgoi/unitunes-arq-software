@@ -7,4 +7,10 @@ BaseService.getAllByUser = async function (userId) {
   return await Favorite.find(query);
 };
 
+BaseService.removeMedia = async function (mediaId, userId) {
+  let query = { 'user': userId, 'media': mediaId };
+
+  return await Favorite.deleteOne(query);
+};
+
 module.exports = BaseService;
