@@ -8,7 +8,7 @@ module.exports = {
   },
   validateUserAdmin(user) {
     if (user.role !== 'admin') {
-      throw new UnauthorizedError(Constants.EXCEPTIONS.UNAUTHORIZED);
+      throw new UnauthorizedError(Constants.EXCEPTIONS.ACCESS_DENIED);
     }
   },
   validatePasswordMatch(isPasswordMatch) {

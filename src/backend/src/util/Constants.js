@@ -13,6 +13,7 @@ let EXCEPTIONS = {
   NOT_FOUND: 'Not Found',
   PERSISTENCE: 'Persistence',
   UNAUTHORIZED: 'Resource not authorized! Check your token session or if you are logged in.',
+  ACCESS_DENIED: 'Access Denied! We have checked and you do not have access to access this resource.',
   LOGIN_FAILED: 'Login failed! Check your authentication credentials.',
   USER_NOT_FOUND: 'User Not Found! Check if your session has expired.'
 };
