@@ -8,8 +8,8 @@ mongoose.pluralize(null);
 
 const UserSchema = new Schema(
   {
-    firstName: { type: String, required: true, max: 255 },
-    lastName: { type: String, required: true, max: 255 },
+    firstName: { type: String, required: true, maxlength: 255 },
+    lastName: { type: String, required: true, mamaxlengthx: 255 },
     email: {
       type: String,
       required: true,
@@ -17,19 +17,24 @@ const UserSchema = new Schema(
       lowercase: true,
       validate: value => {
         if (!validator.isEmail(value)) {
-          throw new Error('InvalidEmailAddress')
+          throw new PersistenceError('InvalidEmailAddress')
         }
       }
     },
     password: {
       type: String,
       required: true,
-      minLength: 7
+      minLength: 7,
+      validate: value => {
+        if (value && value.length < 7) {
+          throw new PersistenceError('ShouldBeGreaterThanSevenDigits')
+        }
+      }
     },
     tokens: [{
       token: {
         type: String,
-        required: true
+        required: true,
       }
     }],
     university: { type: Schema.Types.ObjectId, ref: 'University' },

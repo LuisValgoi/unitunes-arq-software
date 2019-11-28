@@ -5,8 +5,8 @@ mongoose.pluralize(null);
 
 const AlbumSchema = new Schema(
   {
-    name: { type: String, required: true, max: 255 },
-    description: { type: String, required: true, max: 255 },
+    name: { type: String, required: true, maxlength: 255 },
+    description: { type: String, required: true, maxlength: 255 },
     medias: [{ type: Schema.Types.ObjectId, ref: 'Media' }],
   },
   {
