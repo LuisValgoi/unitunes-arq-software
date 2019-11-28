@@ -10,8 +10,12 @@ BaseService.getAllByUser = async function (userId) {
 
 BaseService.removeMedia = async function (mediaId, userId) {
   let query = { 'user': userId };
-
-  return await Library.update(query, { $pull: { 'media': { '_id': mediaId }}} );
+  let library = await Library.findOne(query);
+  if (!library) {
+    throw new PersistenceError('LibraryAndObviousMediaNotFound');
+  }
+  library.media.pop(mediaId);
+  return await library.save();
 };
 
 BaseService.insertMedia = async function (media, userId) {
