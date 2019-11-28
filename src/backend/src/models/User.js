@@ -27,7 +27,7 @@ const UserSchema = new Schema(
       minLength: 6,
       maxlength: 30,
       validate: value => {
-        if (value && (value.length < 7 || value.length > 30)) {
+        if (value && (value.length < 6 || value.length > 30)) {
           throw new PersistenceError('InvalidPasswordLength')
         }
       }
