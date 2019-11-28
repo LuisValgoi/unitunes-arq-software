@@ -122,7 +122,7 @@ Sendo assim, a uniTunes deverá apresentar as seguintes funcionalidades:
 iguais
   - O sistema deve garantir que o primeiro e último nome não são nulos
 
-# Ações
+# Requisitos
 - [x] Academico   poderá criar mídias
 - [x] Academico   poderá disponibilizar mídias
 - [x] Academico   poderá remover a mídia
