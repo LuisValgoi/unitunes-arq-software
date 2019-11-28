@@ -3,7 +3,7 @@ const BaseService = require('./BaseService')(Library);
 
 BaseService.getAllByUser = async function (userId) {
   let query = { 'user': userId };
-  let data = await Library.find(query);
+  let data = await Library.findOne(query);
 
   return data;
 };
@@ -16,8 +16,10 @@ BaseService.removeMedia = async function (mediaId, userId) {
 
 BaseService.insertMedia = async function (media, userId) {
   let query = { 'user': userId };
+  let library = await Library.findOne(query);
+  library = library ? library : await Library.create(query);
 
-  return await Library.update(query, { $push: { 'media': media }} );
+  return await Library.findByIdAndUpdate(library._id, { $addToSet: { 'media': media } }, { new: true, useFindAndModify: false });
 };
 
 
