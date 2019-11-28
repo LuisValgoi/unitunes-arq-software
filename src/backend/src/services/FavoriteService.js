@@ -9,8 +9,12 @@ BaseService.getAllByUser = async function (userId) {
 
 BaseService.removeMedia = async function (mediaId, userId) {
   let query = { 'user': userId };
-
-  return await Favorite.updateOne(query, { $pull: { 'media': { '_id': mediaId } } });
+  let favorite = await Favorite.findOne(query);
+  if (!favorite) {
+    throw new PersistenceError('FavoriteNotFound');
+  }
+  favorite.media.pop(mediaId);
+  return await favorite.save();
 };
 
 BaseService.insertMedia = async function (media, userId) {
