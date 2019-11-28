@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "699efea8-93f4-4e66-809f-c7db1297b323",
+		"_postman_id": "a9010911-3654-4d13-99ee-95fa67d0ebff",
 		"name": "uniTunes",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -95,7 +95,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"firstName\": \"João\",\r\n  \"lastName\": \"Carlos\",\r\n  \"login\": \"joao.carlos\",\r\n  \"email\": \"joao.carlos@live.com\",\r\n  \"lastLoginDate\": \"\",\r\n  \"password\": \"123456789\",\r\n  \"university\": \"5dc1f962bafce5626e6ab8d2\",\r\n  \"account\": null,\r\n  \"library\": null\r\n}"
+							"raw": "{\r\n  \"firstName\": \"Vinicius\",\r\n  \"lastName\": \"Schuck\",\r\n  \"login\": \"vinicius.schuck\",\r\n  \"email\": \"vinicius.schuck@live.com\",\r\n  \"lastLoginDate\": \"\",\r\n  \"password\": \"123456789\",\r\n  \"university\": \"5dc1f962bafce5626e6ab8d2\"\r\n}"
 						},
 						"url": {
 							"raw": "http://localhost:3333/user",
@@ -240,7 +240,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"email\": \"luisvalgoi@gmail.com\",\n\t\"password\": \"RIhdtVbQIw\"\n}",
+							"raw": "{\n\t\"email\": \"vinicius.schuck@live.com\",\n\t\"password\": \"123456789\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1103,7 +1103,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGRiMDZmY2ZmNDU1OTE1NmI5MGZlM2IiLCJpYXQiOjE1NzQ4MjgwMzR9.4Yh-gz_Q0fYLRDudvhFY1_neJl4yszpDlHQdDKY-gNY",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGRmMjgzOTNmYzkyYTJhNmMwMGVkNTQiLCJpYXQiOjE1NzQ5MDU5Mzh9.IhwhtTiUmVg_i2Zlvs9cbzmeco9mpHAqnWUaPP4UT6E",
 									"type": "string"
 								}
 							]
@@ -1236,7 +1236,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGRiMDZmY2ZmNDU1OTE1NmI5MGZlM2IiLCJpYXQiOjE1NzQ4MjgwMzR9.4Yh-gz_Q0fYLRDudvhFY1_neJl4yszpDlHQdDKY-gNY",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGRmMjgzOTNmYzkyYTJhNmMwMGVkNTQiLCJpYXQiOjE1NzQ5MDU5Mzh9.IhwhtTiUmVg_i2Zlvs9cbzmeco9mpHAqnWUaPP4UT6E",
 									"type": "string"
 								}
 							]
@@ -1250,7 +1250,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"name\": \"Name\",\n  \"description\": \"Description 2\",\n  \"price\": 0.1,\n  \"category\": \"Category\",\n  \"author\": \"5dd5e34fa7ef6b0ae4f23da3\",\n  \"classification\": null,\n  \"content\": null,\n  \"image\": null,\n  \"isAvailable\": true,\n  \"isAvailableSince\": null,\n  \"isApropriated\": false\n}"
+							"raw": "{\r\n    \"_id\": \"5ddaa9bcda818471f36883f0\",\r\n    \"author\": \"5ddf28393fc92a2a6c00ed54\",\r\n    \"name\": \"Name\",\r\n    \"description\": \"Description\",\r\n    \"price\": 0.1,\r\n    \"category\": \"Category\",\r\n    \"classification\": null,\r\n    \"content\": null,\r\n    \"image\": null,\r\n    \"isAvailable\": true,\r\n    \"isApropriated\": false\r\n}"
 						},
 						"url": {
 							"raw": "http://localhost:3333/media/:id",
@@ -2270,6 +2270,92 @@
 								{
 									"key": "id",
 									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Notification",
+			"item": [
+				{
+					"name": "Insert",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGRmMjgzOTNmYzkyYTJhNmMwMGVkNTQiLCJpYXQiOjE1NzQ5MDU5Mzh9.IhwhtTiUmVg_i2Zlvs9cbzmeco9mpHAqnWUaPP4UT6E",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"user\": \"5ddf28393fc92a2a6c00ed54\",\r\n  \"description\": \"The media has been blocked by inappropriate content!\",\r\n  \"enable\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/notification",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"notification"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllByUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGRmMjgzOTNmYzkyYTJhNmMwMGVkNTQiLCJpYXQiOjE1NzQ5MDU5Mzh9.IhwhtTiUmVg_i2Zlvs9cbzmeco9mpHAqnWUaPP4UT6E",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/notification?enable=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"notification"
+							],
+							"query": [
+								{
+									"key": "enable",
+									"value": "true"
 								}
 							]
 						}

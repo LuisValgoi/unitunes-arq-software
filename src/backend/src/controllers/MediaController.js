@@ -31,17 +31,6 @@ BaseController.getAllRecents = async function (req, res) {
   }
 };
 
-BaseController.getAllAuthored = async function (req, res) {
-  try {
-    let userId = req.user._id;
-    let data = await MediaService.getAllAuthored(userId);
-
-    return res.json(data);
-  } catch (e) {
-    Thrower.redirect(res, e);
-  }
-};
-
 BaseController.getContent = async function (req, res) {
   try {
     let id = req.params.id;
