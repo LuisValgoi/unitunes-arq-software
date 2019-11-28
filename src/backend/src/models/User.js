@@ -1,36 +1,28 @@
 const mongoose = require('mongoose');
 const { Schema, model } = require('mongoose');
-const validator = require('validator');
 const bcrypt = require('bcryptjs');
+const UsersValidator = require('../models/validators/User');
 
 mongoose.set('useCreateIndex', true);
 mongoose.pluralize(null);
 
 const UserSchema = new Schema(
   {
-    firstName: { type: String, required: true, maxlength: 255 },
-    lastName: { type: String, required: true, mamaxlengthx: 255 },
+    firstName: { type: String, required: true, maxlength: 255, validate: UsersValidator.validateDefaultCharacterLength.bind(this, 255) },
+    lastName: { type: String, required: true, mamaxlengthx: 255, validate: UsersValidator.validateDefaultCharacterLength.bind(this, 255) },
     email: {
       type: String,
       required: true,
       max: 255,
       lowercase: true,
-      validate: value => {
-        if (!validator.isEmail(value)) {
-          throw new PersistenceError('InvalidEmailAddress')
-        }
-      }
+      validate: UsersValidator.validateEmail.bind(this)
     },
     password: {
       type: String,
       required: true,
       minLength: 6,
       maxlength: 30,
-      validate: value => {
-        if (value && (value.length < 6 || value.length > 30)) {
-          throw new PersistenceError('InvalidPasswordLength')
-        }
-      }
+      validate: UsersValidator.validatePasswordLength.bind(this)
     },
     tokens: [{
       token: {
