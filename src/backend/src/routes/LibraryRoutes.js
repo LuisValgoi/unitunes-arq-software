@@ -4,7 +4,10 @@ const LibraryController = require('../controllers/LibraryController');
 
 const auth = require('../middleware/auth');
 
-routes.get('/medias/', auth, LibraryController.getAllByUser);
-routes.get('/medias/:id', auth, LibraryController.getById);
+routes.post('/', auth, LibraryController.insertMedia);
+routes.delete('/:id', auth, LibraryController.removeMedia);
+routes.get('/media', auth, LibraryController.getAllByUser);
+routes.post('/media', auth, LibraryController.insertMedia);
+routes.delete('/media/:id', auth, LibraryController.removeMedia);
 
 module.exports = routes;

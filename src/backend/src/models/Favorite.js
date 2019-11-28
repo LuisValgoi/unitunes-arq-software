@@ -5,7 +5,7 @@ mongoose.pluralize(null);
 
 const FavoriteSchema = new Schema(
   {
-    media: { type: Schema.Types.ObjectId, ref: 'Media' },
+    media: [{ type: Schema.Types.ObjectId, ref: 'Media' }],
     user: { type: Schema.Types.ObjectId, ref: 'User' },
     type: Number,
   },

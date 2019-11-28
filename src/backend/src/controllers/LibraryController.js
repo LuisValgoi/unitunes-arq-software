@@ -12,11 +12,23 @@ BaseController.getAllByUser = async function (req, res) {
   }
 };
 
-BaseController.getById = async function (req, res) {
+BaseController.removeMedia = async function (req, res) {
   try {
-    let userId = req.user._id;
     let mediaId = req.params.id;
-    let data = await LibraryService.getById(userId, mediaId);
+    let userId = req.user._id;
+    let data = await LibraryService.removeMedia(mediaId, userId);
+
+    return res.json(data);
+  } catch (e) {
+    Thrower.redirect(res, e);
+  }
+};
+
+BaseController.insertMedia = async function (req, res) {
+  try {
+    let media = req.body;
+    let userId = req.user._id;
+    let data = await LibraryService.insertMedia(media, userId);
 
     return res.json(data);
   } catch (e) {

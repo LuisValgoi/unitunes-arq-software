@@ -1832,6 +1832,45 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "InsertMedia",
+					"request": {
+						"auth": {
+							"type": "bearer"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"\",\r\n    \"description\": \"\",\r\n    \"price\": 0.0,\r\n    \"category\": \"\",\r\n    \"owner\": \"\",\r\n    \"author\": \"\",\r\n    \"classification\": \"\",\r\n    \"content\": \"\",\r\n    \"image\": \"\",\r\n    \"isAvailable\": true,\r\n    \"isApropriated\": true,\r\n    \"isAvailableSince\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/favorite/media",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"favorite",
+								"media"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"protocolProfileBehavior": {}
@@ -2418,7 +2457,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3333/library/",
+							"raw": "http://localhost:3333/library/media",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2426,19 +2465,96 @@
 							"port": "3333",
 							"path": [
 								"library",
-								""
+								"media"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "GetById",
+					"name": "InsertMedia",
 					"request": {
 						"auth": {
 							"type": "bearer"
 						},
-						"method": "GET",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"\",\r\n    \"description\": \"\",\r\n    \"price\": 0.0,\r\n    \"category\": \"\",\r\n    \"owner\": \"\",\r\n    \"author\": \"\",\r\n    \"classification\": \"\",\r\n    \"content\": \"\",\r\n    \"image\": \"\",\r\n    \"isAvailable\": true,\r\n    \"isApropriated\": true,\r\n    \"isAvailableSince\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/library/media",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"library",
+								"media"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Insert",
+					"request": {
+						"auth": {
+							"type": "bearer"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n    \"user\": \"\",\r\n    \"media\": []\r\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/library",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"library"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove",
+					"request": {
+						"auth": {
+							"type": "bearer"
+						},
+						"method": "DELETE",
 						"header": [],
 						"url": {
 							"raw": "http://localhost:3333/library/:id",
@@ -2449,6 +2565,36 @@
 							"port": "3333",
 							"path": [
 								"library",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RemoveMedia",
+					"request": {
+						"auth": {
+							"type": "bearer"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/library/media/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"library",
+								"media",
 								":id"
 							],
 							"variable": [

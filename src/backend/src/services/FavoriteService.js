@@ -8,9 +8,15 @@ BaseService.getAllByUser = async function (userId) {
 };
 
 BaseService.removeMedia = async function (mediaId, userId) {
-  let query = { 'user': userId, 'media': mediaId };
+  let query = { 'user': userId };
 
-  return await Favorite.deleteOne(query);
+  return await Favorite.update(query, { $pull: { 'media': { '_id': mediaId }}} );
+};
+
+BaseService.insertMedia = async function (media, userId) {
+  let query = { 'user': userId };
+
+  return await Favorite.update(query, { $push: { 'media': media }} );
 };
 
 module.exports = BaseService;
