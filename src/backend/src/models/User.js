@@ -10,8 +10,6 @@ const UserSchema = new Schema(
   {
     firstName: { type: String, required: true, max: 255 },
     lastName: { type: String, required: true, max: 255 },
-    login: { type: String, required: true, max: 255, unique: true },
-    lastLoginDate: Date,
     email: {
       type: String,
       required: true,
@@ -38,7 +36,8 @@ const UserSchema = new Schema(
     account: { type: Schema.Types.ObjectId, ref: 'Account' },
     library: { type: Schema.Types.ObjectId, ref: 'Library' },
     role: { type: String, default: 'academic' },
-    active: { type: Boolean, default: true }
+    active: { type: Boolean, default: true },
+    lastLoginDate: Date,
   },
   {
     timestamps: true,
