@@ -8,7 +8,6 @@ routes.get('/', auth, MediaController.getAll);
 routes.get('/news', auth, MediaController.getAllNews);
 routes.get('/recents', auth, MediaController.getAllRecents);
 routes.get('/released', auth, MediaController.getAllReleased);
-routes.get('/authored', auth, MediaController.getAllAuthored);
 routes.get('/:id', auth, MediaController.getById);
 routes.post('/', auth, MediaController.insert);
 routes.put('/:id', auth, MediaController.update);

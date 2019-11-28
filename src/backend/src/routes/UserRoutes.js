@@ -4,6 +4,7 @@ const UserController = require('../controllers/UserController');
 
 const auth = require('../middleware/auth');
 
+routes.post('/', auth, UserController.insert);
 routes.get('/me', auth, UserController.me);
 routes.post('/me/logout', auth, UserController.logout);
 routes.post('/me/logoutAll', auth, UserController.logoutAll);

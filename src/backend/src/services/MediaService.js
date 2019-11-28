@@ -1,6 +1,7 @@
 const Media = require('../models/Media');
 const MovimentationService = require('./MovimentationService');
 const LibraryService = require('./LibraryService');
+const NotificationService = require('./NotificationService');
 const BaseService = require('./BaseService')(Media);
 const UsersValidator = require('../models/validators/User');
 
@@ -22,12 +23,6 @@ BaseService.getAllNews = async function () {
 BaseService.getAllRecents = async function () {
   let minDate = DateHelper.getDateDeacreasedBy(new Date(), 60);
   let query = QueryHelper.getCreatedAtGreaterThan(minDate);
-
-  return await Media.find(query);
-};
-
-BaseService.getAllAuthored = async function (userId) {
-  let query = { author: { $elemMatch: { $eq: userId } } };
 
   return await Media.find(query);
 };
@@ -67,7 +62,15 @@ BaseService.setMidiaInappropriate = async function (mediaId, currentUser) {
   UsersValidator.validateUserAdmin(currentUser);
   payload = { 'isApropriated': false };
 
-  return await Media.findByIdAndDelete(mediaId, payload, { new: true, useFindAndModify: false });
+  var media = await Media.findOneAndUpdate(mediaId, payload, { new: true, useFindAndModify: false });
+
+  NotificationService.insert({
+    'user': media['author'],
+    'description': 'The media ('+ media['name'] +') has been blocked by inappropriate content!',
+    'enable': true,
+  });
+
+  return media;
 };
 
 module.exports = BaseService;

@@ -8,6 +8,7 @@ const FavoriteRoutes = require('./FavoriteRoutes');
 const LibraryRoutes = require('./LibraryRoutes');
 const ClassificationRoutes = require('./ClassificationRoutes');
 const AlbumRoutes = require('./AlbumRoutes');
+const NotificationRoutes = require('./NotificationRoutes');
 const AppRoutes = require('./AppRoutes');
 
 const routes = express.Router();
@@ -21,6 +22,7 @@ routes.use('/favorite', FavoriteRoutes);
 routes.use('/library', LibraryRoutes);
 routes.use('/classification', ClassificationRoutes);
 routes.use('/album', AlbumRoutes);
+routes.use('/notification', NotificationRoutes);
 routes.use('/', AppRoutes);
 
 module.exports = routes; 
