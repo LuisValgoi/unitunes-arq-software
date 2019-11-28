@@ -65,7 +65,7 @@ BaseService.setMidiaInappropriate = async function (mediaId, currentUser) {
   var media = await Media.findOneAndUpdate(mediaId, payload, { new: true, useFindAndModify: false });
 
   NotificationService.insert({
-    'user': media.author,
+    'user': media.owner,
     'description': 'The media (' + media.name + ') has been blocked by inappropriate content!',
     'enable': true,
   });
