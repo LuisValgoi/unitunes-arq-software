@@ -138,12 +138,12 @@ iguais
 - [x] Academico   poderá vender uma mídia (contemplado pelo release com preço)
 - [x] Academico   poderá fazer download uma mídia
 - [x] Academico   poderá criar uma lista de favoritos
-- [ ] Academico   poderá adicionar uma mídia à uma lista de favoritos
+- [x] Academico   poderá adicionar uma mídia à uma lista de favoritos
 - [x] Academico   poderá remover uma mídia à uma lista de favoritos
 - [x] Academico   poderá adicionar crédito à sua conta
 - [x] Academico   poderá visualizar os crédito da sua conta
 - [x] Sistema     deverá gerar um recibo após a compra
-- [ ] Academico   poderá consultar os nomes das mídias vendidas e o total vendido por: dia, bimestre, ano, intervalo de data.
+- [x] Academico   poderá consultar os nomes das mídias vendidas e o total vendido por: dia, bimestre, ano, intervalo de data.
 - [x] Admin       poderá verificar a qtd e o total de mídias vendidas até a data corrente.
 - [x] Academico   poderá fazer downloads das mídias compradas
 - [x] Academico   poderá fazer downloads das mídias livres
