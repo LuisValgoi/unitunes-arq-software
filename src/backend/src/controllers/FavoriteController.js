@@ -3,7 +3,7 @@ const BaseController = require('./BaseController')(FavoriteService);
 
 BaseController.getAllByUser = async function (req, res) {
   try {
-    let userId = req.params.id;
+    let userId = req.user._id;
     let data = await FavoriteService.getAllByUser(userId);
 
     return res.json(data);
