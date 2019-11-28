@@ -2343,7 +2343,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3333/notification",
+							"raw": "http://localhost:3333/notification?enable=true",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2351,6 +2351,12 @@
 							"port": "3333",
 							"path": [
 								"notification"
+							],
+							"query": [
+								{
+									"key": "enable",
+									"value": "true"
+								}
 							]
 						}
 					},
