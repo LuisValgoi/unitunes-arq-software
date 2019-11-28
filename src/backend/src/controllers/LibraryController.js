@@ -3,7 +3,7 @@ const BaseController = require('./BaseController')(LibraryService);
 
 BaseController.getAllByUser = async function (req, res) {
   try {
-    let userId = req.user['_id'];
+    let userId = req.user._id;
     let data = await LibraryService.getAllByUser(userId);
 
     return res.json(data);
@@ -14,7 +14,7 @@ BaseController.getAllByUser = async function (req, res) {
 
 BaseController.getById = async function (req, res) {
   try {
-    let userId = req.user['_id'];
+    let userId = req.user._id;
     let mediaId = req.params.id;
     let data = await LibraryService.getById(userId, mediaId);
 

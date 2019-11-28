@@ -4,7 +4,7 @@ const BaseService = require('./BaseService')(Notification);
 BaseService.getAllByUser = async function (userId, enable) {
   let query = { 'user': userId };
 
-  if (enable) query['enable'] = enable;
+  if (enable) query.enable = enable;
 
   let data = await Notification.find(query);
 

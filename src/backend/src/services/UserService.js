@@ -9,7 +9,7 @@ const UsersValidator = require('../models/validators/User');
 
 BaseService.insert = async function (payload) {
   let accountId = await AccountService.generateAccountIdForUserCreation();
-  payload['account'] = accountId;
+  payload.account = accountId;
 
   return await User.create(payload);
 };

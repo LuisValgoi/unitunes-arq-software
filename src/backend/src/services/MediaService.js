@@ -50,8 +50,8 @@ BaseService.buy = async function (movimentation) {
   let data = await MovimentationService.insert(movimentation);
 
   let libraryPayload = {
-    'user': movimentation['buyer'],
-    'media': movimentation['media']
+    'user': movimentation.buyer,
+    'media': movimentation.media
   };
   await LibraryService.insert(libraryPayload);
 
@@ -60,13 +60,13 @@ BaseService.buy = async function (movimentation) {
 
 BaseService.setMidiaInappropriate = async function (mediaId, currentUser) {
   UsersValidator.validateUserAdmin(currentUser);
-  payload = { 'isApropriated': false };
 
+  let payload = { 'isApropriated': false };
   var media = await Media.findOneAndUpdate(mediaId, payload, { new: true, useFindAndModify: false });
 
   NotificationService.insert({
-    'user': media['author'],
-    'description': 'The media ('+ media['name'] +') has been blocked by inappropriate content!',
+    'user': media.author,
+    'description': 'The media (' + media.name + ') has been blocked by inappropriate content!',
     'enable': true,
   });
 

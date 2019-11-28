@@ -12,7 +12,7 @@ BaseService.getScoreByMedia = async function (id) {
   let count = 0
 
   for (let item of result) {
-    count += item['value']
+    count += item.value
   }
 
   return count / result.length;

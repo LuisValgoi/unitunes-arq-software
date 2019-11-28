@@ -23,7 +23,7 @@ BaseService.getAllBySeller = async function (userId) {
 };
 
 BaseService.generateReceipt = async function (id) {
-  let movimentation = await Movimentation.findById(id).select(["description", "value", "createdAt", "buyer", "seller"]);
+  let movimentation = await Movimentation.findById(id).select(['description', 'value', 'createdAt', 'buyer', 'seller']);
   MovimentationValidator.validateMovimentation(movimentation);
 
   let description = movimentation.description;
@@ -49,19 +49,19 @@ BaseService.generateReceipt = async function (id) {
 };
 
 BaseService.insert = async function (model) {
-  let value = model['value'];
+  let value = model.value;
   MovimentationValidator.validateAmount(value);
 
-  let buyer = await UserService.getById(model['buyer']);
-  let account = await AccountService.getById(buyer['account']);
-  MovimentationValidator.validateFunds(account['currentAmount'], value);
+  let buyer = await UserService.getById(model.buyer);
+  let account = await AccountService.getById(buyer.account);
+  MovimentationValidator.validateFunds(account.currentAmount, value);
 
   let admin = await UserService.getAdminSystem();
-  let seller = await UserService.getById(model['seller']);
+  let seller = await UserService.getById(model.seller);
 
-  await AccountService.addCredit(seller['account'], _getSellerAmount(value));
-  await AccountService.addCredit(admin['account'], _getAdminAmount(value));
-  await AccountService.addCredit(buyer['account'], - Math.abs(value));
+  await AccountService.addCredit(seller.account, _getSellerAmount(value));
+  await AccountService.addCredit(admin.account, _getAdminAmount(value));
+  await AccountService.addCredit(buyer.account, - Math.abs(value));
 
   return await Movimentation.create(model);
 };
@@ -74,8 +74,8 @@ BaseService.getSalesValue = async function (currentUser) {
       $group:
       {
         _id: null,
-        amount: { $sum: "$value" },
-        mediaCount: { $sum: "$media"}
+        amount: { $sum: '$value' },
+        mediaCount: { $sum: '$media'}
       } 
     }
   ])
