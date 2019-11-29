@@ -21,8 +21,8 @@ const UserSchema = new Schema(
       type: String,
       required: true,
       minLength: 6,
-      maxlength: 30,
-      validate: UsersValidator.validatePasswordLength.bind(this)
+      // maxlength: 30,
+      // validate: UsersValidator.validatePasswordLength.bind(this)
     },
     tokens: [{
       token: {
