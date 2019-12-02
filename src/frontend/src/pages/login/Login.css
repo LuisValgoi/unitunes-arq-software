@@ -1,0 +1,40 @@
+/*  centralize everything in the middle */
+.login {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*  <VerticalLayout /> */
+.login .form {
+  background-color: white;
+  padding: 2%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+
+  width: 100%;
+  max-width: 500px;
+  justify-content: center;
+  align-self: center;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+}
+
+.login .form .logo {
+  max-width: 150px;
+}
+
+.login .form .container *{
+  width: 100%;
+  height: 30px;
+  flex-wrap: wrap;
+  margin: 1%;
+  border-radius: 4px;
+}
+
+.login .form .container label {
+  text-align: end;
+  float: right;
+}
