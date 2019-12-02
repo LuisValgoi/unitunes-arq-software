@@ -1,4 +1,4 @@
-/*  centralize everything in the middle */
+/*  Centralize */
 .login {
   height: 100%;
   display: flex;
@@ -6,7 +6,7 @@
   align-items: center;
 }
 
-/*  <VerticalLayout /> */
+/* set: VerticalLayout */
 .login .form {
   background-color: white;
   padding: 2%;
@@ -22,11 +22,13 @@
   text-align: center;
 }
 
+/* Image */
 .login .form .logo {
-  max-width: 150px;
+  max-width: 300px;
 }
 
-.login .form .container *{
+/* set: fill VerticalLayout */
+.login .form .container * {
   width: 100%;
   height: 30px;
   flex-wrap: wrap;
@@ -34,7 +36,44 @@
   border-radius: 4px;
 }
 
-.login .form .container label {
+/* Input */
+.login .form .container input {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  height: 48px;
+  padding: 0 20px;
+  font-size: 16px;
+  color: #666;
+}
+
+/* Input::Placeholder
+*/
+.login .form .container input::placeholder {
+  color: rgb(194, 188, 188);
+}
+
+/* Send Button */
+.login .form .container button {
+  border: 0;
+  border-radius: 4px;
+  height: 48px;
+  padding: 0 20px;
+  font-size: 16px;
+  background: #625b98;
+  color: white;
+  font-weight: lighter;
+  cursor: pointer;
+}
+
+/* Forgot Password */
+.login .form .container .forgotPassword {
+  width: auto;
+  width: 100%;
+  display: inline-block;
   text-align: end;
-  float: right;
+}
+
+/* Forgot Password > Label */
+.login .form .container .forgotPassword label {
+  color: #8b8b8b;
 }
