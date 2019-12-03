@@ -11,13 +11,14 @@ function Login() {
           <input type="email" placeholder="E-mail"></input>
           <input type="password" placeholder="Senha"></input>
           <button type="submit">Entrar</button>
-          <div className="forgotPassword">
-            <label>Esqueceu sua senha?</label>
-            <label><a href="">Clique aqui!</a></label>
-          </div>
         </div>
-        <div class="register">
-
+        <div className="forgotPassword">
+          <label>Esqueceu sua senha?</label>
+          <label><a href="">Clique aqui</a></label>
+        </div>
+        <div className="register">
+          <label>Ainda não possui conta?</label>
+          <label><a href="">Registre-se</a></label>
         </div>
       </form>
     </div>

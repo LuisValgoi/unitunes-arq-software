@@ -1,4 +1,4 @@
-/*  Centralize */
+/*  All */
 .login {
   height: 100%;
   display: flex;
@@ -6,37 +6,38 @@
   align-items: center;
 }
 
-/* set: VerticalLayout */
+/* Form */
 .login .form {
   background-color: white;
-  padding: 2%;
   border: 1px solid #ddd;
   border-radius: 4px;
 
   width: 100%;
+  padding: 2% 2% 1% 2%;
   max-width: 500px;
-  justify-content: center;
-  align-self: center;
-  align-items: center;
-  align-content: center;
   text-align: center;
 }
 
-/* Image */
+/* Form > Logo */
 .login .form .logo {
   max-width: 300px;
 }
 
-/* set: fill VerticalLayout */
+/* Form > Container */
+.login .form .container {
+  margin: 5px;
+}
+
+/* Form > Container > All */
 .login .form .container * {
   width: 100%;
   height: 30px;
   flex-wrap: wrap;
-  margin: 1%;
+  margin: 1% 2% 1% 1%;
   border-radius: 4px;
 }
 
-/* Input */
+/* Form > Container > Input */
 .login .form .container input {
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -46,13 +47,13 @@
   color: #666;
 }
 
-/* Input::Placeholder
+/* Form > Container > Input::Placeholder
 */
 .login .form .container input::placeholder {
   color: rgb(194, 188, 188);
 }
 
-/* Send Button */
+/* Form > Container > Button */
 .login .form .container button {
   border: 0;
   border-radius: 4px;
@@ -65,15 +66,42 @@
   cursor: pointer;
 }
 
-/* Forgot Password */
-.login .form .container .forgotPassword {
+/* Form > Container > Button:Hover */
+.login .form .container button:hover {
+  background: #8b85ba;
+}
+
+/* Form > Container > Button:Active*/
+.login .form .container button:active {
+  background: #534e79;
+}
+
+/* Form > Forgot */
+.login .form .forgotPassword {
   width: auto;
   width: 100%;
+  margin-top: 5px;
+  margin-bottom: 5px;
   display: inline-block;
   text-align: end;
 }
 
-/* Forgot Password > Label */
-.login .form .container .forgotPassword label {
-  color: #8b8b8b;
+/* Form > Forgot > Label */
+.login .form .forgotPassword label {
+  color: rgb(172, 172, 172);
+  margin-left: 5px;
+}
+
+/* Form > Register  */
+.login .form .register {
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+/* Form > Register > Label */
+.login .form .register label {
+  color: rgb(172, 172, 172);
+  margin-left: 5px;
 }
