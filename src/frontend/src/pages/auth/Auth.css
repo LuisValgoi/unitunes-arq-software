@@ -23,6 +23,12 @@
   max-width: 300px;
 }
 
+/* Form > Logo:Hover */
+.page .form .logo:hover {
+  transform: translateY(-3px);
+  transition: all 0.2s;
+}
+
 /* Form > Container */
 .page .form .container {
   margin: 5px;
