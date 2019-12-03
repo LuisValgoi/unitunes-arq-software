@@ -18,9 +18,7 @@ function Reset() {
         <div className="remember">
           <label>Lembrou de sua senha?</label>
           <label>
-            <Link to="/login">
-              <a href="#">Clique aqui</a>
-            </Link>
+            <Link to="/login">Clique aqui</Link>
           </label>
         </div>
       </form>

@@ -19,17 +19,13 @@ function Login() {
         <div className="forgotPassword">
           <label>Esqueceu sua senha?</label>
           <label>
-            <Link to="/reset">
-              <a href="">Clique aqui</a>
-            </Link>
+            <Link to="/reset">Clique aqui</Link>
           </label>
         </div>
         <div className="register">
           <label>Ainda não possui conta?</label>
           <label>
-            <Link to="/register">
-              <a href="#">Clique aqui</a>
-            </Link>
+            <Link to="/register">Clique aqui</Link>
           </label>
         </div>
       </form>
