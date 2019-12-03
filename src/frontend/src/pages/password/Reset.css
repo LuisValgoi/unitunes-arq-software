@@ -1,0 +1,91 @@
+/*  All */
+.reset {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Form */
+.reset .form {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+
+  width: 100%;
+  padding: 2% 2% 1% 2%;
+  max-width: 500px;
+  text-align: center;
+}
+
+/* Form > Logo */
+.reset .form .logo {
+  max-width: 300px;
+}
+
+/* Form > Container */
+.reset .form .container {
+  margin: 5px;
+}
+
+/* Form > Container > All */
+.reset .form .container * {
+  width: 100%;
+  height: 30px;
+  flex-wrap: wrap;
+  margin: 1% 2% 1% 1%;
+  border-radius: 4px;
+}
+
+/* Form > Container > Input */
+.reset .form .container input {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  height: 48px;
+  padding: 0 20px;
+  font-size: 16px;
+  color: #666;
+}
+
+/* Form > Container > Input::Placeholder
+*/
+.reset .form .container input::placeholder {
+  color: rgb(194, 188, 188);
+}
+
+/* Form > Container > Button */
+.reset .form .container button {
+  border: 0;
+  border-radius: 4px;
+  height: 48px;
+  padding: 0 20px;
+  font-size: 16px;
+  background: #625b98;
+  color: white;
+  font-weight: lighter;
+  cursor: pointer;
+}
+
+/* Form > Container > Button:Hover */
+.reset .form .container button:hover {
+  background: #8b85ba;
+}
+
+/* Form > Container > Button:Active*/
+.reset .form .container button:active {
+  background: #534e79;
+}
+
+/* Form > Register  */
+.reset .form .remember {
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+/* Form > Register > Label */
+.reset .form .remember label {
+  color: rgb(172, 172, 172);
+  margin-left: 5px;
+}

@@ -19,7 +19,7 @@ function Login() {
         <div className="forgotPassword">
           <label>Esqueceu sua senha?</label>
           <label>
-            <Link to="/password/reset">
+            <Link to="/reset">
               <a href="">Clique aqui</a>
             </Link>
           </label>
@@ -28,7 +28,7 @@ function Login() {
           <label>Ainda não possui conta?</label>
           <label>
             <Link to="/register">
-              <a href="#">Registre-se</a>
+              <a href="#">Clique aqui</a>
             </Link>
           </label>
         </div>

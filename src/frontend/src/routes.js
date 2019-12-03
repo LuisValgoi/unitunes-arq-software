@@ -13,7 +13,7 @@ function Routes() {
       <Route exact path="/" component={Home} />
       <Route exact path="/login" component={Login} />
       <Route exact path="/register" component={Register} />
-      <Route exact path="/password/reset" component={Reset} />
+      <Route exact path="/reset" component={Reset} />
     </BrowserRouter>
   );
 }
