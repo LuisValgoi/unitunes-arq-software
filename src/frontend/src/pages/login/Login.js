@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import "./Login.css";
 import logo from "../../assets/logo.png";
 
@@ -6,7 +8,9 @@ function Login() {
   return (
     <div className="login">
       <form className="form" method="post">
-        <img src={logo} className="logo" alt="logo" />
+        <Link to="/">
+          <img src={logo} className="logo" alt="logo" />
+        </Link>
         <div className="container">
           <input type="email" placeholder="E-mail"></input>
           <input type="password" placeholder="Senha"></input>
@@ -14,11 +18,19 @@ function Login() {
         </div>
         <div className="forgotPassword">
           <label>Esqueceu sua senha?</label>
-          <label><a href="">Clique aqui</a></label>
+          <label>
+            <Link to="/password/reset">
+              <a href="">Clique aqui</a>
+            </Link>
+          </label>
         </div>
         <div className="register">
           <label>Ainda não possui conta?</label>
-          <label><a href="">Registre-se</a></label>
+          <label>
+            <Link to="/register">
+              <a href="#">Registre-se</a>
+            </Link>
+          </label>
         </div>
       </form>
     </div>
