@@ -1,5 +1,5 @@
 /*  All */
-.reset {
+.page {
   height: 100%;
   display: flex;
   justify-content: center;
@@ -7,7 +7,7 @@
 }
 
 /* Form */
-.reset .form {
+.page .form {
   background-color: white;
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -19,26 +19,26 @@
 }
 
 /* Form > Logo */
-.reset .form .logo {
+.page .form .logo {
   max-width: 300px;
 }
 
 /* Form > Container */
-.reset .form .container {
+.page .form .container {
   margin: 5px;
 }
 
 /* Form > Container > All */
-.reset .form .container * {
+.page .form .container * {
   width: 100%;
   height: 30px;
   flex-wrap: wrap;
-  margin: 1% 2% 1% 1%;
+  margin: 1% 0;
   border-radius: 4px;
 }
 
 /* Form > Container > Input */
-.reset .form .container input {
+.page .form .container input {
   border: 1px solid #ddd;
   border-radius: 4px;
   height: 48px;
@@ -47,14 +47,22 @@
   color: #666;
 }
 
+/* Form > Container > Input:Active */
+.page .form .container input:active {
+  border: 1px solid #c9c9c9;
+  -moz-box-shadow: inset 0 0 3px #c9c9c9;
+  -webkit-box-shadow: inset 0 0 3px #c9c9c9;
+  box-shadow: inset 0 0 3px #c9c9c9;
+}
+
 /* Form > Container > Input::Placeholder
 */
-.reset .form .container input::placeholder {
+.page .form .container input::placeholder {
   color: rgb(194, 188, 188);
 }
 
 /* Form > Container > Button */
-.reset .form .container button {
+.page .form .container button {
   border: 0;
   border-radius: 4px;
   height: 48px;
@@ -67,25 +75,41 @@
 }
 
 /* Form > Container > Button:Hover */
-.reset .form .container button:hover {
+.page .form .container button:hover {
   background: #8b85ba;
 }
 
 /* Form > Container > Button:Active*/
-.reset .form .container button:active {
+.page .form .container button:active {
   background: #534e79;
 }
 
-/* Form > Register  */
-.reset .form .remember {
+/* Form > 1ST Section */
+.page .form .section-01 {
+  width: auto;
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: inline-block;
+  text-align: end;
+}
+
+/* Form > 1ST Section > Label */
+.page .form .section-01 label {
+  color: rgb(172, 172, 172);
+  margin-left: 5px;
+}
+
+/* Form > 2ND Section  */
+.page .form .section-02 {
   height: 60px;
   display: flex;
   justify-content: center;
   align-items: flex-end;
 }
 
-/* Form > Register > Label */
-.reset .form .remember label {
+/* Form > 2ND Section > Label */
+.page .form .section-02 label {
   color: rgb(172, 172, 172);
   margin-left: 5px;
 }

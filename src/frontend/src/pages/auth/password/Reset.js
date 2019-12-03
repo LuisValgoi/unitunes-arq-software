@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import "./Reset.css";
-import logo from "../../assets/logo.png";
+import "../Auth.css";
+import logo from "../../../assets/logo.png";
 
 function Reset() {
   return (
-    <div className="reset">
+    <div className="page">
       <form className="form" method="post">
         <Link to="/">
           <img src={logo} className="logo" alt="logo" />
@@ -15,7 +15,7 @@ function Reset() {
           <input type="email" placeholder="E-mail"></input>
           <button type="submit">Reset</button>
         </div>
-        <div className="remember">
+        <div className="section-02">
           <label>Lembrou de sua senha?</label>
           <label>
             <Link to="/login">Clique aqui</Link>

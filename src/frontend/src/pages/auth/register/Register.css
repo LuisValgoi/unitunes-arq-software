@@ -1,0 +1,11 @@
+/* Form > Container > Fields Splitted*/
+.page .form .container .splitLeft {
+  width: 49%;
+  float: left;
+}
+
+/* Form > Container > Fields Splitted*/
+.page .form .container .splitRight {
+  width: 49%;
+  float: right;
+}

@@ -2,10 +2,10 @@
 import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 
-import Login from "./pages/login/Login";
 import Home from "./pages/home/Home";
-import Register from "./pages/register/Register";
-import Reset from "./pages/password/Reset";
+import Login from "./pages/auth/login/Login";
+import Register from "./pages/auth/register/Register";
+import Reset from "./pages/auth/password/Reset";
 
 function Routes() {
   return (
