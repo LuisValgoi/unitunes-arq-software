@@ -60,7 +60,7 @@ function Reset() {
   );
 
   let errorHTML = (
-    <div className="section-02 error">
+    <div className="section-02">
       <label className="error">{errorMsg}</label>
       <label>
         <Link to="/login">Voltar</Link>
