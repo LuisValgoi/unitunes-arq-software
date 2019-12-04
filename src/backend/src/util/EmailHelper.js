@@ -23,7 +23,10 @@ module.exports = {
       html: htmlTemplate
     });
 
-    throw new OkMessage(Constants.GOOD_MESSAGES.EMAIL_SENT_SUCCESS);
+    return {
+      code: 200,
+      message: Constants.GOOD_MESSAGES.EMAIL_SENT_SUCCESS
+    };
   },
 
   getHTMLTemplate(firstName, password) {
