@@ -95,7 +95,7 @@
   width: auto;
   width: 100%;
   margin-top: 5px;
-  margin-bottom: 5px;
+  margin-bottom: 30px;
   display: inline-block;
   text-align: end;
 }
@@ -108,10 +108,10 @@
 
 /* Form > 2ND Section  */
 .page .form .section-02 {
-  height: 60px;
+  height: 30px;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
 }
 
 /* Form > 2ND Section > Label */
