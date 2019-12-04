@@ -15,7 +15,7 @@ let EXCEPTIONS = {
   UNAUTHORIZED: 'Resource not authorized! Check your token session or if you are logged in.',
   ACCESS_DENIED: 'Access Denied! We have checked and you do not have access to access this resource.',
   LOGIN_FAILED: 'Login failed! Check your authentication credentials.',
-  USER_NOT_FOUND: 'User Not Found! Check if your session has expired.'
+  USER_NOT_FOUND: 'User Not Found! Check your e-mail or if your session has expired.'
 };
 let GOOD_MESSAGES = {
   EMAIL_SENT_SUCCESS: 'Email sent sucessfully!'
