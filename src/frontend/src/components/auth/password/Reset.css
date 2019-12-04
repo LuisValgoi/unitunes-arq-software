@@ -1,0 +1,9 @@
+/* Form > 2ND Section > Label Error color */
+.page .form .section-02 label.error {
+  color: red;
+}
+
+/* Form > 2ND Section > Label Error color */
+.page .form .section-02 label.success {
+  color: rgb(29, 174, 29);
+}

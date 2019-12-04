@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import "../Auth.css";
-import "./Register.css";
+import "./Reset.css";
 import logo from "../../../assets/logo.png";
 import urls from "../../../services/urls";
 import api from "../../../services/api";
@@ -12,7 +12,7 @@ function Reset() {
   const [emailSent, setEmailSent] = useState(false);
   const [error, setError] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   async function onSubmit(e) {
     e.preventDefault();
@@ -43,7 +43,7 @@ function Reset() {
 
   let sucessHTML = (
     <div className="section-02">
-      <label>O usuário receberá um e-mail com a nova senha.</label>
+      <label className="success">O usuário recebeu um e-mail com a nova senha.</label>
       <label>
         <Link to="/login">Faça Login</Link>
       </label>
@@ -83,7 +83,7 @@ function Reset() {
         </Link>
         <div className="container">
           <input type="email" name="email" required={true} placeholder="E-mail" value={email} onChange={e => onChangeEmail(e.target.value)} />
-          <button type="submit" className={isLoading ? 'is-loading' : ''}>Reset</button>
+          <button type="submit" className={isLoading ? 'button is-link is-loading' : ''}>Reset</button>
         </div>
         {block}
       </form>
