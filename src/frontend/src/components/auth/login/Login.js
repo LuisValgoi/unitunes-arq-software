@@ -37,8 +37,9 @@ function Login() {
 
   function handleError(e) {
     setError(true);
-    setIsLoggedIn(false);
     setErrorMsg(e.response.data.message);
+    setIsLoggedIn(false);
+    setToken('');
   }
 
   function handleAlways() {
