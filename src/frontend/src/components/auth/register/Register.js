@@ -12,6 +12,7 @@ function Register() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(getDefaultErrorValues());
 
+  // get defaults
   function getDefaultErrorValues() {
     return {
       hasOccured: false,
@@ -29,22 +30,24 @@ function Register() {
     };
   }
 
-  function handleSuccess(response) {
-    setError(getDefaultErrorValues());
+  // handlers
+  function _handleSuccess(response) {
     console.log(response);
+    setError(getDefaultErrorValues());
   }
 
-  function handleError(e) {
+  function _handleError(e) {
     setError({
       hasOccured: true,
       msg: e.response.data.message
     })
   }
 
-  function handleAlways() {
+  function _handleAlways() {
     setLoading(false);
   }
 
+  // events
   function onFormChange(e) {
     let { name, value } = e.target;
     form[name] = value;
@@ -61,9 +64,9 @@ function Register() {
     }
 
     await api.post(urls.REGISTER, form)
-      .then(handleSuccess.bind(this))
-      .catch(handleError.bind(this))
-      .finally(handleAlways.bind(this));
+      .then(_handleSuccess.bind(this))
+      .catch(_handleError.bind(this))
+      .finally(_handleAlways.bind(this));
   }
 
   function checkPasswords() {
