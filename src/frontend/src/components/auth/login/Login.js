@@ -30,6 +30,7 @@ function Login() {
   // handlers
   function _handleSuccess(response) {
     setError(_getDefaultErrorValues());
+    setLoading(false);
     setLogged(true);
     console.log(response);
   }
@@ -39,11 +40,8 @@ function Login() {
       hasOccured: true,
       msg: e.response.data.message
     });
-    setLogged(false);
-  }
-
-  function _handleAlways() {
     setLoading(false);
+    setLogged(false);
   }
 
   // events
@@ -60,8 +58,7 @@ function Login() {
 
     await api.post(urls.LOGIN, form)
       .then(_handleSuccess.bind(this))
-      .catch(_handleError.bind(this))
-      .finally(_handleAlways.bind(this));
+      .catch(_handleError.bind(this));
   }
 
   // render
