@@ -11,30 +11,12 @@ import ErrorBoundary from "./components/ErrorBoundary";
 function Routes() {
   return (
     <BrowserRouter>
-      <Route exact path="/">
-        <ErrorBoundary>
-          <Home title="Home" />
-        </ErrorBoundary>
-      </Route>
-
-      <Route exact path="/login">
-        <ErrorBoundary>
-          <Login title="Login" />
-        </ErrorBoundary>
-      </Route>
-
-      <Route exact path="/register">
-        <ErrorBoundary>
-          <Register title="Register" />
-        </ErrorBoundary>
-      </Route>
-
-      <Route exact path="/reset">
-        <ErrorBoundary>
-          <Reset title="Reset" />
-        </ErrorBoundary>
-      </Route>
-
+      <ErrorBoundary>
+        <Route exact path="/" component={Home} />
+        <Route path="/login" component={Login} />
+        <Route path="/register" component={Register} />
+        <Route path="/reset" component={Reset} />
+      </ErrorBoundary>
     </BrowserRouter >
   );
 }
