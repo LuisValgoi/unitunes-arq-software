@@ -47,7 +47,7 @@ UserSchema.pre('save', async function (next) {
   // Hash the password before saving the user model
   const user = this;
   if (user.isModified('password')) {
-    user.password = await bcrypt.hash(user.password, 8);
+    user.password = await bcrypt.hash(user.password, 6);
   }
   next();
 });
@@ -56,7 +56,7 @@ UserSchema.pre('findOneAndUpdate', async function (next) {
   // Hash the password before saving the user model
   const user = this;
   if (user._update && user._update.password) {
-    user._update.password = await bcrypt.hash(this._update.password, 8);
+    user._update.password = await bcrypt.hash(this._update.password, 6);
   }
   next();
 });

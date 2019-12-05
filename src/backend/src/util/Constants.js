@@ -1,6 +1,6 @@
 const Categories = require('../util/Categories');
 
-let PASSWORD_LENGTH = 10;
+let PASSWORD_LENGTH = 6;
 let PASSWORD_CHARACTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 let CATEGORIES = {
   MUSIC: Categories.getMusic(),
