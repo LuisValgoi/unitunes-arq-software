@@ -7,51 +7,64 @@ import urls from "../../../services/urls";
 import api from "../../../services/api";
 
 function Login() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [token, setToken] = useState('');
-  const [error, setError] = useState(false);
-  const [errorMsg, setErrorMsg] = useState('');
-  const [isLoading, setIsLoading] = useState('');
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [logged, setLogged] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(_getDefaultErrorValues());
+  const [form, setForm] = useState(_getDefaultFormValues());
+
+  // get defaults
+  function _getDefaultErrorValues() {
+    return {
+      hasOccured: false,
+      msg: ''
+    };
+  }
+
+  function _getDefaultFormValues() {
+    return {
+      email: '',
+      password: ''
+    };
+  }
+
+  // handlers
+  function _handleSuccess(response) {
+    setError(_getDefaultErrorValues());
+    setLogged(true);
+    console.log(response);
+  }
+
+  function _handleError(e) {
+    setError({
+      hasOccured: true,
+      msg: e.response.data.message
+    });
+    setLogged(false);
+  }
+
+  function _handleAlways() {
+    setLoading(false);
+  }
+
+  // events
+  function onFormChange(e) {
+    let { name, value } = e.target;
+    form[name] = value;
+    setForm({ ...form });
+    setError(_getDefaultErrorValues());
+  }
 
   async function onSubmit(e) {
     e.preventDefault();
+    setLoading(true);
 
-    setIsLoading(true);
-
-    await api.post(urls.LOGIN, {
-      email,
-      password
-    }).then(handleSuccess.bind(this))
-      .catch(handleError.bind(this))
-      .finally(handleAlways.bind(this));
+    await api.post(urls.LOGIN, form)
+      .then(_handleSuccess.bind(this))
+      .catch(_handleError.bind(this))
+      .finally(_handleAlways.bind(this));
   }
 
-  function handleSuccess(response) {
-    setError(false);
-    setErrorMsg('');
-    setIsLoggedIn(true);
-    setToken(response.data.token);
-  }
-
-  function handleError(e) {
-    setError(true);
-    setErrorMsg(e.response.data.message);
-    setIsLoggedIn(false);
-    setToken('');
-  }
-
-  function handleAlways() {
-    setIsLoading(false);
-  }
-
-  function onChangeEmail(value) {
-    setError(false);
-    setErrorMsg('');
-    setEmail(value);
-  }
-
+  // render
   let defaulHTML = (
     <div className="section-02">
       <label>Ainda não possui conta?</label>
@@ -63,7 +76,7 @@ function Login() {
 
   let errorHTML = (
     <div className="section-02">
-      <label className="error">{errorMsg}</label>
+      <label className="error">{error.msg}</label>
     </div>
   );
 
@@ -74,23 +87,38 @@ function Login() {
   );
 
   let block = defaulHTML;
-  if (error) {
+  if (error.hasOccured) {
     block = errorHTML;
-  } else if (token !== '') {
+  } else if (logged) {
     block = sucessHTML;
   }
 
   return (
     <div className="page">
-      {isLoggedIn ? <Redirect to="/" /> :
+      {logged ? <Redirect to="/" /> :
         <form className="form" onSubmit={onSubmit} method="post">
           <Link to="/">
             <img src={logo} className="logo" alt="logo" />
           </Link>
           <div className="container">
-            <input type="email" name="email" placeholder="E-mail" required value={email} onChange={e => onChangeEmail(e.target.value)} />
-            <input type="password" name="password" placeholder="Senha" required value={password} onChange={e => setPassword(e.target.value)} />
-            <button type="submit" className={isLoading ? 'button is-link is-loading' : ''}>Entrar</button>
+            <input
+              type="email"
+              name="email"
+              placeholder="E-mail"
+              required
+              value={form.email}
+              onChange={onFormChange} />
+            <input
+              type="password"
+              name="password"
+              placeholder="Senha"
+              required
+              value={form.password}
+              onChange={onFormChange} />
+            <button
+              type="submit"
+              className={loading ? 'button is-link is-loading' : ''}>Entrar
+            </button>
           </div>
           <div className="section-01">
             <label>Esqueceu sua senha?</label>
