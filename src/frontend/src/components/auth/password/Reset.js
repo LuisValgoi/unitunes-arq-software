@@ -82,7 +82,7 @@ function Reset() {
           <img src={logo} className="logo" alt="logo" />
         </Link>
         <div className="container">
-          <input type="email" name="email" required={true} placeholder="E-mail" value={email} onChange={e => onChangeEmail(e.target.value)} />
+          <input type="email" name="email" required placeholder="E-mail" value={email} onChange={e => onChangeEmail(e.target.value)} />
           <button type="submit" className={isLoading ? 'button is-link is-loading' : ''}>Reset</button>
         </div>
         {block}

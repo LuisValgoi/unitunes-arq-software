@@ -88,8 +88,8 @@ function Login() {
             <img src={logo} className="logo" alt="logo" />
           </Link>
           <div className="container">
-            <input type="email" name="email" placeholder="E-mail" required={true} value={email} onChange={e => onChangeEmail(e.target.value)} />
-            <input type="password" name="password" placeholder="Senha" required={true} value={password} onChange={e => setPassword(e.target.value)} />
+            <input type="email" name="email" placeholder="E-mail" required value={email} onChange={e => onChangeEmail(e.target.value)} />
+            <input type="password" name="password" placeholder="Senha" required value={password} onChange={e => setPassword(e.target.value)} />
             <button type="submit" className={isLoading ? 'button is-link is-loading' : ''}>Entrar</button>
           </div>
           <div className="section-01">
