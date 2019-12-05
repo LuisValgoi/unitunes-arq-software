@@ -88,6 +88,8 @@ function Register() {
             type="text"
             name="firstName"
             required
+            pattern="[A-Za-z0-9]{1,255}"
+            title="You are not allowed to add a field with this size"
             value={form.firstName}
             onChange={onFormChange}
             className="splitLeft"
@@ -97,6 +99,8 @@ function Register() {
             type="text"
             name="lastName"
             required
+            pattern="[A-Za-z0-9]{1,255}"
+            title="You are not allowed to add a field with this size"
             value={form.lastName}
             onChange={onFormChange}
             className="splitRight"
@@ -114,6 +118,8 @@ function Register() {
             type="password"
             name="password"
             required
+            pattern="[A-Za-z0-9]{6,30}"
+            title="Your password must have at least 6 digits until 30 digits"
             value={form.password}
             onChange={onFormChange}
             placeholder="Senha">
@@ -122,6 +128,8 @@ function Register() {
             type="password"
             name="passwordConfirmation"
             required
+            pattern="[A-Za-z0-9]{6,30}"
+            title="Your password must have at least 6 digits until 30 digits"
             value={form.passwordConfirmation}
             onChange={onFormChange}
             onKeyUp={checkPasswords}
